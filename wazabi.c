@@ -35,13 +35,13 @@ int main()
     srand(time(NULL));
 
     // Création de la liste de joueur
-    joueur listeJoueur;
+    joueur *listeJoueur;
 
     // Création objet dé
     de de;
 
     // Initialisation de la partie
-    initPartie(*listeJoueur);
+    initPartie(listeJoueur);
 
     return 0;
 }
