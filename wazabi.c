@@ -28,6 +28,7 @@ struct de
 };
 
 // Déclaration des méthodes / fonctions
+void initDe(de *de);
 void initPartie(joueur *joueurs);
 
 int main(int argc, char *argv[])
