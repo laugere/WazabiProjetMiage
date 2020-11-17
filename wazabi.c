@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
 
     // Création objet dé
     de de;
-    de.faces = {1, 1, 1, 2, 2, 3};
+    initDe(&de);
+
 
     // Initialisation de la partie
     initPartie(&listeJoueur);
@@ -51,21 +52,28 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void initPartie(joueur *joueurs){
-
-int nb;
-
-printf("Combien d'adversaires souhaitez-vous ?");
-scanf("%d", &nb);
-do{
-
-}
-while(nb < 2 && nb > 8);
-
-for(int i = 0; i<nb; i++){
-    joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
+void initDe(de *de) {
+    (*de).faces[0] = 1;
+    (*de).faces[1] = 1;
+    (*de).faces[2] = 1;
+    (*de).faces[3] = 2;
+    (*de).faces[4] = 2;
+    (*de).faces[5] = 3;
 }
 
+void initPartie(joueur *joueurs)
+{
+    int nb;
 
+    printf("Combien d'adversaires souhaitez-vous ?");
+    scanf("%d", &nb);
+    do
+    {
 
+    } while (nb < 2 && nb > 8);
+
+    for (int i = 0; i < nb; i++)
+    {
+        joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
+    }
 }
