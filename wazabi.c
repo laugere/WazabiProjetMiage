@@ -28,6 +28,7 @@ struct de
 };
 
 // Déclaration des méthodes / fonctions
+void initPartie(joueur *joueurs);
 
 int main()
 {
@@ -44,4 +45,23 @@ int main()
     initPartie(&listeJoueur);
 
     return 0;
+}
+
+void initPartie(joueur *joueurs){
+
+int nb;
+
+printf("Combien d'adversaires souhaitez-vous ?");
+scanf("%d", &nb);
+do{
+
+}
+while(nb < 2 && nb > 8);
+
+for(int i = 0; i<nb; i++){
+    joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
+}
+
+
+
 }
