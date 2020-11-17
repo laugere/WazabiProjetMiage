@@ -99,17 +99,17 @@ void afficherDe(int face)
 {
     if (face == 1)
     {
-        printf("wazabi");
+        printf("Wazabi");
     }
     else
     {
         if (face == 2)
         {
-            printf("pioche");
+            printf("Pioche");
         }
         else
         {
-            printf("donne un de");
+            printf("Donne un de");
         }
     }
 }
