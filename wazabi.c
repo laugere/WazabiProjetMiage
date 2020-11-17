@@ -87,7 +87,7 @@ int lancerDe(de de)
     int index;
     int face;
 
-    index = rand() % 5 + 0;
+    index = rand() % 6 + 1;
 
     face = de.faces[index];
     afficherDe(face);
