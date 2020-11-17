@@ -97,13 +97,13 @@ int lancerDe(de de)
 
 void afficherDe(int face)
 {
-    if (face = 1)
+    if (face == 1)
     {
         printf("wazabi");
     }
     else
     {
-        if (face = 2)
+        if (face == 2)
         {
             printf("pioche");
         }
