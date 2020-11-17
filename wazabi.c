@@ -31,7 +31,7 @@ struct de
 // Déclaration des méthodes / fonctions
 void initDe(de *de);
 void initPartie(joueur *joueurs);
-void afficherDe(de de);
+void afficherDe(int face);
 
 int lancerDe(de de);
 
@@ -87,18 +87,16 @@ void initPartie(joueur *joueurs)
 int lancerDe(de de)
 {
     int index;
+    int face;
 
     index = rand() % 5 + 0;
+
+    face = de.faces[index];
+    afficherDe(face);
 
     return de.faces[index];
 }
 
-void afficherDe(de de)
+void afficherDe(int face)
 {
-    int i;
-    printf("\n\n");
-    for (i = 0; i < 6; i++)
-    {
-        printf("de : %d", de.faces[i]);
-    }
 }
