@@ -17,6 +17,12 @@ struct carte
     carte *suivant;
 };
 
+typedef struct de de;
+struct de
+{
+
+};
+
 int main()
 {
     srand(time(NULL));
