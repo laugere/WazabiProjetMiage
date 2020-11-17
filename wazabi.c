@@ -30,7 +30,7 @@ struct de
 // Déclaration des méthodes / fonctions
 void initPartie(joueur *joueurs);
 
-int main()
+int main(int argc, char *argv[])
 {
     // Initialisation de srand
     srand(time(NULL));
@@ -40,9 +40,13 @@ int main()
 
     // Création objet dé
     de de;
+    de.faces = {1, 1, 1, 2, 2, 3};
 
     // Initialisation de la partie
     initPartie(&listeJoueur);
+
+    // lancer dé
+    lancerDes(de);
 
     return 0;
 }
