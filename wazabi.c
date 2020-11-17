@@ -67,7 +67,7 @@ void initDe(de *de)
 
 void initPartie(joueur *joueurs)
 {
-    int nb;
+    /*int nb;
 
     printf("Combien d'adversaires souhaitez-vous ?");
     scanf("%d", &nb);
@@ -79,7 +79,7 @@ void initPartie(joueur *joueurs)
     for (int i = 0; i < nb; i++)
     {
         joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
-    }
+    }*/
 }
 
 int lancerDe(de de)
@@ -97,16 +97,19 @@ int lancerDe(de de)
 
 void afficherDe(int face)
 {
-   if(face=1)
-   {
-       printf("wazabi");
-   }
-   if(face=2)
-   {
-       printf("pioche");
-   }
-   else
-   {
-       printf("donne un de");
-   }
+    if (face = 1)
+    {
+        printf("wazabi");
+    }
+    else
+    {
+        if (face = 2)
+        {
+            printf("pioche");
+        }
+        else
+        {
+            printf("donne un de");
+        }
+    }
 }
