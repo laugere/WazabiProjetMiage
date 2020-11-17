@@ -67,19 +67,37 @@ void initDe(de *de)
 
 void initPartie(joueur *joueurs)
 {
-    /*int nb;
 
-    printf("Combien d'adversaires souhaitez-vous ?");
-    scanf("%d", &nb);
+    int nb;
+    char pseudo[25];
+    joueur *aux = joueurs;
+
+    int nb;
+
     do
     {
+        printf("Combien d'adversaires souhaitez-vous ?");
+        scanf("%d", &nb);
+        printf("\n");
+        printf("Quel est votre pseudo ?");
+        scanf("%s", &pseudo);
+    } while (nb < 1 && nb > 5);
+    // la condition prend en compte le joueur courant
 
-    } while (nb < 2 && nb > 8);
+    joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
 
-    for (int i = 0; i < nb; i++)
+    *tmpJoueur->pseudo = pseudo;
+    tmpJoueur->suivant = NULL;
+    joueurs = tmpJoueur;
+
+    for (int i = 0; i <= nb; i++)
     {
         joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
-    }*/
+        if (aux != NULL)
+        {
+            aux = aux->suivant;
+        }
+    }
 }
 
 int lancerDe(de de)
