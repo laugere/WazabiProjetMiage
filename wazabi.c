@@ -30,6 +30,7 @@ struct de
 // Déclaration des méthodes / fonctions
 void initDe(de *de);
 void initPartie(joueur *joueurs);
+void lancerDes(de de);
 
 int main(int argc, char *argv[])
 {
@@ -42,7 +43,6 @@ int main(int argc, char *argv[])
     // Création objet dé
     de de;
     initDe(&de);
-
 
     // Initialisation de la partie
     initPartie(&listeJoueur);
