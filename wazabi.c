@@ -31,6 +31,8 @@ struct de
 // Déclaration des méthodes / fonctions
 void initDe(de *de);
 void initPartie(joueur *joueurs);
+void afficherDe(de de);
+
 int lancerDe(de de);
 
 int main(int argc, char *argv[])
