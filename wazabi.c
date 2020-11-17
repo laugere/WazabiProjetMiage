@@ -21,7 +21,7 @@ struct carte
 typedef struct de de;
 struct de
 {
-
+    char faces[6];
 };
 
 int main()
