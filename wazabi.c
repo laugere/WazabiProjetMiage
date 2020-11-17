@@ -52,7 +52,6 @@ int main(int argc, char *argv[])
 
     // lancer dé
     lancerDe(de);
-    afficherDe(de);
 
     return 0;
 }
