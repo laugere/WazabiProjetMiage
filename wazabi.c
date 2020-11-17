@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 
+// Déclaration des types
 typedef struct joueur joueur;
 struct joueur
 {
@@ -24,10 +25,13 @@ struct de
     char faces[6];
 };
 
+// Déclaration des méthodes / fonctions
+
 int main()
 {
     srand(time(NULL));
 
+    initPartie();
 
     return 0;
 }
