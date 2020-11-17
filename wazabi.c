@@ -97,4 +97,16 @@ int lancerDe(de de)
 
 void afficherDe(int face)
 {
+   if(face=1)
+   {
+       printf("wazabi");
+   }
+   if(face=2)
+   {
+       printf("pioche");
+   }
+   else
+   {
+       printf("donne un de");
+   }
 }
