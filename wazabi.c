@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <string.h>
 
 // Déclaration des types
 typedef struct joueur joueur;
