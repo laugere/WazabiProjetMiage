@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <string.h>
 
 // Déclaration des types
 typedef struct joueur joueur;
@@ -30,6 +31,7 @@ struct de
 // Déclaration des méthodes / fonctions
 void initDe(de *de);
 void initPartie(joueur *joueurs);
+void lancerDes(de de);
 
 int main(int argc, char *argv[])
 {
