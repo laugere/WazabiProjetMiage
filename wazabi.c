@@ -37,8 +37,11 @@ int main()
     // Création de la liste de joueur
     joueur listeJoueur;
 
+    // Création objet dé
+    de de;
+
     // Initialisation de la partie
-    initPartie(listeJoueur);
+    initPartie(*listeJoueur);
 
     return 0;
 }
