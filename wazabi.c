@@ -8,6 +8,7 @@ typedef struct joueur joueur;
 struct joueur
 {
     char pseudo[25];
+    int de[24];
 };
 
 typedef struct carte carte;
@@ -22,15 +23,20 @@ struct carte
 typedef struct de de;
 struct de
 {
-    char faces[6];
+    int faces[6];
 };
 
 // Déclaration des méthodes / fonctions
 
 int main()
 {
+    // Initialisation de srand
     srand(time(NULL));
 
+    // Création de la liste de joueur
+
+
+    // Initialisation de la partie
     initPartie();
 
     return 0;
