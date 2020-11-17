@@ -9,6 +9,7 @@ struct joueur
 {
     char pseudo[25];
     int de[24];
+    joueur *suivant;
 };
 
 typedef struct carte carte;
@@ -34,10 +35,10 @@ int main()
     srand(time(NULL));
 
     // Création de la liste de joueur
-
+    joueur listeJoueur;
 
     // Initialisation de la partie
-    initPartie();
+    initPartie(listeJoueur);
 
     return 0;
 }
