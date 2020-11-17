@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     initPartie(&listeJoueur);
 
     // lancer dé
-    lancerDes(de);
+    lancerDe(de);
 
     return 0;
 }
@@ -81,22 +81,22 @@ void initPartie(joueur *joueurs)
     }
 }
 
-int lancerDe(de *de)
+int lancerDe(de de)
 {
     int i;
 
     for (i = 0; i < 6; i++)
     {
-        de->faces[i] = rand() % 6 + 1;
+        de.faces[i] = rand() % 6 + 1;
     }
 }
 
-void afficherDe(de *de)
+void afficherDe(de de)
 {
     int i;
     printf("\n\n");
     for (i = 0; i < 6; i++)
     {
-        printf("de : %d", de->faces[i]);
+        printf("de : %d", de.faces[i]);
     }
 }
