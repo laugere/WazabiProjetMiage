@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
     de de;
     initDe(&de);
 
-
     // Initialisation de la partie
     initPartie(&listeJoueur);
 
@@ -53,7 +52,8 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void initDe(de *de) {
+void initDe(de *de)
+{
     (*de).faces[0] = 1;
     (*de).faces[1] = 1;
     (*de).faces[2] = 1;
@@ -76,5 +76,25 @@ void initPartie(joueur *joueurs)
     for (int i = 0; i < nb; i++)
     {
         joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
+    }
+}
+
+int lancerDe(de *de)
+{
+    int i;
+
+    for (i = 0; i < 6; i++)
+    {
+        de->faces[i] = rand() % 6 + 1;
+    }
+}
+
+void afficherDe(de *de)
+{
+    int i;
+    printf("\n\n");
+    for (i = 0; i < 6; i++)
+    {
+        printf("de : %d", de->faces[i]);
     }
 }
