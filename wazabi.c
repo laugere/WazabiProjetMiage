@@ -84,14 +84,11 @@ void initPartie(joueur *joueurs)
 
 int lancerDe(de de)
 {
-    int i;
+    int index;
 
-    for (i = 0; i < 6; i++)
-    {
-        de.faces[i] = rand() % 6 + 1;
-    }
+    index = rand() % 5 + 0;
 
-    return i;
+    return de.faces[index];
 }
 
 void afficherDe(de de)
