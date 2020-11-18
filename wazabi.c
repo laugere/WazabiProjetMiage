@@ -12,6 +12,7 @@ struct joueur
 {
     char pseudo[25];
     int de[24];
+    carte cartes;
     joueur *suivant;
 };
 
@@ -33,12 +34,15 @@ struct de
 //////////////////////////////////////////////////////
 //////// Déclaration des méthodes / fonctions ////////
 //////////////////////////////////////////////////////
-
+// Méthodes
 void initDe(de *de);
 void initPartie(joueur *joueurs);
 void afficherDe(int face);
-void selectionCarte();
+void selectionCarte(joueur *joueurs);
+// FOR TEST
+void test();
 
+// Fonctions
 int lancerDe(de de);
 
 int main(int argc, char *argv[])
@@ -49,23 +53,38 @@ int main(int argc, char *argv[])
     // Création de la liste de joueur
     joueur listeJoueur;
 
-    // Création objet dé
-    de de;
-    initDe(&de);
-
     // Initialisation de la partie
     initPartie(&listeJoueur);
 
     //////////////////////
     //////// TEST ////////
     //////////////////////
+    // Méthode de test
+    test();
+
+    return 0;
+}
+
+/////////////////////////////////
+//////// Méthode de test ////////
+/////////////////////////////////
+
+void test()
+{
+    // Lexique
+    de de;
+    joueur joueurCourant;
+
+    // Début
+    // initialisation de l'objet dé
+    initDe(&de);
+
     // lancer dé
     lancerDe(de);
 
     // Sélection carte
-    selectionCarte();
-
-    return 0;
+    selectionCarte(&joueurCourant);
+    // Fin
 }
 
 ///////////////////////////////////////
@@ -119,13 +138,12 @@ void initPartie(joueur *joueurs)
     }
 }
 
-
 /////////////////////////////////
 //////// Gestion des dés ////////
 /////////////////////////////////
 
 // Roll dice randomly and return
-// index of the face 
+// index of the face
 // 1 = Wazabi
 // 2 = Pioche
 // 3 = Donne dé
@@ -160,4 +178,17 @@ void afficherDe(int face)
             printf("Donne un de");
         }
     }
+}
+
+////////////////////////////////////
+//////// Gestion des cartes ////////
+////////////////////////////////////
+
+void selectionCarte(joueur *joueurs)
+{
+    // Lexique
+
+    // Début
+
+    // Fin
 }
