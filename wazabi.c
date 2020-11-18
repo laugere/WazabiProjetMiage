@@ -21,6 +21,7 @@ struct carte
 {
     int index;
     int cout;
+    char titre[255];
     char effet[255];
     carte *suivant;
 };
@@ -38,7 +39,7 @@ struct de
 void initDe(de *de);
 void initPartie(joueur *joueurs);
 void afficherDe(int face);
-void selectionCarte(joueur *joueurs);
+void selectionCarte(joueur *joueur);
 // FOR TEST
 void test();
 
@@ -184,11 +185,33 @@ void afficherDe(int face)
 //////// Gestion des cartes ////////
 ////////////////////////////////////
 
-void selectionCarte(joueur *joueurs)
+void selectionCarte(joueur *joueur)
 {
     // Lexique
+    carte *aux;
+    carte *prec;
+    char entry;
 
     // Début
+    *aux = joueur->cartes;
+    while (aux != NULL)
+    {
+        do
+        {
+            printf("%s \n", aux->titre);
+            printf("%s", aux->effet);
+            printf("Cette carte coute %d wazabi(s)", aux->cout);
+            printf("[q]<-- Prec - Suivante -->[d]");
+            scanf("%c", entry);
+        } while (entry != 'q' || entry != 'd');
+        if (entry == 'q')
+        {
 
+        }
+        else
+        {
+            
+        }
+    }
     // Fin
 }
