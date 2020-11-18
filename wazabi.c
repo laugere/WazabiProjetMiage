@@ -3,7 +3,10 @@
 #include <string.h>
 #include <time.h>
 
-// Déclaration des types
+///////////////////////////////////////
+//////// Déclaration des types ////////
+///////////////////////////////////////
+
 typedef struct joueur joueur;
 struct joueur
 {
@@ -27,10 +30,14 @@ struct de
     int faces[6];
 };
 
-// Déclaration des méthodes / fonctions
+//////////////////////////////////////////////////////
+//////// Déclaration des méthodes / fonctions ////////
+//////////////////////////////////////////////////////
+
 void initDe(de *de);
 void initPartie(joueur *joueurs);
 void afficherDe(int face);
+void selectionCarte();
 
 int lancerDe(de de);
 
@@ -49,12 +56,23 @@ int main(int argc, char *argv[])
     // Initialisation de la partie
     initPartie(&listeJoueur);
 
+    //////////////////////
+    //////// TEST ////////
+    //////////////////////
     // lancer dé
     lancerDe(de);
+
+    // Sélection carte
+    selectionCarte();
 
     return 0;
 }
 
+///////////////////////////////////////
+//////// Initialisation Partie ////////
+///////////////////////////////////////
+
+// To initialize the dice tab
 void initDe(de *de)
 {
     (*de).faces[0] = 1;
@@ -65,6 +83,7 @@ void initDe(de *de)
     (*de).faces[5] = 3;
 }
 
+// Init game
 void initPartie(joueur *joueurs)
 {
 
@@ -100,6 +119,16 @@ void initPartie(joueur *joueurs)
     }
 }
 
+
+/////////////////////////////////
+//////// Gestion des dés ////////
+/////////////////////////////////
+
+// Roll dice randomly and return
+// index of the face 
+// 1 = Wazabi
+// 2 = Pioche
+// 3 = Donne dé
 int lancerDe(de de)
 {
     int index;
@@ -113,6 +142,7 @@ int lancerDe(de de)
     return de.faces[index];
 }
 
+// Show the face value
 void afficherDe(int face)
 {
     if (face == 1)
