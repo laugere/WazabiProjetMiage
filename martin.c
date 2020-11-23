@@ -22,7 +22,7 @@ void selectionCarte(joueur *joueur)
         } while (entry != 'q' || entry != 'd' || entry != 's');
         if (entry == 's')
         {
-            utilisationCarte(&aux, &joueur);
+            utilisationCarte(aux, joueur);
         }
         else
         {
@@ -64,7 +64,7 @@ void utilisationCarte(carte *carte, joueur *joueur)
         // piochez3Cartes();
         break;
     case 5:
-        supprimer1De(joueur->de);
+        // supprimer1De(joueur->de);
         break;
     case 6:
         // SwitchDes();
@@ -85,14 +85,18 @@ void utilisationCarte(carte *carte, joueur *joueur)
 void supprimer1De(char deJoueur[])
 {
     // Lexique
-    int index;
+    int p;
+    int i;
 
     // Début
-    index = strlen(deJoueur);
-    while (deJoueur[index] != '\0')
+    for (i = 0; deJoueur[i] != '\0'; i++)
     {
-        deJoueur[index] = deJoueur[index + 1];
-        index++;
+        if (deJoueur[i] == deJoueur[0])
+        {
+            for (p = i; deJoueur[p] != 0; p++)
+                deJoueur[p] = deJoueur[p + 1];
+            i--;
+        }
     }
     printf("%s", deJoueur);
     // Fin
