@@ -25,6 +25,7 @@ struct carte
     char titre[255];
     char effet[255];
     carte *suivant;
+    carte *precedent;
 };
 
 typedef struct de de;
