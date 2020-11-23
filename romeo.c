@@ -6,16 +6,16 @@ void initPartie(joueur *joueurs)
     char pseudo[25];
     joueur *aux = joueurs;
     joueur *prec = joueurs;
-    int nb;
-    int longueurChaine = 0;
+    int nbAdv;
     int ajoute = 0;
     do
     {
         printf("Combien d'adversaires souhaitez-vous ?");
         scanf("%d", &nb);
         printf("\n");
-    } while (nb < 1 && nb > 5);
+    } while (nbAdv < 1 && nbAdv > 5);
     // la condition prend en compte le joueur courant
+    
 
     while(ajoute != nb)
     {
@@ -23,9 +23,13 @@ void initPartie(joueur *joueurs)
            joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
            printf("Quel est le pseudo ?");
            scanf("%s", &pseudo); 
+           for(int i = 0; i<25;i++){
+               tmpJoueur->pseudo[i] = pseudo[i];
+           }
            ajoute = ajoute + 1;
            tmpJoueur->suivant = NULL;
-           aux = aux->suivant;
+           tmpJoueur->suivant = NULL;
+           
         }else{
             aux = aux->suivant;
         }
