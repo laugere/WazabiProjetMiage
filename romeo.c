@@ -6,32 +6,54 @@ void initPartie(joueur *joueurs)
     char pseudo[25];
     joueur *aux = joueurs;
     joueur *prec = joueurs;
-    int nbAdv;
+    int nbJ;
     int ajoute = 0;
     do
     {
-        printf("Combien d'adversaires souhaitez-vous ?");
+        printf("Combien de joueurs pour cette partie ?");
         scanf("%d", &nb);
         printf("\n");
-    } while (nbAdv < 1 && nbAdv > 5);
+    } while (nbJ < 2 && nbJ > 6);
     // la condition prend en compte le joueur courant
-    
 
-    while(ajoute != nb)
+    while (ajoute != nbJ)
     {
-        if(aux == NULL){
-           joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
-           printf("Quel est le pseudo ?");
-           scanf("%s", &pseudo); 
-           for(int i = 0; i<25;i++){
-               tmpJoueur->pseudo[i] = pseudo[i];
-           }
-           ajoute = ajoute + 1;
-           tmpJoueur->suivant = NULL;
-           tmpJoueur->suivant = NULL;
-           
-        }else{
-            aux = aux->suivant;
+        joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
+        if (aux == NULL)
+        {
+            printf("Quel est le pseudo ?");
+            scanf("%s", &pseudo);
+            for (int i = 0; i < 25; i++)
+            {
+                tmpJoueur->pseudo[i] = pseudo[i];
+            }
+            tmpJoueur->suivant = NULL;
+            *tmpJoueur->de = NULL;
+            ajoute = ajoute + 1;
+            prec = aux;
+            
         }
+        else
+        {
+            tmpJoueur->precedent = prec;
+            printf("Quel est le pseudo ?");
+            scanf("%s", &pseudo);
+            for (int i = 0; i < 25; i++)
+            {
+                tmpJoueur->pseudo[i] = pseudo[i];
+            }
+            tmpJoueur->suivant = NULL;
+            *tmpJoueur->de = NULL;
+            ajoute = ajoute + 1;
+        }
+        aux = aux->suivant;        
     }
+}
+
+void piocheCarte(carte *lesCartes)
+{
+}
+
+initPioche()
+{
 }
