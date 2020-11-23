@@ -83,17 +83,18 @@ void utilisationCarte(carte *carte, joueur *joueur)
     // Fin
 }
 
-void Supprimer1De(char deJoueur)
+void supprimer1De(char deJoueur)
 {
     // Lexique
     int index;
 
     // Début
     index = strlen(deJoueur);
-    while (deJoueur[index] != '\0')
+    while (deJoueur[&index] != '\0')
     {
-        deJoueur[index] = deJoueur[index + 1];
+        deJoueur[&index] = deJoueur[&index + 1];
         index++;
     }
+    printf("%s", deJoueur);
     // Fin
 }
