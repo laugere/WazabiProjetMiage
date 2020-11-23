@@ -47,7 +47,7 @@ void utilisationCarte(carte *carte, joueur *joueur);
 void test();
 
 // Effets de cartes
-void supprimer1De(char deJoueur);
+void supprimer1De(char deJoueur[]);
 
 // Fonctions
 int lancerDe(de de);
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     joueur listeJoueur;
 
     // Initialisation de la partie
-    initPartie(&listeJoueur);
+    //initPartie(&listeJoueur);
 
     //////////////////////
     //////// TEST ////////
@@ -84,13 +84,13 @@ void test()
 
     // Début
     // initialisation de l'objet dé
-    initDe(&de);
+    //initDe(&de);
 
     // lancer dé
-    lancerDe(de);
+    //lancerDe(de);
 
     // Sélection carte
-    selectionCarte(&joueurCourant);
+    //selectionCarte(&joueurCourant);
 
     // SupprimerDe
     supprimer1De("www");
