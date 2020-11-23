@@ -22,6 +22,7 @@ void selectionCarte(joueur *joueur)
         } while (entry != 'q' || entry != 'd' || entry != 's');
         if (entry == 's')
         {
+            utilisationCarte(*aux);
         }
         else
         {
