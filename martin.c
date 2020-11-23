@@ -64,7 +64,7 @@ void utilisationCarte(carte carte, joueur *joueur)
         // piochez3Cartes();
         break;
     case 5:
-        // Supprimer1De(char *deJoueur);
+        // Supprimer1De(joueur->de);
         break;
     case 6:
         // SwitchDes();
