@@ -46,6 +46,9 @@ void utilisationCarte(carte carte, joueur *joueur);
 // FOR TEST
 void test();
 
+// Effets de cartes
+void Supprimer1De(char deJoueur);
+
 // Fonctions
 int lancerDe(de de);
 
