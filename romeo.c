@@ -16,6 +16,7 @@ void initPartie(joueur *joueurs)
     } while (nbJ < 2 && nbJ > 6);
     // la condition prend en compte le joueur courant
 
+    //initialise les joueurs et leur dés
     while (ajoute != nbJ)
     {
         joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
@@ -28,10 +29,12 @@ void initPartie(joueur *joueurs)
                 tmpJoueur->pseudo[i] = pseudo[i];
             }
             tmpJoueur->suivant = NULL;
-            *tmpJoueur->de = NULL;
             ajoute = ajoute + 1;
             prec = aux;
-            
+            for (int i = 0; i < 3; i++)
+            {
+                tmpJoueur->de[i] = 1;
+            }
         }
         else
         {
@@ -40,20 +43,21 @@ void initPartie(joueur *joueurs)
             scanf("%s", &pseudo);
             for (int i = 0; i < 25; i++)
             {
-                tmpJoueur->pseudo[i] = pseudo[i];
+                tmpJoueur->suivant->pseudo[i] = pseudo[i];
             }
-            tmpJoueur->suivant = NULL;
-            *tmpJoueur->de = NULL;
+            tmpJoueur->suivant->suivant = NULL;
+            tmpJoueur->suivant->precedent = aux;
+            for (int i = 0; i < 3; i++)
+            {
+                tmpJoueur->suivant->de[i] = 1;
+            }
             ajoute = ajoute + 1;
         }
-        aux = aux->suivant;        
+        aux = aux->suivant;
     }
 }
 
-void piocheCarte(carte *lesCartes)
-{
-}
+void ajouterJoueur(){
+    
 
-initPioche()
-{
 }
