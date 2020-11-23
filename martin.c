@@ -82,7 +82,7 @@ void utilisationCarte(carte *carte, joueur *joueur)
     // Fin
 }
 
-void supprimer1De(char *deJoueur[])
+void supprimerDe(char *deJoueur[])
 {
     // Lexique
     int i;
@@ -95,5 +95,6 @@ void supprimer1De(char *deJoueur[])
             deJoueur[i] = '\0';
         }
     }
+    printf("Le dé a été supprimé")
     // Fin
 }
