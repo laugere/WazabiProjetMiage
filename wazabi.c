@@ -103,42 +103,6 @@ void initDe(de *de)
     (*de).faces[5] = 3;
 }
 
-// Init game
-void initPartie(joueur *joueurs)
-{
-
-    int nb;
-    char pseudo[25];
-    joueur *aux = joueurs;
-
-    int nb;
-
-    do
-    {
-        printf("Combien d'adversaires souhaitez-vous ?");
-        scanf("%d", &nb);
-        printf("\n");
-        printf("Quel est votre pseudo ?");
-        scanf("%s", &pseudo);
-    } while (nb < 1 && nb > 5);
-    // la condition prend en compte le joueur courant
-
-    joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
-
-    *tmpJoueur->pseudo = pseudo;
-    tmpJoueur->suivant = NULL;
-    joueurs = tmpJoueur;
-
-    for (int i = 0; i <= nb; i++)
-    {
-        joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
-        if (aux != NULL)
-        {
-            aux = aux->suivant;
-        }
-    }
-}
-
 /////////////////////////////////
 //////// Gestion des dés ////////
 /////////////////////////////////
