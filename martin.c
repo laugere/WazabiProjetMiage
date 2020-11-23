@@ -22,7 +22,6 @@ void selectionCarte(joueur *joueur)
         } while (entry != 'q' || entry != 'd' || entry != 's');
         if (entry == 's')
         {
-            
         }
         else
         {
@@ -35,6 +34,49 @@ void selectionCarte(joueur *joueur)
                 aux = aux->suivant;
             }
         }
+    }
+    // Fin
+}
+
+void utilisationCarte(carte carte)
+{
+    // Lexique
+    int index;
+
+    // Début
+    index = carte.index;
+    switch (index)
+    {
+    case 0:
+        // ChangementSens();
+        break;
+    case 1:
+        // Supprimer2Des();
+        break;
+    case 2:
+        // Donnez1De();
+        break;
+    case 3:
+        // Joueur1Carte();
+        break;
+    case 4:
+        // piochez3Cartes();
+        break;
+    case 5:
+        // Supprimer1De(char *deJoueur);
+        break;
+    case 6:
+        // SwitchDes();
+        break;
+    case 7:
+        // Prendre1Carte();
+        break;
+    case 8:
+        // SupprimerJoueurs2Cartes();
+        break;
+    case 9:
+        // SkipJoueur();
+        break;
     }
     // Fin
 }
