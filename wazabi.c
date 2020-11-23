@@ -42,7 +42,7 @@ void initDe(de *de);
 void initPartie(joueur *joueurs);
 void afficherDe(int face);
 void selectionCarte(joueur *joueur);
-void utilisationCarte(carte carte, joueur *joueur);
+void utilisationCarte(carte *carte, joueur *joueur);
 // FOR TEST
 void test();
 

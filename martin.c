@@ -19,11 +19,11 @@ void selectionCarte(joueur *joueur)
             printf("Cette carte coute %d wazabi(s) \n", aux->cout);
             printf("Utiliser cette carte ? [s] \n");
             printf("[q]<-- Prec - Suivante -->[d]");
-            scanf("%c", entry);
+            scanf("%c", &entry);
         } while (entry != 'q' || entry != 'd' || entry != 's');
         if (entry == 's')
         {
-            utilisationCarte(*aux, &joueur);
+            utilisationCarte(&aux, &joueur);
         }
         else
         {
@@ -40,13 +40,13 @@ void selectionCarte(joueur *joueur)
     // Fin
 }
 
-void utilisationCarte(carte carte, joueur *joueur)
+void utilisationCarte(carte *carte, joueur *joueur)
 {
     // Lexique
     int index;
 
     // Début
-    index = carte.index;
+    index = carte->index;
     switch (index)
     {
     case 0:
