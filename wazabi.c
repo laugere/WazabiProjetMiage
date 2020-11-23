@@ -14,6 +14,7 @@ struct joueur
     int de[24];
     carte cartes;
     joueur *suivant;
+    joueur *precedent;
 };
 
 typedef struct carte carte;
