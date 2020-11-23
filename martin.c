@@ -1,4 +1,5 @@
-#include <wazabi.c>
+#include "wazabi.c"
+
 
 void selectionCarte(joueur *joueur)
 {
@@ -64,7 +65,7 @@ void utilisationCarte(carte carte, joueur *joueur)
         // piochez3Cartes();
         break;
     case 5:
-        // Supprimer1De(joueur->de);
+        Supprimer1De(joueur->de);
         break;
     case 6:
         // SwitchDes();
@@ -78,6 +79,21 @@ void utilisationCarte(carte carte, joueur *joueur)
     case 9:
         // SkipJoueur();
         break;
+    }
+    // Fin
+}
+
+void Supprimer1De(char deJoueur)
+{
+    // Lexique
+    int index;
+
+    // Début
+    index = strlen(deJoueur);
+    while (deJoueur[index] != '\0')
+    {
+        deJoueur[index] = deJoueur[index + 1];
+        index++;
     }
     // Fin
 }

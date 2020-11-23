@@ -7,16 +7,6 @@
 //////// Déclaration des types ////////
 ///////////////////////////////////////
 
-typedef struct joueur joueur;
-struct joueur
-{
-    char pseudo[25];
-    int de[24];
-    carte cartes;
-    joueur *suivant;
-    joueur *precedent;
-};
-
 typedef struct carte carte;
 struct carte
 {
@@ -26,6 +16,16 @@ struct carte
     char effet[255];
     carte *suivant;
     carte *precedent;
+};
+
+typedef struct joueur joueur;
+struct joueur
+{
+    char pseudo[25];
+    int de[24];
+    carte cartes;
+    joueur *suivant;
+    joueur *precedent;
 };
 
 typedef struct de de;
