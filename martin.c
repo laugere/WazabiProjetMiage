@@ -95,6 +95,6 @@ void supprimerDe(char *deJoueur[])
             deJoueur[i] = '\0';
         }
     }
-    printf("Le dé a été supprimé")
+    printf("Le dé a été supprimé");
     // Fin
 }
