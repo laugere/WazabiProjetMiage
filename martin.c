@@ -22,7 +22,7 @@ void selectionCarte(joueur *joueur)
         } while (entry != 'q' || entry != 'd' || entry != 's');
         if (entry == 's')
         {
-            utilisationCarte(*aux);
+            utilisationCarte(*aux, &joueur);
         }
         else
         {
@@ -39,7 +39,7 @@ void selectionCarte(joueur *joueur)
     // Fin
 }
 
-void utilisationCarte(carte carte)
+void utilisationCarte(carte carte, joueur *joueur)
 {
     // Lexique
     int index;
