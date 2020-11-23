@@ -28,6 +28,8 @@ struct joueur
     joueur *precedent;
 };
 
+typedef
+
 typedef struct de de;
 struct de
 {

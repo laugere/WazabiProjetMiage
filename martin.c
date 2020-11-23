@@ -98,3 +98,11 @@ void supprimerDe(char *deJoueur[])
     printf("Le dé a été supprimé");
     // Fin
 }
+
+void piocheCarte()
+{
+    // Lexique
+
+    // Début
+    // Fin
+}
