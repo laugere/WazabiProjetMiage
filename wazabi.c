@@ -60,9 +60,11 @@ struct dice
 // Méthodes
 void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueur);
+void initPioche(pileCartes *pioche);
 void afficherDe(int face);
 void selectionCarte(joueur *joueur);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
+void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 // FOR TEST
 void test();
 
