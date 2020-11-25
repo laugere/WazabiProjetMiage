@@ -39,7 +39,6 @@ void selectionCarte(joueur *joueur)
     // Fin
 }
 
-
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
 {
     // Lexique
@@ -83,7 +82,6 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
     // Fin
 }
 
-
 void supprimerDe(int *deJoueur[])
 {
     // Lexique
@@ -100,7 +98,6 @@ void supprimerDe(int *deJoueur[])
     // Fin
 }
 
-
 void supprimer1De(int *deJoueur[])
 {
     // Lexique
@@ -112,7 +109,6 @@ void supprimer1De(int *deJoueur[])
     // Fin
 }
 
-
 void supprimer2De(int *deJoueur[])
 {
     // Lexique
@@ -122,6 +118,46 @@ void supprimer2De(int *deJoueur[])
     supprimerDe(deJoueur);
     supprimerDe(deJoueur);
     printf("Les dés ont été supprimés.");
+    // Fin
+}
+
+void initPioche(pileCartes *pioche)
+{
+    // Lexique
+    carte *aux;
+    int iterator;
+
+    // Début
+    // Rejouez et changement de sens
+    for (iterator = 0; iterator <= 2; iterator++)
+    {
+        empileCarte(pioche, \
+                    0, \
+                    0, \
+                    "Le joueur rejoue et la partie continue dans le sens inverse.", \
+                    "Rejouez et changement de sens");
+    }
+    // Fin
+}
+
+void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[])
+{
+    // Lexique
+    carte *aux;
+
+    // Début
+    aux = pioche->premier;
+    carte *nouvelleCarte = malloc(sizeof(*nouvelleCarte));
+    if (pioche == NULL || nouvelleCarte == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    nouvelleCarte->cout = cout;
+    nouvelleCarte->index = index;
+    strcpy(nouvelleCarte->effet, effet);
+    strcpy(nouvelleCarte->titre, titre);
+    nouvelleCarte->suivant = aux;
+    pioche->premier = nouvelleCarte;
     // Fin
 }
 

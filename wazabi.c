@@ -12,8 +12,8 @@ struct carte
 {
     int index;
     int cout;
-    char titre[255];
-    char effet[255];
+    char *titre;
+    char *effet;
     carte *suivant;
     carte *precedent;
 };
@@ -45,9 +45,7 @@ struct joueur
 typedef struct listeJoueurs listeJoueurs;
 struct listeJoueurs
 {
-    joueur *premier;
-    joueur *dernier;
-    joueur *courant;
+    joueur *debut;
 };
 
 typedef struct dice dice;
