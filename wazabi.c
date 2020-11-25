@@ -65,6 +65,7 @@ void afficherDe(int face);
 void selectionCarte(joueur *joueur);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
+void ajouterJoueur(listeJoueurs listeJoueur);
 // FOR TEST
 void test();
 
@@ -95,6 +96,7 @@ int main(int argc, char *argv[])
     //////// TEST ////////
     //////////////////////
     // Méthode de test
+    ajouterJoueur(&listeJoueur);
     test();
 
     return 0;
