@@ -112,45 +112,9 @@ void initDe(de *de)
 /////////////////////////////////
 //////// Gestion des dés ////////
 /////////////////////////////////
-
-// Roll dice randomly and return
-// index of the face
-// 1 = Wazabi
-// 2 = Pioche
-// 3 = Donne dé
-int lancerDe(de de)
-{
-    int index;
-    int face;
-
-    index = rand() % 6 + 1;
-
-    face = de.faces[index];
-    afficherDe(face);
-
-    return de.faces[index];
-}
-
-// Show the face value
-void afficherDe(int face)
-{
-    if (face == 1)
-    {
-        printf("Wazabi");
-    }
-    else
-    {
-        if (face == 2)
-        {
-            printf("Pioche");
-        }
-        else
-        {
-            printf("Donne un de");
-        }
-    }
-}
+#include "raphael.c";
 
 ////////////////////////////////////
 //////// Gestion des cartes ////////
 ////////////////////////////////////
+#include "martin.c";
