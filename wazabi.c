@@ -51,6 +51,7 @@ void supprimerDe(char *deJoueur[]);
 
 // Fonctions
 int lancerDe(de de);
+int retourneSommeWazabi(int face, int pointwazabi);
 
 int main(int argc, char *argv[])
 {
@@ -112,7 +113,6 @@ void initDe(de *de)
 /////////////////////////////////
 //////// Gestion des dés ////////
 /////////////////////////////////
-
 
 ////////////////////////////////////
 //////// Gestion des cartes ////////
