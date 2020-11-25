@@ -76,6 +76,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
         // SupprimerJoueurs2Cartes();
         // break;
     case 9:
+        printf("test");
         // SkipJoueur();
         // break;
     }
