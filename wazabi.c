@@ -99,7 +99,7 @@ void test()
     lancerDe(de);
 
     // Sélection carte
-    selectionCarte(&joueurCourant);
+    //selectionCarte(&joueurCourant);
     // Fin
 }
 
