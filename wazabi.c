@@ -117,7 +117,7 @@ void test()
     initDe(&de);
 
     // lancer dé
-    lancerDe(de);
+    //lancerDe(de);
 
     // Sélection carte
     //selectionCarte(&joueurCourant);
