@@ -18,6 +18,15 @@ struct carte
     carte *precedent;
 };
 
+typedef struct listeCartes listeCartes;
+struct listeCartes
+{
+    carte *premier;
+    carte *dernier;
+    carte *courante;
+};
+
+
 typedef struct joueur joueur;
 struct joueur
 {
@@ -28,8 +37,8 @@ struct joueur
     joueur *precedent;
 };
 
-typedef struct listeJoueur listeJoueur;
-struct listeJoueur
+typedef struct listeJoueurs listeJoueurs;
+struct listeJoueurs
 {
     joueur *premier;
     joueur *dernier;
@@ -67,7 +76,7 @@ int main(int argc, char *argv[])
     srand(time(NULL));
 
     // Création de la liste de joueur
-    listeJoueur listeJoueur;
+    listeJoueurs listeJoueur;
 
     // Initialisation de la partie
     initPartie(&listeJoueur);
