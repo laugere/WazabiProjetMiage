@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
     listeJoueurs listeJoueur;
 
     // Initialisation de la partie
-    initPartie(&listeJoueur);
+    //initPartie(&listeJoueur);
 
     //////////////////////
     //////// TEST ////////
