@@ -39,6 +39,7 @@ void selectionCarte(joueur *joueur)
     // Fin
 }
 
+
 void utilisationCarte(carte *carte, joueur *joueur)
 {
     // Lexique
@@ -82,6 +83,7 @@ void utilisationCarte(carte *carte, joueur *joueur)
     // Fin
 }
 
+
 void supprimerDe(int *deJoueur[])
 {
     // Lexique
@@ -98,11 +100,28 @@ void supprimerDe(int *deJoueur[])
     // Fin
 }
 
+
 void supprimer1De(int *deJoueur[])
 {
     // Lexique
 
     // Début
+    printf("Vous avez choisi de supprimer 1 dé...");
+    supprimerDe(deJoueur);
+    printf("Le dé a été supprimé.");
+    // Fin
+}
+
+
+void supprimer2De(int *deJoueur[])
+{
+    // Lexique
+
+    // Début
+    printf("Vous avez choisi de supprimer 2 dés...");
+    supprimerDe(deJoueur);
+    supprimerDe(deJoueur);
+    printf("Les dés ont été supprimés.");
     // Fin
 }
 

@@ -64,10 +64,13 @@ void utilisationCarte(carte *carte, joueur *joueur);
 void test();
 
 // Effets de cartes
+// Suppression de dés
+void supprimerDe(int *deJoueur[]);
+void supprimer1De(int *deJoueur[]);
+void supprimer2De(int *deJoueur[]);
 
 // Fonctions
 int lancerDe(dice de);
-void supprimerDe(int *deJoueur[]);
 int retourneSommeWazabi(int face, int pointwazabi);
 
 int main(int argc, char *argv[])
