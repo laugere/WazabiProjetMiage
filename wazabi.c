@@ -26,6 +26,11 @@ struct listeCartes
     carte *courante;
 };
 
+typedef struct pileCartes pileCartes;
+struct pileCartes
+{
+    carte *premier;
+}
 
 typedef struct joueur joueur;
 struct joueur
