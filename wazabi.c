@@ -25,7 +25,7 @@ typedef struct joueur joueur;
 struct joueur
 {
     char pseudo[25];
-    int de[24];
+    int des[24];
     carte cartes;
     joueur *suivant;
     joueur *precedent;
