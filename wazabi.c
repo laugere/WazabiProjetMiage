@@ -34,10 +34,10 @@ struct listeJoueur
     joueur *premier;
     joueur *dernier;
     joueur *courant;
-}
+};
 
-typedef struct de de;
-struct de
+typedef struct dice dice;
+struct dice
 {
     int faces[6];
 };
@@ -46,7 +46,7 @@ struct de
 //////// Déclaration des méthodes / fonctions ////////
 //////////////////////////////////////////////////////
 // Méthodes
-void initDe(de *de);
+void initDe(dice *de);
 void initPartie(joueur *joueurs);
 void afficherDe(int face);
 void selectionCarte(joueur *joueur);
@@ -57,7 +57,7 @@ void test();
 // Effets de cartes
 
 // Fonctions
-int lancerDe(de de);
+int lancerDe(dice de);
 void supprimerDe(int *deJoueur[]);
 int retourneSommeWazabi(int face, int pointwazabi);
 
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 void test()
 {
     // Lexique
-    de de;
+    dice de;
     joueur joueurCourant;
 
     // Début
@@ -108,7 +108,7 @@ void test()
 ///////////////////////////////////////
 
 // To initialize the dice tab
-void initDe(de *de)
+void initDe(dice *de)
 {
     (*de).faces[0] = 1;
     (*de).faces[1] = 1;
