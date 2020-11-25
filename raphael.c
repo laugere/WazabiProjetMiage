@@ -1,6 +1,6 @@
 #include "wazabi.c"
 
-int lancerDe(de de)
+int lancerDe(dice de)
 {
     int pointwazabi = 0;
     int index;
