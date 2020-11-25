@@ -62,7 +62,7 @@ void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueur);
 void initPioche(pileCartes *pioche);
 void afficherDe(int face);
-void selectionCarte(joueur *joueur);
+void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void ajouterJoueur(listeJoueurs *listeJoueurs);
@@ -96,7 +96,8 @@ int main(int argc, char *argv[])
     //////// TEST ////////
     //////////////////////
     // Méthode de test
-    ajouterJoueur(&listeJoueur);
+    //ajouterJoueur(&listeJoueur);
+    initPioche(&pioche);
     test();
 
     return 0;

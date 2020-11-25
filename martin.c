@@ -1,6 +1,6 @@
 #include "wazabi.c"
 
-void selectionCarte(joueur *joueur)
+void selectionCarte(joueur *joueur, pileCartes *pioche)
 {
     // Lexique
     carte *aux;
@@ -22,7 +22,7 @@ void selectionCarte(joueur *joueur)
         } while (entry != 'q' || entry != 'd' || entry != 's');
         if (entry == 's')
         {
-            utilisationCarte(aux, joueur);
+            utilisationCarte(aux, joueur, pioche);
         }
         else
         {
@@ -50,34 +50,34 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
     {
     case 0:
         // ChangementSens();
-        break;
+        // break;
     case 1:
-        supprimer2Des(&joueur->des);
-        break;
+        // supprimer2Des(&joueur->des);
+        // break;
     case 2:
         // Donnez1De();
-        break;
+        // break;
     case 3:
         // Joueur1Carte();
-        break;
+        // break;
     case 4:
         // piochez3Cartes();
-        break;
+        // break;
     case 5:
-        supprimer1De(&joueur->des);
-        break;
+        // supprimer1De(&joueur->des);
+        // break;
     case 6:
         // SwitchDes();
-        break;
+        // break;
     case 7:
         // Prendre1Carte();
-        break;
+        // break;
     case 8:
         // SupprimerJoueurs2Cartes();
-        break;
+        // break;
     case 9:
         // SkipJoueur();
-        break;
+        // break;
     }
     // Fin
 }
