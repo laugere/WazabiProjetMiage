@@ -47,10 +47,10 @@ void utilisationCarte(carte *carte, joueur *joueur);
 void test();
 
 // Effets de cartes
-void supprimerDe(char *deJoueur[]);
 
 // Fonctions
 int lancerDe(de de);
+void supprimerDe(int *deJoueur[]);
 int retourneSommeWazabi(int face, int pointwazabi);
 
 int main(int argc, char *argv[])
