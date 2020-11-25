@@ -85,6 +85,8 @@ int main(int argc, char *argv[])
 
     // Création de la liste de joueur
     listeJoueurs listeJoueur;
+    pileCartes pioche;
+    pileCartes defausse;
 
     // Initialisation de la partie
     //initPartie(&listeJoueur);

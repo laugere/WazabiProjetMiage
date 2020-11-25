@@ -8,7 +8,7 @@ void selectionCarte(joueur *joueur)
     char entry;
 
     // Début
-    *aux = joueur->cartes;
+    aux = joueur->listecartes.premier;
     while (aux != NULL)
     {
         do
@@ -40,7 +40,7 @@ void selectionCarte(joueur *joueur)
 }
 
 
-void utilisationCarte(carte *carte, joueur *joueur)
+void utilisationCarte(carte *carte, joueur *joueur, )
 {
     // Lexique
     int index;
@@ -130,6 +130,6 @@ void piocheCarte()
     // Lexique
 
     // Début
-    
+
     // Fin
 }
