@@ -37,7 +37,7 @@ struct joueur
 {
     char pseudo[25];
     int des[24];
-    carte cartes;
+    listeCartes listecartes;
     joueur *suivant;
     joueur *precedent;
 };
