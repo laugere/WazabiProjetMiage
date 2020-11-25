@@ -28,6 +28,14 @@ struct joueur
     joueur *precedent;
 };
 
+typedef struct listeJoueur listeJoueur;
+struct listeJoueur
+{
+    joueur *premier;
+    joueur *dernier;
+    joueur *courant;
+}
+
 typedef struct de de;
 struct de
 {
@@ -59,10 +67,10 @@ int main(int argc, char *argv[])
     srand(time(NULL));
 
     // Création de la liste de joueur
-    joueur listeJoueur;
+    listeJoueur listeJoueur;
 
     // Initialisation de la partie
-    //initPartie(&listeJoueur);
+    initPartie(&listeJoueur);
 
     //////////////////////
     //////// TEST ////////
