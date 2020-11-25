@@ -64,7 +64,7 @@ void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueur);
 void afficherDe(int face);
 void selectionCarte(joueur *joueur);
-void utilisationCarte(carte *carte, joueur *joueur);
+void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 // FOR TEST
 void test();
 

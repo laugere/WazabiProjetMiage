@@ -40,7 +40,7 @@ void selectionCarte(joueur *joueur)
 }
 
 
-void utilisationCarte(carte *carte, joueur *joueur, )
+void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
 {
     // Lexique
     int index;
