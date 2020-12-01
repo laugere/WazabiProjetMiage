@@ -11,6 +11,11 @@ void initPartie(listeJoueurs *listeJoueurs)
         scanf("%d", &nbJ);
         viderBuffer();
         printf("\n");
+
+        //int i = 'a';
+        //printf("%d\n",i); <-- retourne 97 (ascii de a)
+        // -48 pour convertir en int
+
     } while (nbJ < 2 && nbJ > 6);
 
     //initialise les joueurs et leur dés
@@ -36,10 +41,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
         printf("Quel est le pseudo ?");
 
         //scanf("%s", pseudo);
-        //
-
         scanfByRomeo(pseudo, 25);
-
         //
 
         for (int i = 0; i < 25; i++)
@@ -64,6 +66,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
                 printf("Quel est le pseudo ?");
                 //scanf("%s", pseudo);
                 scanfByRomeo(pseudo, 25);
+                //
                 for (int i = 0; i < 25; i++)
                 {
                     tmpJoueur->pseudo[i] = pseudo[i];
