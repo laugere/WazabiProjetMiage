@@ -267,27 +267,26 @@ void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char tit
     // Fin
 }
 
-void piocheCarte(pileCartes *pioche)
+carte piocheCarte(pileCartes *pioche)
 {
     // Lexique
     carte *aux;
-    // Début
-    // Fin
-}
+    carte carteRetour;
 
-void afficherPile(pileCartes *pioche)
-{
+    // Début
     if (pioche == NULL)
     {
         exit(EXIT_FAILURE);
     }
-    carte *aux = pioche->premier;
 
-    while (aux != NULL)
+    aux = pioche->premier;
+
+    if (pioche != NULL && pioche->premier != NULL)
     {
-        printf("%s\n", aux->titre);
-        aux = aux->suivant;
+        carteRetour = *aux;
+        pioche->premier = aux->suivant;
     }
 
-    printf("\n");
+    return carteRetour;
+    // Fin
 }

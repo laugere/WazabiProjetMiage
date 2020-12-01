@@ -74,7 +74,6 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // FOR TEST
 void test();
-void afficherPile(pileCartes *pioche);
 
 // Effets de cartes
 // Suppression de dés
