@@ -68,6 +68,7 @@ void afficherDe(int face);
 void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
+void selectCarteEmpiler(int index, pileCartes *pioche);
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
@@ -87,6 +88,7 @@ int retourneSommeWazabi(int face, int pointwazabi);
 
 // Fonctions générales
 int scanfByRomeo(char *chaine, int taille);
+void viderBuffer();
 
 int main(int argc, char *argv[])
 {
