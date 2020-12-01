@@ -109,7 +109,6 @@ int main(int argc, char *argv[])
     // Méthode de test
     //ajouterJoueur(&listeJoueur);
     initPioche(&pioche);
-    afficherPile(&pioche);
     test();
 
     return 0;
