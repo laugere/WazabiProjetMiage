@@ -81,6 +81,7 @@ void supprimer1De(int *deJoueur[]);
 void supprimer2De(int *deJoueur[]);
 
 // Fonctions
+// Fonctions Dé
 int lancerDe(dice de);
 int retourneSommeWazabi(int face, int pointwazabi);
 
