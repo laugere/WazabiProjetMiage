@@ -58,14 +58,19 @@ struct dice
 //////// Déclaration des méthodes / fonctions ////////
 //////////////////////////////////////////////////////
 // Méthodes
+// Initialization
 void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueur);
 void initPioche(pileCartes *pioche);
+// Méthodes Dé
 void afficherDe(int face);
+// Méthodes Cartes
 void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
-void ajouterJoueur(listeJoueurs *listeJoueurs);
+// Méthodes Joueurs
+void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ);
+void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // FOR TEST
 void test();
 
@@ -78,6 +83,9 @@ void supprimer2De(int *deJoueur[]);
 // Fonctions
 int lancerDe(dice de);
 int retourneSommeWazabi(int face, int pointwazabi);
+
+// Fonctions générales
+int scanfByRomeo(char *chaine, int taille);
 
 int main(int argc, char *argv[])
 {
