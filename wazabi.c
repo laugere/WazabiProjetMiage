@@ -12,8 +12,8 @@ struct carte
 {
     int index;
     int cout;
-    char *titre;
-    char *effet;
+    char titre[255];
+    char effet[255];
     carte *suivant;
     carte *precedent;
 };
@@ -74,6 +74,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // FOR TEST
 void test();
+void afficherPile(pileCartes *pioche);
 
 // Effets de cartes
 // Suppression de dés
@@ -109,6 +110,7 @@ int main(int argc, char *argv[])
     // Méthode de test
     //ajouterJoueur(&listeJoueur);
     initPioche(&pioche);
+    afficherPile(&pioche);
     test();
 
     return 0;

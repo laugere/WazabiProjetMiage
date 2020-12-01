@@ -145,10 +145,10 @@ void initPioche(pileCartes *pioche)
     //// empileCarte
     for (iterator = 0; iterator <= 36; iterator++)
     {
-        carte = rand() % 10 + 1;
+        carte = rand() % 9 + 1;
         if (tabCarte[carte] != 0)
         {
-            tabCarte[carte]--;
+            tabCarte[carte] = tabCarte[carte] - 1;
             selectCarteEmpiler(carte, pioche);
         }
     }
@@ -251,10 +251,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[])
 {
     // Lexique
-    carte *aux;
 
     // Début
-    aux = pioche->premier;
     carte *nouvelleCarte = malloc(sizeof(*nouvelleCarte));
     if (pioche == NULL || nouvelleCarte == NULL)
     {
@@ -264,16 +262,32 @@ void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char tit
     nouvelleCarte->index = index;
     strcpy(nouvelleCarte->effet, effet);
     strcpy(nouvelleCarte->titre, titre);
-    nouvelleCarte->suivant = aux;
+    nouvelleCarte->suivant = pioche->premier;
     pioche->premier = nouvelleCarte;
     // Fin
 }
 
-void piocheCarte()
+void piocheCarte(pileCartes *pioche)
 {
     // Lexique
-
+    carte *aux;
     // Début
-
     // Fin
+}
+
+void afficherPile(pileCartes *pioche)
+{
+    if (pioche == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    carte *aux = pioche->premier;
+
+    while (aux != NULL)
+    {
+        printf("%s\n", aux->titre);
+        aux = aux->suivant;
+    }
+
+    printf("\n");
 }
