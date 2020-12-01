@@ -127,6 +127,15 @@ int scanfByRomeo(char *chaine, int taille)
     }
 }
 
+void viderBuffer()
+{
+    int c = 0;
+    while (c != '\n' && c != EOF)
+    {
+        c = getchar();
+    }
+}
+
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ) //Méthode de test
 {
     joueur *ptrAux = listeJoueurs->debut;
