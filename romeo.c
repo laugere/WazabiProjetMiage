@@ -2,79 +2,151 @@
 // Init game
 void initPartie(listeJoueurs *listeJoueurs)
 {
-    int nb;
-    int nbJ;
+    int nbJ = 0;
     int ajoute = 0;
 
     do
     {
         printf("Combien de joueurs pour cette partie ?");
-        scanf("%d", &nb);
+        scanf("%d", &nbJ);
+        viderBuffer();
         printf("\n");
     } while (nbJ < 2 && nbJ > 6);
 
     //initialise les joueurs et leur dés
     while (ajoute != nbJ)
     {
-        ajouterJoueur(listeJoueurs);
+        ajouterJoueur(listeJoueurs, nbJ);
         ajoute++;
     }
+    afficherJoueurs(listeJoueurs, nbJ);
 }
 
-void ajouterJoueur(listeJoueurs *listeJoueurs)
+void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
 {
     joueur *ptrAux = listeJoueurs->debut;
     joueur *ptrPrec = ptrAux;
     char pseudo[25];
+    int tailleListe = 0;
 
     joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
 
     if (ptrAux == NULL)
     {
         printf("Quel est le pseudo ?");
-        scanf("%s", &pseudo);
+
+        //scanf("%s", pseudo);
+        //
+
+        scanfByRomeo(pseudo, 25);
+
+        //
+
         for (int i = 0; i < 25; i++)
         {
             tmpJoueur->pseudo[i] = pseudo[i];
-            if (i < 3)
+            if (i <= 3)
             {
                 tmpJoueur->des[i] = 1;
             }
         }
         tmpJoueur->suivant = NULL;
+        listeJoueurs->debut = tmpJoueur;
     }
     else
     {
         int ajoute = 0;
         while (ajoute != 1)
         {
+            ptrPrec = ptrAux;
             if (ptrAux->suivant == NULL)
             {
                 printf("Quel est le pseudo ?");
-                scanf("%s", &pseudo);
+                //scanf("%s", pseudo);
+                scanfByRomeo(pseudo, 25);
                 for (int i = 0; i < 25; i++)
                 {
                     tmpJoueur->pseudo[i] = pseudo[i];
-                    if (i < 3)
+                    if (i <= 3)
                     {
                         tmpJoueur->des[i] = 1;
                     }
                 }
-                //tmpJoueur->suivant = tmpJoueur;
+                tmpJoueur->suivant = NULL;
 
                 ptrAux->suivant = tmpJoueur;
+                ptrAux->suivant->precedent = ptrPrec;
+                ajoute = 1;
             }
             ptrAux = ptrAux->suivant;
         }
     }
-    afficherJoueurs(&listeJoueurs);
+
+    //lie le premier et le dernier joueur
+
+    joueur *firstPlayer = listeJoueurs->debut;
+    joueur *lastPlayer = listeJoueurs->debut;
+    joueur *ptrJoueurCourant = listeJoueurs->debut;
+    int trouve = 0;
+
+    while (trouve != 1)
+    {
+        if (ptrJoueurCourant->suivant == NULL)
+        {
+            lastPlayer = ptrJoueurCourant;
+            trouve = 1;
+        }
+        ptrJoueurCourant = ptrJoueurCourant->suivant;
+        tailleListe++;
+    }
+
+    if (tailleListe == nbJ)
+    {
+        firstPlayer->precedent = lastPlayer;
+        lastPlayer->suivant = firstPlayer;
+    }
 }
 
-afficherJoueurs(listeJoueurs *listeJoueurs){
-    joueur *ptrAux = listeJoueurs->debut;
+int scanfByRomeo(char *chaine, int taille)
+{
+    char *positionEntree = NULL;
 
-    while(ptrAux != NULL){
-        printf("%s", ptrAux->pseudo);
+    if (fgets(chaine, taille, stdin) != NULL)
+    {
+        positionEntree = strchr(chaine, '\n');
+        if (positionEntree != NULL)
+        {
+            *positionEntree = '\0';
+        }
+        return 1;
+    }
+    else
+    {
+        viderBuffer();
+        return 0;
+    }
+}
+
+void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ) //Méthode de test
+{
+    joueur *ptrAux = listeJoueurs->debut;
+    int tailleListe = 0;
+
+    while (tailleListe != nbJ)
+    {
+        //Affiche le pseudo du joueur
+        printf("~~~Le Joueur~~~\n");
+        printf("Pseudo %s \n", ptrAux->pseudo);
+        //Affiche les dés du joueur
+        for (int i = 0; i <= 3; i++)
+        {
+            printf("%d \n", ptrAux->des[i]);
+        }
+        //Affiche le joueur précédent
+        printf("Le joueur precedent : %s\n", ptrAux->precedent->pseudo);
+        //Affiche le joueur suivant
+        printf("Le joueur suivant : %s\n", ptrAux->suivant->pseudo);
         ptrAux = ptrAux->suivant;
+        tailleListe++;
     }
 }
