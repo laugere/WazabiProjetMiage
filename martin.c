@@ -143,14 +143,13 @@ void initPioche(pileCartes *pioche)
     tabCarte[8] = 4; //// Tous les joueurs sauf vous n’ont plus que 2 cartes ////
     tabCarte[9] = 2; //// Le joueur de votre choix passe son tour ////
     //// empileCarte
-    for (iterator = 0; iterator <= 36; iterator++)
+    for (iterator = 0; iterator < 36; iterator++)
     {
-        carte = rand() % 9 + 1;
-        if (tabCarte[carte] != 0)
-        {
-            tabCarte[carte] = tabCarte[carte] - 1;
-            selectCarteEmpiler(carte, pioche);
-        }
+        do {
+            carte = rand() % 10 + 0;
+        } while (tabCarte[carte] == 0);
+        tabCarte[carte] = tabCarte[carte] - 1;
+        selectCarteEmpiler(carte, pioche);
     }
     // Fin
 }
@@ -183,7 +182,7 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
         empileCarte(pioche,
                     3,
                     2,
-                    "L'effet est independant des des que vous avez peut-etre deja donnes avec la ou les figure(s).",
+                    "L effet est independant des des que vous avez peut-etre deja donnes avec la ou les figure(s).",
                     "Donnez 1 de vos des au joueur de votre choix");
         break;
     case 3:
@@ -191,16 +190,16 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
         empileCarte(pioche,
                     1,
                     3,
-                    "Le joueur choisi doit avoir au moins 2 cartes en main. Il choisit alors la carte qu'il souhaite conserver et se defausse des autres.",
-                    "Le joueur de votre choix n’a plus qu’1 carte");
+                    "Le joueur choisi doit avoir au moins 2 cartes en main. Il choisit alors la carte qu il souhaite conserver et se defausse des autres.",
+                    "Le joueur de votre choix n a plus qu 1 carte");
         break;
     case 4:
         //// Piochez 3 cartes supplémentaires ////
         empileCarte(pioche,
                     1,
                     4,
-                    "L’effet est independant des cartes que vous avez peut-etre obtenues avec la ou les figure(s).",
-                    "Piochez 3 cartes supplémentaires");
+                    "L effet est independant des cartes que vous avez peut etre obtenues avec la ou les figure(s).",
+                    "Piochez 3 cartes supplementaires");
         break;
     case 5:
         //// Supprimez 1 de vos des ////
@@ -215,15 +214,15 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
         empileCarte(pioche,
                     2,
                     6,
-                    "Selon le choix du joueur qui pose la carte. (Il doit lui aussi donner ses dés).",
-                    "Tous les joueurs donnent leurs dés à leur voisin de droite ou de gauche");
+                    "Selon le choix du joueur qui pose la carte. (Il doit lui aussi donner ses des).",
+                    "Tous les joueurs donnent leurs des a leur voisin de droite ou de gauche");
         break;
     case 7:
         //// Prenez 1 carte au joueur de votre choix ////
         empileCarte(pioche,
                     1,
                     7,
-                    "Le joueur vous presente ses cartes en eventail faces cachees, prenez celle de votre choix. Si aucun joueur n’a de carte prenez-en une dans la pioche.",
+                    "Le joueur vous presente ses cartes en eventail faces cachees, prenez celle de votre choix. Si aucun joueur n a de carte prenez-en une dans la pioche.",
                     "Prenez 1 carte au joueur de votre choix");
         break;
     case 8:
@@ -231,8 +230,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
         empileCarte(pioche,
                     2,
                     8,
-                    "Les joueurs ayant plus de 2 cartes choisissent celles qu’ils souhaitent conserver et se defaussent des autres.",
-                    "Tous les joueurs sauf vous n’ont plus que 2 cartes");
+                    "Les joueurs ayant plus de 2 cartes choisissent celles qu ils souhaitent conserver et se defaussent des autres.",
+                    "Tous les joueurs sauf vous n ont plus que 2 cartes");
         break;
     case 9:
         //// Le joueur de votre choix passe son tour ////
