@@ -1,4 +1,4 @@
-void lancerDe(dice de, int *des[24])
+void lancerDe(dice de, int des[24])
 {
     //Lexique
     int index;
@@ -8,9 +8,9 @@ void lancerDe(dice de, int *des[24])
     indexDe = 0;
     while (des[indexDe] != 0)
     {
-        index = rand() % 6 + 1;
-        afficherDe(index);
-        *des[indexDe] = de.faces[index];
+        index = rand() % (6 - 1) + 1;
+        afficherDe(de.faces[index]);
+        des[indexDe] = de.faces[index];
         indexDe++;
     }
     // Fin
@@ -19,17 +19,18 @@ void lancerDe(dice de, int *des[24])
 void afficherDe(int face) // affichage de la face en fonction de l'index du dé
 {
     // Début
-    switch(face) {
-        case 1:
-            printf("Wazabi");
-            break;
-        case 2:
-            printf("Pioche");
-            break;
-        case 3:
-            printf("Donne un de");
-        default:
-            break;
+    switch (face)
+    {
+    case 1:
+        printf("Wazabi\n");
+        break;
+    case 2:
+        printf("Pioche\n");
+        break;
+    case 3:
+        printf("Donne un de\n");
+    default:
+        break;
     }
     // Fin
 }

@@ -59,7 +59,7 @@ void initPioche(pileCartes *pioche);
 // Méthode tour
 void tour(listeJoueurs *listeJoueur);
 // Méthodes Dé
-void lancerDe(dice de, int *des[24]);
+void lancerDe(dice de, int des[24]);
 void afficherDe(int face);
 // Méthodes Cartes
 void selectionCarte(joueur *joueur, pileCartes *pioche);
