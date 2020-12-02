@@ -60,9 +60,8 @@ void tour(listeJoueurs *listeJoueur)
         lancerDe(de, ptrJoueur->des);
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
-        printf("Vous avez %d Wazabi", nbWJoueur);
+        printf("Vous avez %d Wazabi\n", nbWJoueur);
         ptrJoueur = ptrJoueur->suivant;
-        fin = true;
     } while (!fin);
     // Fin
 }
