@@ -59,6 +59,7 @@ void initPioche(pileCartes *pioche);
 // Méthode tour
 void tour(listeJoueurs *listeJoueur);
 // Méthodes Dé
+void lancerDe(dice de, int des[24]);
 void afficherDe(int face);
 // Méthodes Cartes
 void selectionCarte(joueur *joueur, pileCartes *pioche);
@@ -79,7 +80,6 @@ void supprimer2De(int *deJoueur[]);
 
 // Fonctions
 // Fonctions Dé
-int lancerDe(dice de);
 int retourneSommeWazabi(int face, int pointwazabi);
 
 // Fonctions générales

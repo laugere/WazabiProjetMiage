@@ -38,18 +38,23 @@ void initDe(dice *de)
     (*de).faces[5] = 3;
 }
 
-void tour(listeJoueurs *listeJoueur) {
+void tour(listeJoueurs *listeJoueur)
+{
     // Lexique
     dice de;
     pileCartes pioche;
     pileCartes defausse;
     bool fin;
+    joueur *ptrJoueur;
 
     // Début
-    initDe(&de);
     fin = false;
-    do {
-
+    initDe(&de);
+    ptrJoueur = listeJoueur->debut;
+    do
+    {
+        // Lancement des dés
+        lancerDe(de, ptrJoueur->des);
     } while (!fin);
     // Fin
 }

@@ -1,6 +1,6 @@
-int lancerDe(dice de)
+int lancerDe(dice de, int des[24])
 {
- //Lexique
+    //Lexique
     int index;
     int face;
     int nbDe = 0;
@@ -50,7 +50,7 @@ void afficherDe(int face) // affichage de la face en fonction de l'index du dé
 int retourneSommeWazabi(int face, int compteurWazabi)
 {
 
-    if (face == 1)  // Si la face est un wazabi on compte le nombre de wazabi
+    if (face == 1) // Si la face est un wazabi on compte le nombre de wazabi
     {
         compteurWazabi = compteurWazabi + 1;
     }
