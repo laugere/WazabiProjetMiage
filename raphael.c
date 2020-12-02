@@ -1,5 +1,3 @@
-
-
 int lancerDe(dice de)
 {
  //Lexique
