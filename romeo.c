@@ -1,4 +1,3 @@
-#include <wazabi.c>
 // Init game
 void initPartie(listeJoueurs *listeJoueurs)
 {
