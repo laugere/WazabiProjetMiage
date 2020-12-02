@@ -42,17 +42,25 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
         //scanf("%s", pseudo);
         scanfByRomeo(pseudo, 25);
         //
-
+        //initialise le pseudo
         for (int i = 0; i < 25; i++)
         {
             tmpJoueur->pseudo[i] = pseudo[i];
+        }
+
+        //initialise les dés
+        for (int i = 0; i < 24; i++)
+        {
             if (i <= 3)
             {
                 tmpJoueur->des[i] = 1;
-            }else{
+            }
+            else
+            {
                 tmpJoueur->des[i] = 0;
             }
         }
+
         tmpJoueur->suivant = NULL;
         listeJoueurs->debut = tmpJoueur;
     }
@@ -68,13 +76,20 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
                 //scanf("%s", pseudo);
                 scanfByRomeo(pseudo, 25);
                 //
+                //initialise le pseudo
                 for (int i = 0; i < 25; i++)
                 {
                     tmpJoueur->pseudo[i] = pseudo[i];
+                }
+                //initialise les dés
+                for (int i = 0; i < 24; i++)
+                {
                     if (i <= 3)
                     {
                         tmpJoueur->des[i] = 1;
-                    }else{
+                    }
+                    else
+                    {
                         tmpJoueur->des[i] = 0;
                     }
                 }
@@ -155,9 +170,10 @@ void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ) //Méthode de test
         //Affiche les dés du joueur
         for (int i = 0; i <= 24; i++)
         {
-            if(ptrAux->des[i] == 1){
+            if (ptrAux->des[i] == 1)
+            {
                 printf("%d \n", ptrAux->des[i]);
-            }         
+            }
         }
         //Affiche le joueur précédent
         printf("Le joueur precedent : %s\n", ptrAux->precedent->pseudo);
