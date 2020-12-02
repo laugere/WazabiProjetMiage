@@ -49,6 +49,7 @@ int retourneSommeWazabi(int des[24])
         {
             vRetour++;
         }
+        indexDe++;
     }
     return vRetour;
     // Fin
