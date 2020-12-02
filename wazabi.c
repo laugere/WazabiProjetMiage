@@ -59,7 +59,7 @@ void tour()
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
-        selectionCarte();
+        selectionCarte(ptrJoueur, &pioche);
         ptrJoueur = ptrJoueur->suivant;
     } while (!fin);
     // Fin

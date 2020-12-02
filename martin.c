@@ -296,7 +296,7 @@ void initListeCarte(joueur *joueur, pileCartes *pioche)
     joueur->listecartes.dernier = NULL;
     joueur->listecartes.premier = NULL;
     joueur->listecartes.taille = 0;
-    ajoutFirstCarteJoueur(&joueur, &pioche);
+    ajoutFirstCarteJoueur(joueur, pioche);
     // Fin
 }
 
@@ -310,7 +310,8 @@ void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche)
 
     // Début
     listeCarte = joueur->listecartes;
-    *newCarte = piocheCarte(&pioche);
+    newCarte = NULL;
+    *newCarte = piocheCarte(pioche);
     newCarte->suivant = newCarte;
     listeCarte.premier = newCarte;
     listeCarte.dernier = newCarte;
@@ -329,7 +330,8 @@ void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche)
 
     // Début
     listeCarte = joueur->listecartes;
-    *newCarte = piocheCarte(&pioche);
+    newCarte = NULL;
+    *newCarte = piocheCarte(pioche);
     dernierCarte = listeCarte.dernier;
     newCarte->suivant = dernierCarte->suivant;
     dernierCarte->suivant = newCarte;

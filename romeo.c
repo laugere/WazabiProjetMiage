@@ -20,7 +20,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
     //initialise les joueurs et leur dés
     while (ajoute != nbJ)
     {
-        ajouterJoueur(listeJoueurs, nbJ, &pioche);
+        ajouterJoueur(listeJoueurs, nbJ, pioche);
         ajoute++;
     }
     afficherJoueurs(listeJoueurs, nbJ);
@@ -103,7 +103,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche)
         }
     }
 
-    initListeCarte(&tmpJoueur, &pioche);
+    initListeCarte(tmpJoueur, pioche);
 
     //lie le premier et le dernier joueur
 
