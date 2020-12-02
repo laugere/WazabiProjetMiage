@@ -56,7 +56,9 @@ void tour(listeJoueurs *listeJoueur)
     do
     {
         // Lancement des dés
+        printf("--------------------\n");
         lancerDe(de, ptrJoueur->des);
+        printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi", nbWJoueur);
         ptrJoueur = ptrJoueur->suivant;
