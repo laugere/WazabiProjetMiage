@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <stdbool.h>
 #include "header.c"
 #include "romeo.c"
 #include "martin.c"
@@ -14,35 +15,16 @@ int main(int argc, char *argv[])
 
     // Création de la liste de joueur
     listeJoueurs listeJoueur;
-    pileCartes pioche;
-    pileCartes defausse;
+
+    listeJoueur.debut = NULL;
 
     // Initialisation de la partie
-    //initPartie(&listeJoueur);
+    initPartie(&listeJoueur);
 
-    //////////////////////
-    //////// TEST ////////
-    //////////////////////
-    // Méthode de test
-    test();
+    // Lancement des tours
+    tour(&listeJoueur);
 
     return 0;
-}
-
-/////////////////////////////////
-//////// Méthode de test ////////
-/////////////////////////////////
-
-void test()
-{
-    // Lexique
-    dice de;
-    joueur joueurCourant;
-
-    // Début
-    // initialisation de l'objet dé
-    initDe(&de);
-    // Fin
 }
 
 // To initialize the dice tab
@@ -54,4 +36,20 @@ void initDe(dice *de)
     (*de).faces[3] = 2;
     (*de).faces[4] = 2;
     (*de).faces[5] = 3;
+}
+
+void tour(listeJoueurs *listeJoueur) {
+    // Lexique
+    dice de;
+    pileCartes pioche;
+    pileCartes defausse;
+    bool fin;
+
+    // Début
+    initDe(&de);
+    fin = false;
+    do {
+
+    } while (!fin);
+    // Fin
 }

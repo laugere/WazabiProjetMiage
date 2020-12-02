@@ -56,6 +56,8 @@ struct dice
 void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueur);
 void initPioche(pileCartes *pioche);
+// Méthode tour
+void tour(listeJoueurs *listeJoueur);
 // Méthodes Dé
 void afficherDe(int face);
 // Méthodes Cartes
