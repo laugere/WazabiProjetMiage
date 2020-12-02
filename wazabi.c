@@ -45,7 +45,9 @@ void tour(listeJoueurs *listeJoueur)
     pileCartes pioche;
     pileCartes defausse;
     bool fin;
+
     joueur *ptrJoueur;
+    int nbWJoueur;
 
     // Début
     fin = false;
@@ -55,7 +57,8 @@ void tour(listeJoueurs *listeJoueur)
     {
         // Lancement des dés
         lancerDe(de, ptrJoueur->des);
-        retourneSommeWazabi(ptrJoueur->des);
+        nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
+        printf("Vous avez %d Wazabi", nbWJoueur);
         ptrJoueur = ptrJoueur->suivant;
         fin = true;
     } while (!fin);
