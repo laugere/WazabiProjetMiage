@@ -49,6 +49,8 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
             if (i <= 3)
             {
                 tmpJoueur->des[i] = 1;
+            }else{
+                tmpJoueur->des[i] = 0;
             }
         }
         tmpJoueur->suivant = NULL;
@@ -72,6 +74,8 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
                     if (i <= 3)
                     {
                         tmpJoueur->des[i] = 1;
+                    }else{
+                        tmpJoueur->des[i] = 0;
                     }
                 }
                 tmpJoueur->suivant = NULL;
@@ -149,9 +153,11 @@ void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ) //Méthode de test
         printf("~~~Le Joueur~~~\n");
         printf("Pseudo %s \n", ptrAux->pseudo);
         //Affiche les dés du joueur
-        for (int i = 0; i <= 3; i++)
+        for (int i = 0; i <= 24; i++)
         {
-            printf("%d \n", ptrAux->des[i]);
+            if(ptrAux->des[i] == 1){
+                printf("%d \n", ptrAux->des[i]);
+            }         
         }
         //Affiche le joueur précédent
         printf("Le joueur precedent : %s\n", ptrAux->precedent->pseudo);
