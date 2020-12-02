@@ -50,7 +50,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
         // ChangementSens();
         // break;
     case 1:
-        supprimer2Des(&joueur->des);
+        //supprimer2Des(&joueur->des);
         break;
     case 2:
         // Donnez1De();
@@ -62,7 +62,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
         // piochez3Cartes();
         // break;
     case 5:
-        supprimer1De(&joueur->des);
+        //supprimer1De(&joueur->des);
         break;
     case 6:
         // SwitchDes();
