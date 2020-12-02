@@ -54,12 +54,12 @@ struct dice
 // Méthodes
 // Initialization
 void initDe(dice *de);
-void initPartie(listeJoueurs *listeJoueur);
+void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche);
 void initPioche(pileCartes *pioche);
 void initListeCarte(joueur *joueur, pileCartes *pioche);
 void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche);
 // Méthode tour
-void tour(listeJoueurs *listeJoueur);
+void tour();
 // Méthodes Dé
 void lancerDe(dice de, int des[24]);
 void afficherDe(int face);
@@ -70,7 +70,7 @@ void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char tit
 void selectCarteEmpiler(int index, pileCartes *pioche);
 void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche);
 // Méthodes Joueurs
-void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ);
+void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // FOR TEST
 void test();

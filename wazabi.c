@@ -13,16 +13,8 @@ int main(int argc, char *argv[])
     // Initialisation de srand
     srand(time(NULL));
 
-    // Création de la liste de joueur
-    listeJoueurs listeJoueur;
-
-    listeJoueur.debut = NULL;
-
-    // Initialisation de la partie
-    initPartie(&listeJoueur);
-
     // Lancement des tours
-    tour(&listeJoueur);
+    tour();
 
     return 0;
 }
@@ -38,9 +30,10 @@ void initDe(dice *de)
     (*de).faces[5] = 3;
 }
 
-void tour(listeJoueurs *listeJoueur)
+void tour()
 {
     // Lexique
+    listeJoueurs listeJoueur;
     dice de;
     pileCartes pioche;
     pileCartes defausse;
@@ -50,9 +43,14 @@ void tour(listeJoueurs *listeJoueur)
     int nbWJoueur;
 
     // Début
+    listeJoueur.debut = NULL;
+
+    // Initialisation de la partie
+    initPioche(&pioche);
+    initPartie(&listeJoueur, &pioche);
     fin = false;
     initDe(&de);
-    ptrJoueur = listeJoueur->debut;
+    ptrJoueur = listeJoueur.debut;
     do
     {
         // Lancement des dés
@@ -61,6 +59,7 @@ void tour(listeJoueurs *listeJoueur)
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
+        selectionCarte();
         ptrJoueur = ptrJoueur->suivant;
     } while (!fin);
     // Fin

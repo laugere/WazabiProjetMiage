@@ -1,5 +1,5 @@
 // Init game
-void initPartie(listeJoueurs *listeJoueurs)
+void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
 {
     int nbJ = 0;
     int ajoute = 0;
@@ -20,13 +20,13 @@ void initPartie(listeJoueurs *listeJoueurs)
     //initialise les joueurs et leur dés
     while (ajoute != nbJ)
     {
-        ajouterJoueur(listeJoueurs, nbJ);
+        ajouterJoueur(listeJoueurs, nbJ, &pioche);
         ajoute++;
     }
     afficherJoueurs(listeJoueurs, nbJ);
 }
 
-void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
+void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche)
 {
     joueur *ptrAux = listeJoueurs->debut;
     joueur *ptrPrec = ptrAux;
@@ -102,6 +102,8 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ)
             ptrAux = ptrAux->suivant;
         }
     }
+
+    initListeCarte(&tmpJoueur, &pioche);
 
     //lie le premier et le dernier joueur
 
