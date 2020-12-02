@@ -5,6 +5,7 @@
 #include "header.c"
 #include "romeo.c"
 #include "martin.c"
+#include "raphael.c"
 
 int main(int argc, char *argv[])
 {
