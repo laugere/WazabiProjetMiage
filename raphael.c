@@ -1,31 +1,36 @@
-#include "wazabi.c"
+
 
 int lancerDe(dice de)
 {
-    int pointwazabi = 0;
+ //Lexique
     int index;
     int face;
     int nbDe = 0;
     int compteurnbde = 0;
+    int compteurWazabi = 0;
+
+    //Debut
     printf("combien voulez-vous lancer de de ? ");
     scanf("%i", &nbDe);
 
-    while (compteurnbde < nbDe)
+    while (compteurnbde < nbDe) // tant que le nombre de dé est plus petit que le nombre de dé du joueur
     {
-        index = rand() % 6 + 1;
-        face = de.faces[index];
+        index = rand() % 6 + 1; // l'index du tableau prend une valeur aléatoir en 1 et 6
+        face = de.faces[index]; // récupère la face en fonction de l'index aléatoire
+        compteurWazabi = retourneSommeWazabi(face, compteurWazabi);
+
         afficherDe(face);
-        retourneSommeWazabi(face, pointwazabi);
+
         printf("\n\n");
         compteurnbde = compteurnbde + 1;
     }
     printf("\n");
-    printf("point wazabi : %i ", pointwazabi);
+    printf("point wazabi : %i ", compteurWazabi);
 
     return de.faces[index];
 }
 
-void afficherDe(int face)
+void afficherDe(int face) // affichage de la face en fonction de l'index du dé
 {
     if (face == 1)
     {
@@ -44,13 +49,12 @@ void afficherDe(int face)
     }
 }
 
-int retourneSommeWazabi(int face, int pointwazabi)
+int retourneSommeWazabi(int face, int compteurWazabi)
 {
 
-    if (face == 1)
+    if (face == 1)  // Si la face est un wazabi on compte le nombre de wazabi
     {
-        pointwazabi = pointwazabi + 1;
-        printf("pts wazabi : %i ", pointwazabi);
+        compteurWazabi = compteurWazabi + 1;
     }
-    return pointwazabi;
+    return compteurWazabi;
 }
