@@ -54,7 +54,8 @@ void tour(listeJoueurs *listeJoueur)
     do
     {
         // Lancement des dés
-        lancerDe(de, ptrJoueur->des);
+        lancerDe(de, &ptrJoueur->des);
+        ptrJoueur = ptrJoueur->suivant;
     } while (!fin);
     // Fin
 }

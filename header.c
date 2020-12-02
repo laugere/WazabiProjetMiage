@@ -59,7 +59,7 @@ void initPioche(pileCartes *pioche);
 // Méthode tour
 void tour(listeJoueurs *listeJoueur);
 // Méthodes Dé
-void lancerDe(dice de, int des[24]);
+void lancerDe(dice de, int *des[24]);
 void afficherDe(int face);
 // Méthodes Cartes
 void selectionCarte(joueur *joueur, pileCartes *pioche);
@@ -80,7 +80,7 @@ void supprimer2De(int *deJoueur[]);
 
 // Fonctions
 // Fonctions Dé
-int retourneSommeWazabi(int face, int pointwazabi);
+int retourneSommeWazabi(int des[24]);
 
 // Fonctions générales
 int scanfByRomeo(char *chaine, int taille);

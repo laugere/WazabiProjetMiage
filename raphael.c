@@ -1,58 +1,55 @@
-int lancerDe(dice de, int des[24])
+void lancerDe(dice de, int *des[24])
 {
     //Lexique
     int index;
-    int face;
-    int nbDe = 0;
-    int compteurnbde = 0;
-    int compteurWazabi = 0;
+    int indexDe;
 
     //Debut
-    printf("combien voulez-vous lancer de de ? ");
-    scanf("%i", &nbDe);
-
-    while (compteurnbde < nbDe) // tant que le nombre de dé est plus petit que le nombre de dé du joueur
+    indexDe = 0;
+    while (des[indexDe] != 0)
     {
-        index = rand() % 6 + 1; // l'index du tableau prend une valeur aléatoir en 1 et 6
-        face = de.faces[index]; // récupère la face en fonction de l'index aléatoire
-        compteurWazabi = retourneSommeWazabi(face, compteurWazabi);
-
-        afficherDe(face);
-
-        printf("\n\n");
-        compteurnbde = compteurnbde + 1;
+        index = rand() % 6 + 1;
+        afficherDe(index);
+        *des[indexDe] = de.faces[index];
+        indexDe++;
     }
-    printf("\n");
-    printf("point wazabi : %i ", compteurWazabi);
-
-    return de.faces[index];
+    // Fin
 }
 
 void afficherDe(int face) // affichage de la face en fonction de l'index du dé
 {
-    if (face == 1)
-    {
-        printf("Wazabi");
-    }
-    else
-    {
-        if (face == 2)
-        {
+    // Début
+    switch(face) {
+        case 1:
+            printf("Wazabi");
+            break;
+        case 2:
             printf("Pioche");
-        }
-        else
-        {
+            break;
+        case 3:
             printf("Donne un de");
-        }
+        default:
+            break;
     }
+    // Fin
 }
 
-int retourneSommeWazabi(int face, int compteurWazabi)
+int retourneSommeWazabi(int des[24])
 {
+    // Lexique
+    int indexDe;
+    int vRetour;
 
-    if (face == 1) // Si la face est un wazabi on compte le nombre de wazabi
+    // Début
+    indexDe = 0;
+    vRetour = 0;
+    while (des[indexDe] != 0)
     {
-        compteurWazabi = compteurWazabi + 1;
+        if (des[indexDe] == 1)
+        {
+            vRetour++;
+        }
     }
-    return compteurWazabi;
+    return vRetour;
+    // Fin
 }
