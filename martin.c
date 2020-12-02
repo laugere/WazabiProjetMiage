@@ -143,7 +143,8 @@ void initPioche(pileCartes *pioche)
     //// empileCarte
     for (iterator = 0; iterator < 36; iterator++)
     {
-        do {
+        do
+        {
             carte = rand() % 10 + 0;
         } while (tabCarte[carte] == 0);
         tabCarte[carte] = tabCarte[carte] - 1;
@@ -285,5 +286,54 @@ carte piocheCarte(pileCartes *pioche)
     }
 
     return carteRetour;
+    // Fin
+}
+
+void initListeCarte(joueur *joueur, pileCartes *pioche)
+{
+    // Lexique
+    // Début
+    joueur->listecartes.dernier = NULL;
+    joueur->listecartes.premier = NULL;
+    joueur->listecartes.taille = 0;
+    ajoutFirstCarteJoueur(&joueur, &pioche);
+    // Fin
+}
+
+void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche)
+{
+    // Lexique
+    listeCartes listeCarte;
+    carte *newCarte;
+    int iterator;
+    int ptrCarte;
+
+    // Début
+    listeCarte = joueur->listecartes;
+    *newCarte = piocheCarte(&pioche);
+    newCarte->suivant = newCarte;
+    listeCarte.premier = newCarte;
+    listeCarte.dernier = newCarte;
+    listeCarte.taille++;
+    // Fin
+}
+
+void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche)
+{
+    // Lexique
+    listeCartes listeCarte;
+    carte *newCarte;
+    carte *dernierCarte;
+    int iterator;
+    int ptrCarte;
+
+    // Début
+    listeCarte = joueur->listecartes;
+    *newCarte = piocheCarte(&pioche);
+    dernierCarte = listeCarte.dernier;
+    newCarte->suivant = dernierCarte->suivant;
+    dernierCarte->suivant = newCarte;
+    listeCarte.dernier = newCarte;
+    listeCarte.taille++;
     // Fin
 }

@@ -17,7 +17,7 @@ struct listeCartes
 {
     carte *premier;
     carte *dernier;
-    carte *courante;
+    int taille;
 };
 
 typedef struct pileCartes pileCartes;
@@ -56,6 +56,8 @@ struct dice
 void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueur);
 void initPioche(pileCartes *pioche);
+void initListeCarte(joueur *joueur, pileCartes *pioche);
+void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche);
 // Méthode tour
 void tour(listeJoueurs *listeJoueur);
 // Méthodes Dé
@@ -66,6 +68,7 @@ void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void selectCarteEmpiler(int index, pileCartes *pioche);
+void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche);
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
