@@ -50,7 +50,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
         // ChangementSens();
         // break;
     case 1:
-        //supprimer2Des(&joueur->des);
+        supprimer2Des(joueur->des);
         break;
     case 2:
         // Donnez1De();
@@ -62,7 +62,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
         // piochez3Cartes();
         // break;
     case 5:
-        //supprimer1De(&joueur->des);
+        supprimer1De(joueur->des);
         break;
     case 6:
         // SwitchDes();
@@ -81,7 +81,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
     // Fin
 }
 
-void supprimerDe(int *deJoueur[])
+void supprimerDe(int deJoueur[])
 {
     // Lexique
     int i;
@@ -97,26 +97,26 @@ void supprimerDe(int *deJoueur[])
     // Fin
 }
 
-void supprimer1De(int *deJoueur[])
+void supprimer1De(int deJoueur[])
 {
     // Lexique
 
     // Début
-    printf("Vous avez choisi de supprimer 1 dé...");
+    printf("Vous avez choisi de supprimer 1 de...\n");
     supprimerDe(deJoueur);
-    printf("Le dé a été supprimé.");
+    printf("Le dé a été supprime.");
     // Fin
 }
 
-void supprimer2De(int *deJoueur[])
+void supprimer2De(int deJoueur[])
 {
     // Lexique
 
     // Début
-    printf("Vous avez choisi de supprimer 2 dés...");
+    printf("Vous avez choisi de supprimer 2 des...\n");
     supprimerDe(deJoueur);
     supprimerDe(deJoueur);
-    printf("Les dés ont été supprimés.");
+    printf("Les dés ont été supprimes.");
     // Fin
 }
 

@@ -85,9 +85,9 @@ void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 
 // Effets de cartes
 // Suppression de dés
-void supprimerDe(int *deJoueur[]);
-void supprimer1De(int *deJoueur[]);
-void supprimer2De(int *deJoueur[]);
+void supprimerDe(int deJoueur[]);
+void supprimer1De(int deJoueur[]);
+void supprimer2De(int deJoueur[]);
 
 // Méthodes générales
 void viderBuffer();
