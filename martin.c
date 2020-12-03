@@ -2,7 +2,6 @@ void selectionCarte(joueur *joueur, pileCartes *pioche)
 {
     // Lexique
     carte *aux;
-    carte *prec;
     char entry;
 
     // Début
@@ -265,11 +264,11 @@ void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char tit
     // Fin
 }
 
-carte piocheCarte(pileCartes *pioche)
+carte *piocheCarte(pileCartes *pioche)
 {
     // Lexique
     carte *aux;
-    carte carteRetour;
+    carte *carteRetour;
 
     // Début
     if (pioche == NULL)
@@ -281,7 +280,7 @@ carte piocheCarte(pileCartes *pioche)
 
     if (pioche != NULL && pioche->premier != NULL)
     {
-        carteRetour = *aux;
+        carteRetour = aux;
         pioche->premier = aux->suivant;
     }
 
@@ -303,19 +302,20 @@ void initListeCarte(joueur *joueur, pileCartes *pioche)
 void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche)
 {
     // Lexique
-    listeCartes listeCarte;
+    listeCartes *listeCarte;
     carte *newCarte;
     int iterator;
     int ptrCarte;
 
     // Début
-    listeCarte = joueur->listecartes;
+    listeCarte = NULL;
+    *listeCarte = joueur->listecartes;
     newCarte = NULL;
-    *newCarte = piocheCarte(pioche);
+    newCarte = piocheCarte(pioche);
     newCarte->suivant = newCarte;
-    listeCarte.premier = newCarte;
-    listeCarte.dernier = newCarte;
-    listeCarte.taille++;
+    listeCarte->premier = newCarte;
+    listeCarte->dernier = newCarte;
+    listeCarte->taille++;
     // Fin
 }
 
@@ -331,11 +331,23 @@ void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche)
     // Début
     listeCarte = joueur->listecartes;
     newCarte = NULL;
-    *newCarte = piocheCarte(pioche);
+    newCarte = piocheCarte(pioche);
     dernierCarte = listeCarte.dernier;
     newCarte->suivant = dernierCarte->suivant;
     dernierCarte->suivant = newCarte;
     listeCarte.dernier = newCarte;
     listeCarte.taille++;
     // Fin
+}
+
+void affiche(joueur *joueur)
+{
+    carte *courant;
+    courant = joueur->listecartes.premier;
+    int i;
+    for (i = 0; i < joueur->listecartes.taille; ++i)
+    {
+        printf("%p - %s\n", courant, courant->titre);
+        courant = courant->suivant;
+    }
 }

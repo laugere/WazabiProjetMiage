@@ -74,6 +74,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // FOR TEST
 void test();
+void affiche(joueur *joueur);
 
 // Effets de cartes
 // Suppression de dés
@@ -84,6 +85,8 @@ void supprimer2De(int *deJoueur[]);
 // Fonctions
 // Fonctions Dé
 int retourneSommeWazabi(int des[24]);
+// Fonctions Cartes
+carte *piocheCarte(pileCartes *pioche);
 
 // Fonctions générales
 int scanfByRomeo(char *chaine, int taille);
