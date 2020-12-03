@@ -68,7 +68,8 @@ void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void selectCarteEmpiler(int index, pileCartes *pioche);
-void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche);
+void ajoutCarteJoueur(listeCartes *listecarte, carte *carte);
+void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index);
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);

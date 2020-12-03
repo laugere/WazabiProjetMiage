@@ -301,7 +301,7 @@ void initListeCarte(joueur *joueur, pileCartes *pioche)
     ajoutFirstCarteJoueur(&joueur->listecartes, pioche);
     for (iterator = 0; iterator < 2; iterator++)
     {
-        ajoutCarteJoueur(&joueur->listecartes, pioche);
+        ajoutCarteJoueur(&joueur->listecartes, piocheCarte(pioche));
     }
     // Fin
 }
@@ -322,24 +322,43 @@ void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
     // Fin
 }
 
-void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
+void ajoutCarteJoueur(listeCartes *listecarte, carte *carte)
 {
     // Lexique
-    carte *newCarte;
 
     // Début
-    newCarte = NULL;
-    newCarte = piocheCarte(pioche);
-
-    newCarte->precedent = listecarte->dernier;
-    newCarte->suivant = listecarte->dernier->suivant;
-    listecarte->dernier->suivant = newCarte;
-    listecarte->premier->precedent = newCarte;
-    listecarte->dernier = newCarte;
+    carte->precedent = listecarte->dernier;
+    carte->suivant = listecarte->dernier->suivant;
+    listecarte->dernier->suivant = carte;
+    listecarte->premier->precedent = carte;
+    listecarte->dernier = carte;
     listecarte->taille++;
     // Fin
 }
 
-void supprimerCarteJoueur(listeCartes *listecarte) {
-    
+void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index)
+{
+    // Lexique
+    carte *ptrCarte;
+    carte *ptrPrec;
+    int iterator;
+
+    // Début
+    ptrCarte = listecarteEmetteur->premier;
+
+    if (listecarteEmetteur->taille < index)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    for (iterator = 0; iterator < index; iterator++)
+    {
+        ptrPrec = ptrCarte;
+        ptrCarte = ptrCarte->suivant;
+    }
+
+    ptrPrec->suivant = ptrCarte->suivant;
+    ptrPrec->suivant->precedent = ptrPrec;
+    ajoutCarteJoueur(listecarteRecepteur, ptrCarte);
+    // Fin
 }
