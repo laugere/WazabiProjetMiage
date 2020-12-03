@@ -8,17 +8,16 @@ void selectionCarte(joueur *joueur, pileCartes *pioche)
     aux = joueur->listecartes.premier;
     while (aux != NULL)
     {
-        printf("%c", entry);
+        printf("\n\n");
+        printf("----------------------------------------\n");
+        printf("%s \n", aux->titre);
+        printf("%s", aux->effet);
+        printf("Cette carte coute %d wazabi(s) \n", aux->cout);
+        printf("----------------------------------------\n");
+        printf("Utiliser cette carte ? [s] \n");
+        printf("[q]<-- Prec - Suivante -->[d]");
         do
         {
-            printf("\n\n");
-            printf("----------------------------------------\n");
-            printf("%s \n", aux->titre);
-            printf("%s", aux->effet);
-            printf("Cette carte coute %d wazabi(s) \n", aux->cout);
-            printf("----------------------------------------\n");
-            printf("Utiliser cette carte ? [s] \n");
-            printf("[q]<-- Prec - Suivante -->[d]");
             entry = getchar();
         } while (entry != 'd' && entry != 'q' && entry != 's');
         switch (entry)
@@ -335,6 +334,7 @@ void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
     newCarte->precedent = listecarte->dernier;
     newCarte->suivant = listecarte->dernier->suivant;
     listecarte->dernier->suivant = newCarte;
+    listecarte->premier->precedent = newCarte;
     listecarte->dernier = newCarte;
     listecarte->taille++;
     // Fin
