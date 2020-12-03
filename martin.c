@@ -339,3 +339,7 @@ void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
     listecarte->taille++;
     // Fin
 }
+
+void supprimerCarteJoueur(listeCartes *listecarte) {
+    
+}
