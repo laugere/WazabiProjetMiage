@@ -301,7 +301,8 @@ void initListeCarte(joueur *joueur, pileCartes *pioche)
     joueur->listecartes.premier = NULL;
     joueur->listecartes.taille = 0;
     ajoutFirstCarteJoueur(&joueur->listecartes, pioche);
-    for (iterator = 0; iterator < 3; iterator++) {
+    for (iterator = 0; iterator < 3; iterator++)
+    {
         ajoutCarteJoueur(&joueur->listecartes, pioche);
     }
     // Fin
@@ -311,8 +312,6 @@ void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
 {
     // Lexique
     carte *newCarte;
-    int iterator;
-    int ptrCarte;
 
     // Début
     newCarte = NULL;
@@ -328,16 +327,13 @@ void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
 {
     // Lexique
     carte *newCarte;
-    carte *dernierCarte;
-    int iterator;
-    int ptrCarte;
 
     // Début
     newCarte = NULL;
     newCarte = piocheCarte(pioche);
-    dernierCarte = listecarte->dernier;
-    newCarte->suivant = dernierCarte->suivant;
-    dernierCarte->suivant = newCarte;
+
+    newCarte->suivant = listecarte->dernier->suivant;
+    listecarte->dernier->suivant = newCarte;
     listecarte->dernier = newCarte;
     listecarte->taille++;
     // Fin
