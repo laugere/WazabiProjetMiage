@@ -87,7 +87,7 @@ void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // Suppression de dés
 void supprimerDe(int deJoueur[]);
 void supprimer1De(int deJoueur[]);
-void supprimer2De(int deJoueur[]);
+void supprimer2Des(int deJoueur[]);
 
 // Méthodes générales
 void viderBuffer();

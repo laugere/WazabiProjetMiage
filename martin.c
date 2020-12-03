@@ -104,11 +104,11 @@ void supprimer1De(int deJoueur[])
     // Début
     printf("Vous avez choisi de supprimer 1 de...\n");
     supprimerDe(deJoueur);
-    printf("Le dé a été supprime.");
+    printf("Le de a ete supprime.");
     // Fin
 }
 
-void supprimer2De(int deJoueur[])
+void supprimer2Des(int deJoueur[])
 {
     // Lexique
 
@@ -116,7 +116,7 @@ void supprimer2De(int deJoueur[])
     printf("Vous avez choisi de supprimer 2 des...\n");
     supprimerDe(deJoueur);
     supprimerDe(deJoueur);
-    printf("Les dés ont été supprimes.");
+    printf("Les des ont ete supprimes.");
     // Fin
 }
 
