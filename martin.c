@@ -300,7 +300,7 @@ void initListeCarte(joueur *joueur, pileCartes *pioche)
     joueur->listecartes.premier = NULL;
     joueur->listecartes.taille = 0;
     ajoutFirstCarteJoueur(&joueur->listecartes, pioche);
-    for (iterator = 0; iterator < 3; iterator++)
+    for (iterator = 0; iterator < 2; iterator++)
     {
         ajoutCarteJoueur(&joueur->listecartes, pioche);
     }
