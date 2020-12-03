@@ -69,6 +69,7 @@ void tour();
 // Méthodes Dé
 void lancerDe(dice de, int des[24]);
 void afficherDe(int face);
+void ajouterDe(int deJoueur[]);
 
 // Méthodes Cartes
 void selectionCarte(joueur *joueur, pileCartes *pioche);
@@ -88,6 +89,8 @@ void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 void supprimerDe(int deJoueur[]);
 void supprimer1De(int deJoueur[]);
 void supprimer2Des(int deJoueur[]);
+// Donne De
+void transfertDe(int deJoueurEmetteur[], listeJoueurs *listeJoueurs);
 
 // Méthodes générales
 void viderBuffer();
@@ -106,3 +109,4 @@ carte *piocheCarte(pileCartes *pioche);
 int scanfByRomeo(char *chaine, int taille);
 int countDe(int des[24]);
 bool verifFin(joueur *joueur);
+joueur *selectionJoueur(listeJoueurs *listeJoueurs);

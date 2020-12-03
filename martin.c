@@ -81,6 +81,21 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche)
     // Fin
 }
 
+void ajouterDe(int deJoueur[])
+{
+    // Lexique
+    int index;
+
+    // Début
+    index = 0;
+    while (deJoueur[index] != 0)
+    {
+        index++;
+    }
+    deJoueur[index + 1] = 1;
+    // Fin
+}
+
 void supprimerDe(int deJoueur[])
 {
     // Lexique
@@ -94,6 +109,58 @@ void supprimerDe(int deJoueur[])
             deJoueur[i] = '\0';
         }
     }
+    // Fin
+}
+
+void transfertDe(int deJoueurEmetteur[], listeJoueurs *listeJoueurs)
+{
+    // Lexique
+    joueur *JoueurRecepteur;
+    
+    // Début
+    JoueurRecepteur = selectionJoueur(listeJoueurs);
+    supprimer1De(deJoueurEmetteur);
+    ajouterDe(JoueurRecepteur->des);
+    // Fin
+}
+
+joueur *selectionJoueur(listeJoueurs *listeJoueurs)
+{
+    // Lexique
+    joueur *aux;
+    joueur *joueurRetour;
+    char entry;
+
+    // Début
+    aux = listeJoueurs->debut;
+    while (aux != NULL)
+    {
+        printf("\n\n");
+        printf("----------------------------------------\n");
+        printf("%s \n", aux->pseudo);
+        printf("----------------------------------------\n");
+        printf("Choisir ce joueur ? [s] \n");
+        printf("[q]<-- Prec - Suivante -->[d]");
+        do
+        {
+            entry = getchar();
+        } while (entry != 'd' && entry != 'q' && entry != 's');
+        switch (entry)
+        {
+        case 'q':
+            aux = aux->precedent;
+            break;
+        case 'd':
+            aux = aux->suivant;
+            break;
+        case 's':
+            joueurRetour = aux;
+            aux = NULL;
+            break;
+        }
+    }
+
+    return joueurRetour;
     // Fin
 }
 
@@ -335,7 +402,8 @@ void ajoutCarteJoueur(listeCartes *listecarte, carte *carte)
     // Fin
 }
 
-void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index) {
+void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index)
+{
     // Lexique
     carte *ptrCarte;
     carte *ptrPrec;
