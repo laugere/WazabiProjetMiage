@@ -36,7 +36,6 @@ void tour()
     listeJoueurs listeJoueur;
     dice de;
     pileCartes pioche;
-    pileCartes defausse;
     bool fin;
 
     joueur *ptrJoueur;

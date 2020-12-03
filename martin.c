@@ -123,7 +123,6 @@ void supprimer2De(int *deJoueur[])
 void initPioche(pileCartes *pioche)
 {
     // Lexique
-    carte *aux;
     int iterator;
     int carte;
     int tabCarte[10];
@@ -359,6 +358,6 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
 
     ptrPrec->suivant = ptrCarte->suivant;
     ptrPrec->suivant->precedent = ptrPrec;
-    ajoutCarteJoueur(&listecarteRecepteur, ptrCarte);
+    ajoutCarteJoueur(listecarteRecepteur, ptrCarte);
     // Fin
 }
