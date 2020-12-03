@@ -57,7 +57,7 @@ void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche);
 void initPioche(pileCartes *pioche);
 void initListeCarte(joueur *joueur, pileCartes *pioche);
-void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche);
+void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche);
 // Méthode tour
 void tour();
 // Méthodes Dé
@@ -68,13 +68,12 @@ void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void selectCarteEmpiler(int index, pileCartes *pioche);
-void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche);
+void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche);
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
 // FOR TEST
 void test();
-void affiche(joueur *joueur);
 
 // Effets de cartes
 // Suppression de dés

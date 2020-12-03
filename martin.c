@@ -10,9 +10,12 @@ void selectionCarte(joueur *joueur, pileCartes *pioche)
     {
         do
         {
+            printf("\n\n\n");
+            printf("--------------------\n");
             printf("%s \n", aux->titre);
             printf("%s", aux->effet);
             printf("Cette carte coute %d wazabi(s) \n", aux->cout);
+            printf("--------------------\n");
             printf("Utiliser cette carte ? [s] \n");
             printf("[q]<-- Prec - Suivante -->[d]");
             scanf("%c", &entry);
@@ -291,63 +294,51 @@ carte *piocheCarte(pileCartes *pioche)
 void initListeCarte(joueur *joueur, pileCartes *pioche)
 {
     // Lexique
+    int iterator;
+
     // Début
     joueur->listecartes.dernier = NULL;
     joueur->listecartes.premier = NULL;
     joueur->listecartes.taille = 0;
-    ajoutFirstCarteJoueur(joueur, pioche);
+    ajoutFirstCarteJoueur(&joueur->listecartes, pioche);
+    for (iterator = 0; iterator < 3; iterator++) {
+        ajoutCarteJoueur(&joueur->listecartes, pioche);
+    }
     // Fin
 }
 
-void ajoutFirstCarteJoueur(joueur *joueur, pileCartes *pioche)
+void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
 {
     // Lexique
-    listeCartes *listeCarte;
     carte *newCarte;
     int iterator;
     int ptrCarte;
 
     // Début
-    listeCarte = NULL;
-    *listeCarte = joueur->listecartes;
     newCarte = NULL;
     newCarte = piocheCarte(pioche);
     newCarte->suivant = newCarte;
-    listeCarte->premier = newCarte;
-    listeCarte->dernier = newCarte;
-    listeCarte->taille++;
+    listecarte->premier = newCarte;
+    listecarte->dernier = newCarte;
+    listecarte->taille++;
     // Fin
 }
 
-void ajoutCarteJoueur(joueur *joueur, pileCartes *pioche)
+void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
 {
     // Lexique
-    listeCartes listeCarte;
     carte *newCarte;
     carte *dernierCarte;
     int iterator;
     int ptrCarte;
 
     // Début
-    listeCarte = joueur->listecartes;
     newCarte = NULL;
     newCarte = piocheCarte(pioche);
-    dernierCarte = listeCarte.dernier;
+    dernierCarte = listecarte->dernier;
     newCarte->suivant = dernierCarte->suivant;
     dernierCarte->suivant = newCarte;
-    listeCarte.dernier = newCarte;
-    listeCarte.taille++;
+    listecarte->dernier = newCarte;
+    listecarte->taille++;
     // Fin
-}
-
-void affiche(joueur *joueur)
-{
-    carte *courant;
-    courant = joueur->listecartes.premier;
-    int i;
-    for (i = 0; i < joueur->listecartes.taille; ++i)
-    {
-        printf("%p - %s\n", courant, courant->titre);
-        courant = courant->suivant;
-    }
 }
