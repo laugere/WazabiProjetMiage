@@ -103,3 +103,5 @@ carte *piocheCarte(pileCartes *pioche);
 
 // Fonctions générales
 int scanfByRomeo(char *chaine, int taille);
+int countDe(int des[24]);
+bool verifFin(joueur *joueur);

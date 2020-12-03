@@ -361,3 +361,35 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
     ajoutCarteJoueur(listecarteRecepteur, ptrCarte);
     // Fin
 }
+
+int countDe(int des[24])
+{
+    // Lexique
+    int vRetour;
+
+    // Début
+    vRetour = 0;
+    while (des[vRetour] != 0)
+    {
+        vRetour++;
+    }
+
+    return vRetour;
+    // Fin
+}
+
+bool verifFin(joueur *joueur)
+{
+    // Lexique
+
+    // Début
+    if (countDe(&joueur->des) == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    // Fin
+}
