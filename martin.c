@@ -317,6 +317,7 @@ void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
     newCarte = NULL;
     newCarte = piocheCarte(pioche);
     newCarte->suivant = newCarte;
+    newCarte->precedent = newCarte;
     listecarte->premier = newCarte;
     listecarte->dernier = newCarte;
     listecarte->taille++;
@@ -332,6 +333,7 @@ void ajoutCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
     newCarte = NULL;
     newCarte = piocheCarte(pioche);
 
+    newCarte->precedent = listecarte->dernier;
     newCarte->suivant = listecarte->dernier->suivant;
     listecarte->dernier->suivant = newCarte;
     listecarte->dernier = newCarte;
