@@ -8,32 +8,31 @@ void selectionCarte(joueur *joueur, pileCartes *pioche)
     aux = joueur->listecartes.premier;
     while (aux != NULL)
     {
+        printf("%c", entry);
         do
         {
-            printf("\n\n\n");
-            printf("--------------------\n");
+            printf("\n\n");
+            printf("----------------------------------------\n");
             printf("%s \n", aux->titre);
             printf("%s", aux->effet);
             printf("Cette carte coute %d wazabi(s) \n", aux->cout);
-            printf("--------------------\n");
+            printf("----------------------------------------\n");
             printf("Utiliser cette carte ? [s] \n");
             printf("[q]<-- Prec - Suivante -->[d]");
-            scanf("%c", &entry);
-        } while (entry != 'q' || entry != 'd' || entry != 's');
-        if (entry == 's')
+            entry = getchar();
+        } while (entry != 'd' && entry != 'q' && entry != 's');
+        switch (entry)
         {
+        case 'q':
+            aux = aux->precedent;
+            break;
+        case 'd':
+            aux = aux->suivant;
+            break;
+        case 's':
             utilisationCarte(aux, joueur, pioche);
-        }
-        else
-        {
-            if (entry == 'q')
-            {
-                aux = aux->precedent;
-            }
-            else
-            {
-                aux = aux->suivant;
-            }
+            aux = NULL;
+            break;
         }
     }
     // Fin
