@@ -335,6 +335,32 @@ void ajoutCarteJoueur(listeCartes *listecarte, carte *carte)
     // Fin
 }
 
+void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index) {
+    // Lexique
+    carte *ptrCarte;
+    carte *ptrPrec;
+    int iterator;
+
+    // Début
+    ptrCarte = listeCartes->premier;
+
+    if (listeCartes->taille < index)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    for (iterator = 0; iterator < index; iterator++)
+    {
+        ptrPrec = ptrCarte;
+        ptrCarte = ptrCarte->suivant;
+    }
+
+    ptrPrec->suivant = ptrCarte->suivant;
+    ptrPrec->suivant->precedent = ptrPrec;
+    empileCarte(defausse, ptrCarte->cout, ptrCarte->index, ptrCarte->effet, ptrCarte->titre);
+    // Fin
+}
+
 void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index)
 {
     // Lexique
