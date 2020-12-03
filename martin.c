@@ -409,7 +409,7 @@ bool verifFin(joueur *joueur)
     // Lexique
 
     // Début
-    if (countDe(&joueur->des) == 0)
+    if (countDe(joueur->des) == 0)
     {
         return true;
     }
