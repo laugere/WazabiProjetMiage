@@ -51,18 +51,25 @@ struct dice
 //////////////////////////////////////////////////////
 //////// Déclaration des méthodes / fonctions ////////
 //////////////////////////////////////////////////////
-// Méthodes
-// Initialization
+
+
+//////////////////////
+////// Méthodes //////
+//////////////////////
+// Méthodes initialization
 void initDe(dice *de);
 void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche);
 void initPioche(pileCartes *pioche);
 void initListeCarte(joueur *joueur, pileCartes *pioche);
 void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche);
+
 // Méthode tour
 void tour();
+
 // Méthodes Dé
 void lancerDe(dice de, int des[24]);
 void afficherDe(int face);
+
 // Méthodes Cartes
 void selectionCarte(joueur *joueur, pileCartes *pioche);
 void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche);
@@ -70,11 +77,10 @@ void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char tit
 void selectCarteEmpiler(int index, pileCartes *pioche);
 void ajoutCarteJoueur(listeCartes *listecarte, carte *carte);
 void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index);
+
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
 void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
-// FOR TEST
-void test();
 
 // Effets de cartes
 // Suppression de dés
@@ -82,12 +88,18 @@ void supprimerDe(int *deJoueur[]);
 void supprimer1De(int *deJoueur[]);
 void supprimer2De(int *deJoueur[]);
 
-// Fonctions
+// Méthodes générales
+void viderBuffer();
+
+
+/////////////////////////
+/////// Fonctions ///////
+/////////////////////////
 // Fonctions Dé
 int retourneSommeWazabi(int des[24]);
+
 // Fonctions Cartes
 carte *piocheCarte(pileCartes *pioche);
 
 // Fonctions générales
 int scanfByRomeo(char *chaine, int taille);
-void viderBuffer();
