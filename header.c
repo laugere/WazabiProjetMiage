@@ -90,7 +90,7 @@ void supprimerDe(int deJoueur[]);
 void supprimer1De(int deJoueur[]);
 void supprimer2Des(int deJoueur[]);
 // Donne De
-void Donner1De(joueur *joueur, listeJoueurs *listeJoueurs);
+void donner1De(joueur *joueur, listeJoueurs *listeJoueurs);
 void transfertDe(int deJoueurEmetteur[], listeJoueurs *listeJoueurs);
 
 // Méthodes générales

@@ -53,7 +53,7 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJou
         supprimer2Des(joueur->des);
         break;
     case 2:
-        Donnez1De();
+        donner1De(joueur, listeJoueurs);
         break;
     case 3:
         // Joueur1Carte();
@@ -112,14 +112,14 @@ void supprimerDe(int deJoueur[])
     // Fin
 }
 
-void Donner1De(joueur *joueur, listeJoueurs *listeJoueurs)
+void donner1De(joueur *joueur, listeJoueurs *listeJoueurs)
 {
     // Lexique
 
     // Début
     printf("Vous avez choisi de donner un dé ...");
     transfertDe(joueur->des, listeJoueurs);
-    printf("Le de a ete donne.")
+    printf("Le de a ete donne.");
     // Fin
 }
 
