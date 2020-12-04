@@ -59,8 +59,8 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJou
         // Joueur1Carte();
         // break;
     case 4:
-        // piochez3Cartes();
-        // break;
+        piochez3Cartes(joueur, pioche);
+        break;
     case 5:
         supprimer1De(joueur->des);
         break;

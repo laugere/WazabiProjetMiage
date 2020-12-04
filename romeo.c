@@ -194,6 +194,9 @@ void ChangementSens(int sens){
     }
 }
 
-void piochez3Cartes(){
+void piochez3Cartes(joueur *joueur, pileCartes *pioche){
 
+    for(int i = 0; i < 3 ; i++){
+        ajoutCarteJoueur(&joueur->listecartes, piocheCarte(pioche));
+  }
 }
