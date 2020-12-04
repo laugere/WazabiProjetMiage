@@ -55,3 +55,45 @@ int retourneSommeWazabi(int des[24])
     return vRetour;
     // Fin
 }
+
+int retourneSommePioche(int des[24])
+{
+    // Lexique
+    int indexDe;
+    int vRetour;
+
+    // Début
+    indexDe = 0;
+    vRetour = 0;
+    while (des[indexDe] != 0)
+    {
+        if (des[indexDe] == 2)
+        {
+            vRetour++;
+        }
+        indexDe++;
+    }
+    return vRetour;
+    // Fin
+}
+
+int retourneSommeDonneDe(int des[24])
+{
+    // Lexique
+    int indexDe;
+    int vRetour;
+
+    // Début
+    indexDe = 0;
+    vRetour = 0;
+    while (des[indexDe] != 0)
+    {
+        if (des[indexDe] == 3)
+        {
+            vRetour++;
+        }
+        indexDe++;
+    }
+    return vRetour;
+    // Fin
+}

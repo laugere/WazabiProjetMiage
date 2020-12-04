@@ -102,6 +102,8 @@ void viderBuffer();
 /////////////////////////
 // Fonctions Dé
 int retourneSommeWazabi(int des[24]);
+int retourneSommePioche(int des[24]);
+int retourneSommeDonneDe(int des[24]);
 
 // Fonctions Cartes
 carte *piocheCarte(pileCartes *pioche);
