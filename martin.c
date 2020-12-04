@@ -1,4 +1,4 @@
-void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs)
+void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens)
 {
     // Lexique
     carte *aux;
@@ -29,7 +29,7 @@ void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueu
             aux = aux->suivant;
             break;
         case 's':
-            utilisationCarte(aux, joueur, pioche, listeJoueurs);
+            utilisationCarte(aux, joueur, pioche, listeJoueurs, sens);
             aux = NULL;
             break;
         }
@@ -37,7 +37,7 @@ void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueu
     // Fin
 }
 
-void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs)
+void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs,int sens)
 {
     // Lexique
     int index;
@@ -47,8 +47,8 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJou
     switch (index)
     {
     case 0:
-        // ChangementSens();
-        // break;
+        ChangementSens(sens);
+        break;
     case 1:
         supprimer2Des(joueur->des);
         break;

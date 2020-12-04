@@ -72,13 +72,14 @@ void afficherDe(int face);
 void ajouterDe(int deJoueur[]);
 
 // Méthodes Cartes
-void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs);
-void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs);
+void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens);
+void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void selectCarteEmpiler(int index, pileCartes *pioche);
 void ajoutCarteJoueur(listeCartes *listecarte, carte *carte);
 void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index);
 void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index);
+int ChangementSens(int sens);
 
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);

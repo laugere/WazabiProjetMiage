@@ -37,6 +37,7 @@ void tour()
     dice de;
     pileCartes pioche;
     bool fin;
+    int sens = 0;
 
     joueur *ptrJoueur;
     int nbWJoueur;
@@ -58,9 +59,15 @@ void tour()
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
-        selectionCarte(ptrJoueur, &pioche, &listeJoueur);
+        selectionCarte(ptrJoueur, &pioche, &listeJoueur, sens);
+
         fin=verifFin(ptrJoueur);
-        ptrJoueur = ptrJoueur->suivant;
+        if(sens == 0){
+            ptrJoueur = ptrJoueur->suivant;
+        }else{
+            ptrJoueur = ptrJoueur->precedent;
+        }
+        
     } while (!fin);
     // Fin
 }
