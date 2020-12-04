@@ -186,10 +186,14 @@ void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ) //Méthode de test
     }
 }
 
-int ChangementSens(int sens){
+void ChangementSens(int sens){
     if(sens == 0){
         sens = 1; //inverse le sens
     }else{
         sens = 0; //remet le sens normal
     }
+}
+
+void piochez3Cartes(){
+
 }

@@ -79,7 +79,7 @@ void selectCarteEmpiler(int index, pileCartes *pioche);
 void ajoutCarteJoueur(listeCartes *listecarte, carte *carte);
 void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index);
 void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index);
-int ChangementSens(int sens);
+void ChangementSens(int sens);
 
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
