@@ -39,6 +39,7 @@ struct joueur
 typedef struct listeJoueurs listeJoueurs;
 struct listeJoueurs
 {
+    int nb;
     joueur *debut;
 };
 
@@ -83,8 +84,8 @@ void ChangementSens(int sens);
 void piochez3Cartes(joueur *joueur, pileCartes *pioche);
 
 // Méthodes Joueurs
-void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche);
-void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ);
+void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche);
+void afficherJoueurs(listeJoueurs *listeJoueurs);
 
 // Effets de cartes
 // Suppression de dés
@@ -94,6 +95,8 @@ void supprimer2Des(int deJoueur[]);
 // Donne De
 void donner1De(joueur *joueur, listeJoueurs *listeJoueurs);
 void transfertDe(int deJoueurEmetteur[], listeJoueurs *listeJoueurs);
+// Switch Dés
+void switchDes(listeJoueurs *listeJoueurs);
 
 // Méthodes générales
 void viderBuffer();

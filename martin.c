@@ -37,7 +37,7 @@ void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueu
     // Fin
 }
 
-void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs,int sens)
+void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens)
 {
     // Lexique
     int index;
@@ -65,8 +65,8 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJou
         supprimer1De(joueur->des);
         break;
     case 6:
-        // SwitchDes();
-        // break;
+        switchDes(listeJoueurs);
+        break;
     case 7:
         // Prendre1Carte();
         // break;
@@ -495,6 +495,33 @@ bool verifFin(joueur *joueur)
     else
     {
         return false;
+    }
+    // Fin
+}
+
+void switchDes(listeJoueurs *listeJoueurs)
+{
+    // Lexique
+    char entry;
+    int iterator;
+    joueur *ptrJoueur;
+
+    // Début
+    printf("Dans quel sens voulez-vous effectuer la rotation des des ?");
+    printf("[q]<-- Gauche - Droite -->[d]");
+    do
+    {
+        entry = getchar();
+    } while (entry != 'q' || entry != 'd');
+
+    ptrJoueur = listeJoueurs->debut;
+
+    for (iterator = 0; iterator < listeJoueurs->nb; iterator++)
+    {
+        if (entry == 'q')
+            *ptrJoueur->suivant->des = *ptrJoueur->des;
+        else if (entry == 'd')
+            *ptrJoueur->precedent->des = *ptrJoueur->des;
     }
     // Fin
 }

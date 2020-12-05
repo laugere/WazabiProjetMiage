@@ -17,21 +17,24 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
 
     } while (nbJ < 2 && nbJ > 6);
 
+    listeJoueurs->nb = nbJ;
+
     //initialise les joueurs et leur dés
     while (ajoute != nbJ)
     {
-        ajouterJoueur(listeJoueurs, nbJ, pioche);
+        ajouterJoueur(listeJoueurs, pioche);
         ajoute++;
     }
-    afficherJoueurs(listeJoueurs, nbJ);
+    afficherJoueurs(listeJoueurs);
 }
 
-void ajouterJoueur(listeJoueurs *listeJoueurs, int nbJ, pileCartes *pioche)
+void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche)
 {
     joueur *ptrAux = listeJoueurs->debut;
     joueur *ptrPrec = ptrAux;
     char pseudo[25];
     int tailleListe = 0;
+    int nbJ = listeJoueurs->nb;
 
     joueur *tmpJoueur = (joueur *)malloc(sizeof(joueur));
 
@@ -159,10 +162,11 @@ void viderBuffer()
     }
 }
 
-void afficherJoueurs(listeJoueurs *listeJoueurs, int nbJ) //Méthode de test
+void afficherJoueurs(listeJoueurs *listeJoueurs) //Méthode de test
 {
     joueur *ptrAux = listeJoueurs->debut;
     int tailleListe = 0;
+    int nbJ = listeJoueurs->nb;
 
     while (tailleListe != nbJ)
     {

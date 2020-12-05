@@ -38,7 +38,6 @@ void tour()
     pileCartes pioche;
     bool fin;
     int sens = 0;
-
     joueur *ptrJoueur;
     int nbWJoueur;
 
@@ -61,7 +60,9 @@ void tour()
         printf("Vous avez %d Wazabi\n", nbWJoueur);
         selectionCarte(ptrJoueur, &pioche, &listeJoueur, sens);
 
+        // Vérification si le joueur courant a encore des dés
         fin=verifFin(ptrJoueur);
+        // Changement de sens si sens = 0 sens normal (gauche) si sens = 1 sens inversé (droite)
         if(sens == 0){
             ptrJoueur = ptrJoueur->suivant;
         }else{
