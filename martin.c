@@ -1,4 +1,4 @@
-carte *selectionCarte(joueur *joueur)
+carte *selectionCarte(joueur *joueur, bool cache)
 {
     // Lexique
     carte *vRetour;
@@ -11,9 +11,16 @@ carte *selectionCarte(joueur *joueur)
     {
         printf("\n\n");
         printf("----------------------------------------\n");
-        printf("%s \n", aux->titre);
-        printf("%s", aux->effet);
-        printf("Cette carte coute %d wazabi(s) \n", aux->cout);
+        if (cache)
+        {
+            printf("carte numero : %d", aux->index);
+        }
+        else
+        {
+            printf("%s \n", aux->titre);
+            printf("%s", aux->effet);
+            printf("Cette carte coute %d wazabi(s) \n", aux->cout);
+        }
         printf("----------------------------------------\n");
         printf("Choisir cette carte ? [s] \n");
         printf("[q]<-- Prec - Suivante -->[d]");
@@ -47,7 +54,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
     carte *carte;
 
     // Début
-    carte = selectionCarte(joueur);
+    carte = selectionCarte(joueur, false);
     index = carte->index;
     switch (index)
     {
@@ -551,13 +558,15 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
     // Fin
 }
 
-void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueur)
+void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
 {
     // Lexique
     joueur *joueurCible;
+    carte *carte;
 
     // Début
     joueurCible = selectionJoueur(listeJoueurs);
-
+    carte = selectionCarte(joueurCible, true);
+    transfertCarteJoueur(&joueurCible->listecartes, &joueurCourant->listecartes, carte->index);
     // Fin
 }

@@ -112,7 +112,7 @@ int retourneSommePioche(int des[24]);
 int retourneSommeDonneDe(int des[24]);
 
 // Fonctions Cartes
-carte *selectionCarte(joueur *joueur);
+carte *selectionCarte(joueur *joueur, bool cache);
 carte *piocheCarte(pileCartes *pioche);
 
 // Fonctions générales
