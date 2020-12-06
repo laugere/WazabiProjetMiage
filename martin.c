@@ -80,7 +80,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
         switchDes(listeJoueurs);
         break;
     case 7:
-        //prendre1Carte();
+        prendre1Carte(listeJoueurs, joueur);
         break;
     case 8:
         // SupprimerJoueurs2Cartes();
@@ -547,7 +547,7 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
 
     // Début
     joueurCible = selectionJoueur(listeJoueurs);
-    carte = selectionCarte(joueurCible);
+    carte = selectionCarte(joueurCible, false);
     for (iterator = 0; iterator < joueurCible->listecartes.taille; iterator++)
     {
         if (iterator != carte->index)
