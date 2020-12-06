@@ -534,18 +534,18 @@ void switchDes(listeJoueurs *listeJoueurs)
 void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
 {
     // Lexique
-    joueur *joueur;
+    joueur *joueurCible;
     carte *carte;
     int iterator;
 
     // Début
-    joueur = selectionJoueur(listeJoueurs);
-    carte = selectionCarte(joueur);
-    for (iterator = 0; iterator < joueur->listecartes.taille; iterator++)
+    joueurCible = selectionJoueur(listeJoueurs);
+    carte = selectionCarte(joueurCible);
+    for (iterator = 0; iterator < joueurCible->listecartes.taille; iterator++)
     {
         if (iterator != carte->index)
         {
-            transfertCarteDefausse(&joueur->listecartes, defausse, iterator);
+            transfertCarteDefausse(&joueurCible->listecartes, defausse, iterator);
         }
     }
     // Fin
