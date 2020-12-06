@@ -53,7 +53,6 @@ struct dice
 //////// Déclaration des méthodes / fonctions ////////
 //////////////////////////////////////////////////////
 
-
 //////////////////////
 ////// Méthodes //////
 //////////////////////
@@ -73,8 +72,8 @@ void afficherDe(int face);
 void ajouterDe(int deJoueur[]);
 
 // Méthodes Cartes
-void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens);
-void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens);
+carte *selectionCarte(joueur *joueur);
+void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void selectCarteEmpiler(int index, pileCartes *pioche);
 void ajoutCarteJoueur(listeCartes *listecarte, carte *carte);
@@ -100,7 +99,6 @@ void switchDes(listeJoueurs *listeJoueurs);
 
 // Méthodes générales
 void viderBuffer();
-
 
 /////////////////////////
 /////// Fonctions ///////

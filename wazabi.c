@@ -36,6 +36,7 @@ void tour()
     listeJoueurs listeJoueur;
     dice de;
     pileCartes pioche;
+    pileCartes defausse;
     bool fin;
     int sens = 0;
     joueur *ptrJoueur;
@@ -58,7 +59,7 @@ void tour()
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
-        selectionCarte(ptrJoueur, &pioche, &listeJoueur, sens);
+        utilisationCarte(ptrJoueur, &pioche, &listeJoueur, sens, &defausse);
 
         // Vérification si le joueur courant a encore des dés
         fin=verifFin(ptrJoueur);

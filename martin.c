@@ -1,4 +1,4 @@
-void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens)
+carte *selectionCarte(joueur *joueur)
 {
     // Lexique
     carte *aux;
@@ -14,7 +14,7 @@ void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueu
         printf("%s", aux->effet);
         printf("Cette carte coute %d wazabi(s) \n", aux->cout);
         printf("----------------------------------------\n");
-        printf("Utiliser cette carte ? [s] \n");
+        printf("Choisir cette carte ? [s] \n");
         printf("[q]<-- Prec - Suivante -->[d]");
         do
         {
@@ -29,7 +29,7 @@ void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueu
             aux = aux->suivant;
             break;
         case 's':
-            utilisationCarte(aux, joueur, pioche, listeJoueurs, sens);
+            return aux;
             aux = NULL;
             break;
         }
@@ -37,12 +37,14 @@ void selectionCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueu
     // Fin
 }
 
-void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens)
+void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse)
 {
     // Lexique
     int index;
+    carte *carte;
 
     // Début
+    carte = selectionCarte(joueur);
     index = carte->index;
     switch (index)
     {
@@ -56,8 +58,8 @@ void utilisationCarte(carte *carte, joueur *joueur, pileCartes *pioche, listeJou
         donner1De(joueur, listeJoueurs);
         break;
     case 3:
-        // Joueur1Carte();
-        // break;
+        joueur1Carte(listeJoueurs, defausse);
+        break;
     case 4:
         piochez3Cartes(joueur, pioche);
         break;
@@ -522,6 +524,26 @@ void switchDes(listeJoueurs *listeJoueurs)
             *ptrJoueur->suivant->des = *ptrJoueur->des;
         else if (entry == 'd')
             *ptrJoueur->precedent->des = *ptrJoueur->des;
+    }
+    // Fin
+}
+
+void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
+{
+    // Lexique
+    joueur *joueur;
+    carte *carte;
+    int iterator;
+
+    // Début
+    joueur = selectionJoueur(listeJoueurs);
+    carte = selectionCarte(joueur);
+    for (iterator = 0; iterator < joueur->listecartes.taille; iterator++)
+    {
+        if (iterator != carte->index)
+        {
+            transfertCarteDefausse(&joueur->listecartes, defausse, iterator);
+        }
     }
     // Fin
 }
