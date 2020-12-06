@@ -72,7 +72,6 @@ void afficherDe(int face);
 void ajouterDe(int deJoueur[]);
 
 // Méthodes Cartes
-carte *selectionCarte(joueur *joueur);
 void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse);
 void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
 void selectCarteEmpiler(int index, pileCartes *pioche);
@@ -96,6 +95,10 @@ void donner1De(joueur *joueur, listeJoueurs *listeJoueurs);
 void transfertDe(int deJoueurEmetteur[], listeJoueurs *listeJoueurs);
 // Switch Dés
 void switchDes(listeJoueurs *listeJoueurs);
+// Joueur 1 carte
+void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse);
+// Prendre 1 carte
+void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueur);
 
 // Méthodes générales
 void viderBuffer();
@@ -109,6 +112,7 @@ int retourneSommePioche(int des[24]);
 int retourneSommeDonneDe(int des[24]);
 
 // Fonctions Cartes
+carte *selectionCarte(joueur *joueur);
 carte *piocheCarte(pileCartes *pioche);
 
 // Fonctions générales

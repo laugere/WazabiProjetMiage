@@ -1,6 +1,7 @@
 carte *selectionCarte(joueur *joueur)
 {
     // Lexique
+    carte *vRetour;
     carte *aux;
     char entry;
 
@@ -29,11 +30,13 @@ carte *selectionCarte(joueur *joueur)
             aux = aux->suivant;
             break;
         case 's':
-            return aux;
+            vRetour = aux;
             aux = NULL;
             break;
         }
     }
+
+    return vRetour;
     // Fin
 }
 
@@ -70,8 +73,8 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
         switchDes(listeJoueurs);
         break;
     case 7:
-        // Prendre1Carte();
-        // break;
+        //prendre1Carte();
+        break;
     case 8:
         // SupprimerJoueurs2Cartes();
         // break;
@@ -545,5 +548,16 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
             transfertCarteDefausse(&joueur->listecartes, defausse, iterator);
         }
     }
+    // Fin
+}
+
+void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueur)
+{
+    // Lexique
+    joueur *joueurCible;
+
+    // Début
+    joueurCible = selectionJoueur(listeJoueurs);
+
     // Fin
 }
