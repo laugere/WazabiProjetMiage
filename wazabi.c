@@ -59,7 +59,7 @@ void tour()
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
-        utilisationCarte(ptrJoueur, &pioche, &listeJoueur, sens, &defausse);
+        utilisationCarte(ptrJoueur, &pioche, &listeJoueur, sens, &defausse, nbWJoueur);
 
         // Vérification si le joueur courant a encore des dés
         fin=verifFin(ptrJoueur);

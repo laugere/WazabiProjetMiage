@@ -47,14 +47,17 @@ carte *selectionCarte(joueur *joueur, bool cache)
     // Fin
 }
 
-void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse)
+void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse, int nbWJoueur)
 {
     // Lexique
     int index;
     carte *carte;
 
     // Début
-    carte = selectionCarte(joueur, false);
+    do
+    {
+        carte = selectionCarte(joueur, false);
+    } while (carte->cout <= nbWJoueur);
     index = carte->index;
     switch (index)
     {
@@ -591,7 +594,7 @@ void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, p
     // Fin
 }
 
-void skipJoueur(joueur * joueurCourant)
+void skipJoueur(joueur *joueurCourant)
 {
     // Lexique
 
