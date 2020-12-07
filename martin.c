@@ -591,3 +591,12 @@ void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, p
     }
     // Fin
 }
+
+void skipJoueur(joueur * joueurCourant)
+{
+    // Lexique
+
+    // Début
+    joueurCourant = joueurCourant->suivant;
+    // Fin
+}
