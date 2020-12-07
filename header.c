@@ -101,6 +101,8 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse);
 void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueur);
 // Supprimer Joueur 2 cartes
 void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, pileCartes *defausse);
+// Skip Joueur
+void skipJoueur(joueur * joueurCourant);
 
 // Méthodes générales
 void viderBuffer();
