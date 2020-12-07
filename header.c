@@ -99,6 +99,8 @@ void switchDes(listeJoueurs *listeJoueurs);
 void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse);
 // Prendre 1 carte
 void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueur);
+// Supprimer Joueur 2 cartes
+void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, pileCartes *defausse);
 
 // Méthodes générales
 void viderBuffer();
