@@ -570,3 +570,24 @@ void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
     transfertCarteJoueur(&joueurCible->listecartes, &joueurCourant->listecartes, carte->index);
     // Fin
 }
+
+void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, pileCartes *defausse)
+{
+    // Lexique
+    joueur *ptrJoueur;
+    int iterator;
+
+    // Début
+    while (ptrJoueur != NULL)
+    {
+        if (ptrJoueur != joueurCourant)
+        {
+            for (iterator = 0; iterator < ptrJoueur->listecartes.taille - 2; iterator++)
+            {
+                transfertCarteDefausse(&ptrJoueur->listecartes, defausse, iterator);
+            }
+        }
+        ptrJoueur = ptrJoueur->suivant;
+    }
+    // Fin
+}
