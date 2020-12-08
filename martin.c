@@ -459,7 +459,7 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
         exit(EXIT_FAILURE);
     }
 
-    for (iterator = 0; iterator <= index; iterator++)
+    while(ptrCarte->index != index)
     {
         ptrPrec = ptrCarte;
         ptrCarte = ptrCarte->suivant;
