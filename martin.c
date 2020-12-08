@@ -161,7 +161,7 @@ void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs)
 
     // Début
     *deJoueurEmetteur = joueurCourant->des;
-    JoueurRecepteur = selectionJoueur(joueur, listeJoueurs);
+    JoueurRecepteur = selectionJoueur(joueurCourant, listeJoueurs);
     supprimer1De(deJoueurEmetteur);
     ajouterDe(JoueurRecepteur->des);
     // Fin
