@@ -449,6 +449,7 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     // Lexique
     carte *ptrCarte;
     carte *ptrPrec;
+    carte *ptrSuiv;
 
     // Début
     ptrCarte = listeCartes->premier;
@@ -461,10 +462,12 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     while(ptrCarte->index != index)
     {
         ptrPrec = ptrCarte->precedent;
+        ptrSuiv = ptrCarte->suivant;
     }
 
-    ptrPrec->suivant = ptrCarte->suivant;
-    ptrPrec->suivant->precedent = ptrPrec;
+    ptrPrec->suivant = ptrSuiv;
+    ptrSuiv->precedent = ptrPrec;
+
     empileCarte(defausse, ptrCarte->cout, ptrCarte->index, ptrCarte->effet, ptrCarte->titre);
     // Fin
 }
