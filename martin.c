@@ -13,7 +13,7 @@ carte *selectionCarte(joueur *joueur, bool cache)
         printf("--------------------------------------------------------------------------------\n");
         if (cache)
         {
-            printf("carte numero : %d \n", aux->index);
+            printf("carte numero : %d \n", aux->nCarte);
         }
         else
         {
