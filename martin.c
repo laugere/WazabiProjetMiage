@@ -449,7 +449,6 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     // Lexique
     carte *ptrCarte;
     carte *ptrPrec;
-    int iterator;
 
     // Début
     ptrCarte = listeCartes->premier;
