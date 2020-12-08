@@ -537,8 +537,8 @@ void switchDes(listeJoueurs *listeJoueurs)
     joueur *ptrJoueur;
 
     // Début
-    printf("Dans quel sens voulez-vous effectuer la rotation des des ?");
-    printf("[q]<-- Gauche - Droite -->[d]");
+    printf("Dans quel sens voulez-vous effectuer la rotation des des ?\n");
+    printf("[q]<-- Gauche - Droite -->[d]\n");
     do
     {
         entry = getchar();
