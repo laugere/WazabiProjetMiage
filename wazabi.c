@@ -54,6 +54,7 @@ void tour()
     joueur firstPlayer = initPartie(&listeJoueur, &pioche);
     fin = false;
     initDe(&de);
+    ptrJoueur = NULL;
     *ptrJoueur = firstPlayer;
     do
     {

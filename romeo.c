@@ -44,7 +44,7 @@ joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ){ //First recu
         lancerDe(de, joueurCourant->des, joueurCourant->pseudo);
 
         if(retourneSommeWazabi(joueurCourant->des) > sommeW){
-            premierJoueur == joueurCourant;
+            premierJoueur = joueurCourant;
         }
     }
 
