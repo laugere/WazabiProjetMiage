@@ -91,7 +91,7 @@ void supprimer1De(int deJoueur[]);
 void supprimer2Des(int deJoueur[]);
 // Donne De
 void donner1De(joueur *joueur, listeJoueurs *listeJoueurs);
-void transfertDe(int deJoueurEmetteur[], listeJoueurs *listeJoueurs);
+void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs);
 // Switch Dés
 void switchDes(listeJoueurs *listeJoueurs);
 // Joueur 1 carte
@@ -119,7 +119,7 @@ carte *selectionCarte(joueur *joueur, bool cache);
 carte *piocheCarte(pileCartes *pioche);
 
 // Fonctions Joueurs
-joueur *selectionJoueur(listeJoueurs *listeJoueurs);
+joueur *selectionJoueur(joueur *joueurCourant, listeJoueurs *listeJoueurs);
 joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de);
 
 // Fonctions générales
