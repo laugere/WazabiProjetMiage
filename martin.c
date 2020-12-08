@@ -82,7 +82,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             donner1De(joueur, listeJoueurs);
             break;
         case 3:
-            joueur1Carte(listeJoueurs, defausse);
+            joueur1Carte(listeJoueurs, defausse, joueur);
             break;
         case 4:
             piochez3Cartes(joueur, pioche);
@@ -157,12 +157,10 @@ void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs)
 {
     // Lexique
     joueur *JoueurRecepteur;
-    int *deJoueurEmetteur[24];
 
     // Début
-    *deJoueurEmetteur = joueurCourant->des;
     JoueurRecepteur = selectionJoueur(joueurCourant, listeJoueurs);
-    supprimer1De(deJoueurEmetteur);
+    supprimer1De(joueurCourant->des);
     ajouterDe(JoueurRecepteur->des);
     // Fin
 }
@@ -561,7 +559,7 @@ void switchDes(listeJoueurs *listeJoueurs)
     // Fin
 }
 
-void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
+void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joueurCourant)
 {
     // Lexique
     joueur *joueurCible;
@@ -569,7 +567,7 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse)
     int iterator;
 
     // Début
-    joueurCible = selectionJoueur(listeJoueurs);
+    joueurCible = selectionJoueur(joueurCourant, listeJoueurs);
     carte = selectionCarte(joueurCible, false);
     for (iterator = 0; iterator < joueurCible->listecartes.taille; iterator++)
     {
@@ -588,7 +586,7 @@ void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
     carte *carte;
 
     // Début
-    joueurCible = selectionJoueur(listeJoueurs);
+    joueurCible = selectionJoueur(joueurCourant, listeJoueurs);
     carte = selectionCarte(joueurCible, true);
     transfertCarteJoueur(&joueurCible->listecartes, &joueurCourant->listecartes, carte->index);
     // Fin

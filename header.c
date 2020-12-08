@@ -95,7 +95,7 @@ void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs);
 // Switch Dés
 void switchDes(listeJoueurs *listeJoueurs);
 // Joueur 1 carte
-void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse);
+void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joueurCourant);
 // Prendre 1 carte
 void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueur);
 // Supprimer Joueur 2 cartes
