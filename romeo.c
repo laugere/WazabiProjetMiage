@@ -32,28 +32,28 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
     //afficherJoueurs(listeJoueurs);
 }
 
-joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ)
+joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
 {
-    dice de;
-    int sommeW = 0;
+    // Lexique
+    int iterator;
+    int maxW;
+    int wCourant;
+    joueur *ptrJoueur;
+    joueur *joueurRetour;
 
-    joueur *joueurCourant = listeJoueurs->debut;
-    joueur *premierJoueur = listeJoueurs->debut;
-
-    while (sommeW == 0)
+    // Début
+    maxW = 0;
+    ptrJoueur = listeJoueurs->debut;
+    for (iterator = 0; iterator < nbJ; iterator++)
     {
-        for (int i = 0; i < nbJ; i++)
-        {
-            lancerDe(de, joueurCourant->des, joueurCourant->pseudo);
-
-            if (retourneSommeWazabi(joueurCourant->des) > sommeW)
-            {
-                sommeW = sommeW + retourneSommeWazabi(joueurCourant->des);
-                premierJoueur = joueurCourant;
-            }
+        lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
+        wCourant = retourneSommeWazabi(ptrJoueur->des);
+        if (wCourant > maxW) {
+            maxW = wCourant;
+            joueurRetour = ptrJoueur;
         }
     }
-    return *premierJoueur;
+    // Fin
 }
 
 void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)

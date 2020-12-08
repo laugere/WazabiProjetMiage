@@ -51,11 +51,11 @@ void tour()
 
     // Initialisation de la partie
     initPioche(&pioche);
-    joueur firstPlayer = initPartie(&listeJoueur, &pioche);
+    initPartie(&listeJoueur, &pioche);
     fin = false;
     initDe(&de);
     ptrJoueur = NULL;
-    *ptrJoueur = firstPlayer;
+    *ptrJoueur = determinePremierJoueur(&listeJoueur, listeJoueur.nb, de);
     do
     {
         // Lancement des dés

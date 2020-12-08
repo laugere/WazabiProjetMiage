@@ -62,7 +62,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche);
 void initPioche(pileCartes *pioche);
 void initListeCarte(joueur *joueur, pileCartes *pioche);
 void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche);
-joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ);
+joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de);
 // Méthode tour
 void tour();
 
