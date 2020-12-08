@@ -10,20 +10,20 @@ carte *selectionCarte(joueur *joueur, bool cache)
     while (aux != NULL)
     {
         printf("\n\n");
-        printf("----------------------------------------\n");
+        printf("--------------------------------------------------------------------------------\n");
         if (cache)
         {
-            printf("carte numero : %d", aux->index);
+            printf("carte numero : %d \n", aux->index);
         }
         else
         {
             printf("%s \n", aux->titre);
-            printf("%s", aux->effet);
+            printf("%s \n", aux->effet);
             printf("Cette carte coute %d wazabi(s) \n", aux->cout);
         }
-        printf("----------------------------------------\n");
+        printf("--------------------------------------------------------------------------------\n");
         printf("Choisir cette carte ? [s] \n");
-        printf("[q]<-- Prec - Suivante -->[d]");
+        printf("[q]<-- Prec - Suivante -->[d] \n");
         do
         {
             entry = getchar();
@@ -161,11 +161,11 @@ joueur *selectionJoueur(listeJoueurs *listeJoueurs)
     while (aux != NULL)
     {
         printf("\n\n");
-        printf("----------------------------------------\n");
+        printf("--------------------------------------------------------------------------------\n");
         printf("%s \n", aux->pseudo);
-        printf("----------------------------------------\n");
+        printf("--------------------------------------------------------------------------------\n");
         printf("Choisir ce joueur ? [s] \n");
-        printf("[q]<-- Prec - Suivante -->[d]");
+        printf("[q]<-- Prec - Suivante -->[d] \n");
         do
         {
             entry = getchar();
@@ -196,7 +196,7 @@ void supprimer1De(int deJoueur[])
     // Début
     printf("Vous avez choisi de supprimer 1 de...\n");
     supprimerDe(deJoueur);
-    printf("Le de a ete supprime.");
+    printf("Le de a ete supprime. \n");
     // Fin
 }
 
@@ -208,7 +208,7 @@ void supprimer2Des(int deJoueur[])
     printf("Vous avez choisi de supprimer 2 des...\n");
     supprimerDe(deJoueur);
     supprimerDe(deJoueur);
-    printf("Les des ont ete supprimes.");
+    printf("Les des ont ete supprimes. \n");
     // Fin
 }
 
