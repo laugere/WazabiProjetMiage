@@ -460,7 +460,7 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
 
     while(ptrCarte->index != index)
     {
-        ptrPrec = ptrCarte;
+        ptrPrec = ptrCarte->precedent;
         ptrCarte = ptrCarte->suivant;
     }
 
