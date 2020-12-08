@@ -55,21 +55,24 @@ void tour()
     {
         // Lancement des dés
         printf("--------------------\n");
-        lancerDe(de, ptrJoueur->des);
+        lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
         printf("--------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
         utilisationCarte(ptrJoueur, &pioche, &listeJoueur, sens, &defausse, nbWJoueur);
 
         // Vérification si le joueur courant a encore des dés
-        fin=verifFin(ptrJoueur);
+        fin = verifFin(ptrJoueur);
         // Changement de sens si sens = 0 sens normal (gauche) si sens = 1 sens inversé (droite)
-        if(sens == 0){
+        if (sens == 0)
+        {
             ptrJoueur = ptrJoueur->suivant;
-        }else{
+        }
+        else
+        {
             ptrJoueur = ptrJoueur->precedent;
         }
-        
+
     } while (!fin);
     // Fin
 }

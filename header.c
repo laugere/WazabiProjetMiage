@@ -67,7 +67,7 @@ void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche);
 void tour();
 
 // Méthodes Dé
-void lancerDe(dice de, int des[24]);
+void lancerDe(dice de, int des[24], char pseudo[25]);
 void afficherDe(int face);
 void ajouterDe(int deJoueur[]);
 
