@@ -55,7 +55,7 @@ void tour()
     fin = false;
     initDe(&de);
     ptrJoueur = NULL;
-    *ptrJoueur = determinePremierJoueur(&listeJoueur, listeJoueur.nb, de);
+    ptrJoueur = determinePremierJoueur(&listeJoueur, listeJoueur.nb, de);
     do
     {
         // Lancement des dés

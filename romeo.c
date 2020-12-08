@@ -32,7 +32,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
     //afficherJoueurs(listeJoueurs);
 }
 
-joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
+joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
 {
     // Lexique
     int iterator;
@@ -53,6 +53,8 @@ joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
             joueurRetour = ptrJoueur;
         }
     }
+
+    return joueurRetour;
     // Fin
 }
 
