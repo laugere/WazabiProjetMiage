@@ -82,7 +82,7 @@ void ChangementSens(int sens);
 void piochez3Cartes(joueur *joueur, pileCartes *pioche);
 
 // Méthodes Joueurs
-void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche);
+void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute);
 void afficherJoueurs(listeJoueurs *listeJoueurs);
 
 // Effets de cartes
