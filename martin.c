@@ -465,11 +465,6 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     // Début
     ptrCarte = listeCartes->premier;
 
-    if (listeCartes->taille < index)
-    {
-        exit(EXIT_FAILURE);
-    }
-
     while(ptrCarte->nCarte != nCarte)
     {
         ptrPrec = ptrCarte->precedent;
