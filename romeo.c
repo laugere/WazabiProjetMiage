@@ -25,7 +25,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         ajouterJoueur(listeJoueurs, pioche, ajoute);
         ajoute++;
     }
-    afficherJoueurs(listeJoueurs);
+    //afficherJoueurs(listeJoueurs);
 }
 
 void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
@@ -41,7 +41,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
 
     if (ptrAux == NULL)
     {
-        printf("Quel est le pseudo du joueur %d?\n", numJ);
+        printf("Quel est le pseudo du joueur %d ?\n", numJ);
 
         //scanf("%s", pseudo);
         scanfByRomeo(pseudo, 25);
@@ -76,7 +76,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
             ptrPrec = ptrAux;
             if (ptrAux->suivant == NULL)
             {
-                printf("Quel est le pseudo du joueur %d?\n", numJ);
+                printf("Quel est le pseudo du joueur %d ?\n", numJ);
                 //scanf("%s", pseudo);
                 scanfByRomeo(pseudo, 25);
                 //
