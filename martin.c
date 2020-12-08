@@ -578,15 +578,17 @@ void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, p
     // Lexique
     joueur *ptrJoueur;
     int iterator;
+    int jterator;
 
     // Début
-    while (ptrJoueur != NULL)
+    ptrJoueur = listeJoueurs->debut;
+    for (iterator = 0; iterator < listeJoueurs->nb; iterator++)
     {
         if (ptrJoueur != joueurCourant)
         {
-            for (iterator = 0; iterator < ptrJoueur->listecartes.taille - 2; iterator++)
+            for (jterator = 0; jterator < ptrJoueur->listecartes.taille - 2; jterator++)
             {
-                transfertCarteDefausse(&ptrJoueur->listecartes, defausse, iterator);
+                transfertCarteDefausse(&ptrJoueur->listecartes, defausse, jterator);
             }
         }
         ptrJoueur = ptrJoueur->suivant;
