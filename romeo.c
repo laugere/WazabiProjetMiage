@@ -76,7 +76,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
             ptrPrec = ptrAux;
             if (ptrAux->suivant == NULL)
             {
-                printf("Quel est le pseudo du joueur %d?\n", &numJ);
+                printf("Quel est le pseudo du joueur %d?\n", numJ);
                 //scanf("%s", pseudo);
                 scanfByRomeo(pseudo, 25);
                 //
