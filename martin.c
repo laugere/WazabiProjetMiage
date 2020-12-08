@@ -103,6 +103,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             skipJoueur(joueur);
             break;
         }
+        transfertCarteDefausse(&joueur->listecartes, defausse, carte->index);
     }
     else
     {
