@@ -1,4 +1,4 @@
-void lancerDe(dice de, int des[24],char pseudo[25])
+void lancerDe(dice de, int des[24], char pseudo[25])
 {
     //Lexique
     int index;
@@ -6,7 +6,7 @@ void lancerDe(dice de, int des[24],char pseudo[25])
 
     //Debut
     indexDe = 0;
-   printf("Voici le resultat de votre jet %s :", pseudo);
+    printf("Voici le resultat de votre jet %s :", pseudo);
     printf("\n");
     while (des[indexDe] != 0)
     {
