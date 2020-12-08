@@ -22,14 +22,15 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
     //initialise les joueurs et leur dés
     while (ajoute != nbJ)
     {
-        ajouterJoueur(listeJoueurs, pioche);
+        ajouterJoueur(listeJoueurs, pioche, ajoute);
         ajoute++;
     }
     afficherJoueurs(listeJoueurs);
 }
 
-void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche)
+void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
 {
+    int numJ = ajoute + 1;
     joueur *ptrAux = listeJoueurs->debut;
     joueur *ptrPrec = ptrAux;
     char pseudo[25];
@@ -40,7 +41,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche)
 
     if (ptrAux == NULL)
     {
-        printf("Quel est le pseudo ?\n");
+        printf("Quel est le pseudo du joueur %d?\n", &numJ);
 
         //scanf("%s", pseudo);
         scanfByRomeo(pseudo, 25);
@@ -75,7 +76,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche)
             ptrPrec = ptrAux;
             if (ptrAux->suivant == NULL)
             {
-                printf("Quel est le pseudo ?\n");
+                printf("Quel est le pseudo du joueur %d?\n", &numJ);
                 //scanf("%s", pseudo);
                 scanfByRomeo(pseudo, 25);
                 //
