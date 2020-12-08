@@ -1,5 +1,5 @@
 // Init game
-void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
+joueur initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
 {
     int nbJ = 0;
     int ajoute = 0;
@@ -29,17 +29,30 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         ajoute++;
     }
     //afficherJoueurs(listeJoueurs);
+    return determinePremierJoueur(listeJoueurs, nbJ);
 }
 
 
-void determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ){
+joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ){ //First recursive function of Moreaux Romeo, 08/12/2020
+
+    dice de;
+    int sommeW = 0;
+    joueur *joueurCourant = listeJoueurs->debut;
+    joueur *premierJoueur = listeJoueurs->debut;
 
     for(int i = 0; i < nbJ; i++){
-        lancerDe();
+        lancerDe(de, joueurCourant->des, joueurCourant->pseudo);
 
-
+        if(retourneSommeWazabi(joueurCourant->des) > sommeW){
+            premierJoueur == joueurCourant;
+        }
     }
 
+    if(sommeW == 0){
+        determinePremierJoueur(listeJoueurs, nbJ);
+    }
+
+    return *premierJoueur;
 }
 
 void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
