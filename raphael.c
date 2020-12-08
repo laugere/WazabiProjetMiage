@@ -9,7 +9,7 @@ void lancerDe(dice de, int des[24],char pseudo[25])
     while (des[indexDe] != 0)
     {
         index = rand() % (6 - 1) + 1;
-        printf("Voici le resultat de votre jet %c :", pseudo);
+        printf("Voici le resultat de votre jet %s :", pseudo);
         printf("\n");
         afficherDe(de.faces[index]);
         des[indexDe] = de.faces[index];
