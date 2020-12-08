@@ -202,6 +202,7 @@ joueur *selectionJoueur(joueur *joueurCourant, listeJoueurs *listeJoueurs)
                 break;
             }
         }
+        aux = aux->suivant;
     }
 
     return joueurRetour;
