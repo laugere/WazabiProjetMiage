@@ -58,7 +58,7 @@ struct dice
 //////////////////////
 // Méthodes initialization
 void initDe(dice *de);
-joueur initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche);
+void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche);
 void initPioche(pileCartes *pioche);
 void initListeCarte(joueur *joueur, pileCartes *pioche);
 void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche);

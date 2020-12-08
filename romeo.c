@@ -1,5 +1,5 @@
 // Init game
-joueur initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
+void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
 {
     int nbJ = 0;
     int ajoute = 0;
@@ -30,7 +30,6 @@ joueur initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         ajoute++;
     }
     //afficherJoueurs(listeJoueurs);
-    return determinePremierJoueur(listeJoueurs, nbJ);
 }
 
 joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ)
