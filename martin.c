@@ -487,7 +487,7 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
 
     for (iterator = 0; iterator < index; iterator++)
     {
-        ptrPrec = ptrCarte;
+        ptrPrec = ptrCarte->precedent;
         ptrCarte = ptrCarte->suivant;
     }
 
