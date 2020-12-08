@@ -10,6 +10,9 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         scanf("%d", &nbJ);
         viderBuffer();
         printf("\n");
+        if(nbJ < 2 || nbJ > 6){
+            prinft("Le Wazabi ne peut être joué que de 2 à 6 joueurs.\n");
+        }
 
         //int i = 'a';
         //printf("%d\n",i); <-- retourne 97 (ascii de a)
