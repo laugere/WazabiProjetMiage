@@ -119,8 +119,10 @@ int retourneSommeDonneDe(int des[24]);
 carte *selectionCarte(joueur *joueur, bool cache);
 carte *piocheCarte(pileCartes *pioche);
 
+// Fonctions Joueurs
+joueur *selectionJoueur(listeJoueurs *listeJoueurs);
+
 // Fonctions générales
 int scanfByRomeo(char *chaine, int taille);
 int countDe(int des[24]);
 bool verifFin(joueur *joueur);
-joueur *selectionJoueur(listeJoueurs *listeJoueurs);
