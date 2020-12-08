@@ -62,6 +62,10 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
     do
     {
         carte = selectionCarte(joueur, false);
+        if (carte == NULL)
+        {
+            break;
+        }
     } while (carte->cout > nbWJoueur);
     if (carte != NULL)
     {
