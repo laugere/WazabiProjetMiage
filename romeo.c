@@ -10,7 +10,8 @@ joueur initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         scanf("%d", &nbJ);
         viderBuffer();
         printf("\n");
-        if(nbJ < 2 || nbJ > 6){
+        if (nbJ < 2 || nbJ > 6)
+        {
             printf("Le Wazabi ne peut être joue que de 2 a 6 joueurs.\n");
         }
 
@@ -32,26 +33,27 @@ joueur initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
     return determinePremierJoueur(listeJoueurs, nbJ);
 }
 
-
-joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ){ //First recursive function of Moreaux Romeo, 08/12/2020
-
+joueur determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ)
+{
     dice de;
     int sommeW = 0;
+
     joueur *joueurCourant = listeJoueurs->debut;
     joueur *premierJoueur = listeJoueurs->debut;
 
-    for(int i = 0; i < nbJ; i++){
-        lancerDe(de, joueurCourant->des, joueurCourant->pseudo);
+    while (sommeW == 0)
+    {
+        for (int i = 0; i < nbJ; i++)
+        {
+            lancerDe(de, joueurCourant->des, joueurCourant->pseudo);
 
-        if(retourneSommeWazabi(joueurCourant->des) > sommeW){
-            premierJoueur = joueurCourant;
+            if (retourneSommeWazabi(joueurCourant->des) > sommeW)
+            {
+                sommeW = sommeW + retourneSommeWazabi(joueurCourant->des);
+                premierJoueur = joueurCourant;
+            }
         }
     }
-
-    if(sommeW == 0){
-        determinePremierJoueur(listeJoueurs, nbJ);
-    }
-
     return *premierJoueur;
 }
 
@@ -218,17 +220,23 @@ void afficherJoueurs(listeJoueurs *listeJoueurs) //Méthode de test
     }
 }
 
-void ChangementSens(int sens){
-    if(sens == 0){
+void ChangementSens(int sens)
+{
+    if (sens == 0)
+    {
         sens = 1; //inverse le sens
-    }else{
+    }
+    else
+    {
         sens = 0; //remet le sens normal
     }
 }
 
-void piochez3Cartes(joueur *joueur, pileCartes *pioche){
+void piochez3Cartes(joueur *joueur, pileCartes *pioche)
+{
 
-    for(int i = 0; i < 3 ; i++){
+    for (int i = 0; i < 3; i++)
+    {
         ajoutCarteJoueur(&joueur->listecartes, piocheCarte(pioche));
-  }
+    }
 }
