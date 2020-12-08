@@ -54,9 +54,9 @@ void tour()
     do
     {
         // Lancement des dés
-        printf("--------------------\n");
+        printf("--------------------------------------------------------------------------------\n");
         lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
-        printf("--------------------\n");
+        printf("--------------------------------------------------------------------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
         utilisationCarte(ptrJoueur, &pioche, &listeJoueur, sens, &defausse, nbWJoueur);
