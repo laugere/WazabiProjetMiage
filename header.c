@@ -4,6 +4,7 @@
 typedef struct carte carte;
 struct carte
 {
+    int nCarte;
     int index;
     int cout;
     char titre[255];
@@ -72,8 +73,8 @@ void ajouterDe(int deJoueur[]);
 
 // Méthodes Cartes
 void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse, int nbWJoueur);
-void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[]);
-void selectCarteEmpiler(int index, pileCartes *pioche);
+void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[], int nCarte);
+void selectCarteEmpiler(int index, pileCartes *pioche, int nCarte);
 void ajoutCarteJoueur(listeCartes *listecarte, carte *carte);
 void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index);
 void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index);

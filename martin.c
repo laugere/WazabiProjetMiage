@@ -103,7 +103,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             skipJoueur(joueur);
             break;
         }
-        transfertCarteDefausse(&joueur->listecartes, defausse, index);
+        transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
     }
     else
     {
@@ -256,12 +256,12 @@ void initPioche(pileCartes *pioche)
             carte = rand() % 10 + 0;
         } while (tabCarte[carte] == 0);
         tabCarte[carte] = tabCarte[carte] - 1;
-        selectCarteEmpiler(carte, pioche);
+        selectCarteEmpiler(carte, pioche, iterator);
     }
     // Fin
 }
 
-void selectCarteEmpiler(int index, pileCartes *pioche)
+void selectCarteEmpiler(int index, pileCartes *pioche, int nCarte)
 {
     // Lexique
 
@@ -274,7 +274,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     0,
                     0,
                     "Le joueur rejoue et la partie continue dans le sens inverse.",
-                    "Rejouez et changement de sens");
+                    "Rejouez et changement de sens",
+                    nCarte);
         break;
     case 1:
         //// Supprimez 2 de vos dés ////
@@ -282,7 +283,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     3,
                     1,
                     "Les des sont retires de la partie.",
-                    "Supprimez 2 de vos des");
+                    "Supprimez 2 de vos des",
+                    nCarte);
         break;
     case 2:
         //// Donnez 1 de vos dés au joueur de votre choix ////
@@ -290,7 +292,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     3,
                     2,
                     "L effet est independant des des que vous avez peut-etre deja donnes avec la ou les figure(s).",
-                    "Donnez 1 de vos des au joueur de votre choix");
+                    "Donnez 1 de vos des au joueur de votre choix",
+                    nCarte);
         break;
     case 3:
         //// Le joueur de votre choix n’a plus qu’1 carte ////
@@ -298,7 +301,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     1,
                     3,
                     "Le joueur choisi doit avoir au moins 2 cartes en main. Il choisit alors la carte qu il souhaite conserver et se defausse des autres.",
-                    "Le joueur de votre choix n a plus qu 1 carte");
+                    "Le joueur de votre choix n a plus qu 1 carte",
+                    nCarte);
         break;
     case 4:
         //// Piochez 3 cartes supplémentaires ////
@@ -306,7 +310,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     1,
                     4,
                     "L effet est independant des cartes que vous avez peut etre obtenues avec la ou les figure(s).",
-                    "Piochez 3 cartes supplementaires");
+                    "Piochez 3 cartes supplementaires",
+                    nCarte);
         break;
     case 5:
         //// Supprimez 1 de vos des ////
@@ -314,7 +319,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     1,
                     5,
                     "Le de est retire de la partie. On ne peut pas jouer cette carte si on obtient dans le meme tour 2 figures (Donne de) ou plus avec ses des.",
-                    "Supprimez 1 de vos des");
+                    "Supprimez 1 de vos des",
+                    nCarte);
         break;
     case 6:
         //// Tous les joueurs donnent leurs dés à leur voisin de droite ou de gauche ////
@@ -322,7 +328,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     2,
                     6,
                     "Selon le choix du joueur qui pose la carte. (Il doit lui aussi donner ses des).",
-                    "Tous les joueurs donnent leurs des a leur voisin de droite ou de gauche");
+                    "Tous les joueurs donnent leurs des a leur voisin de droite ou de gauche",
+                    nCarte);
         break;
     case 7:
         //// Prenez 1 carte au joueur de votre choix ////
@@ -330,7 +337,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     1,
                     7,
                     "Le joueur vous presente ses cartes en eventail faces cachees, prenez celle de votre choix. Si aucun joueur n a de carte prenez-en une dans la pioche.",
-                    "Prenez 1 carte au joueur de votre choix");
+                    "Prenez 1 carte au joueur de votre choix",
+                    nCarte);
         break;
     case 8:
         //// Tous les joueurs sauf vous n’ont plus que 2 cartes ////
@@ -338,7 +346,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     2,
                     8,
                     "Les joueurs ayant plus de 2 cartes choisissent celles qu ils souhaitent conserver et se defaussent des autres.",
-                    "Tous les joueurs sauf vous n ont plus que 2 cartes");
+                    "Tous les joueurs sauf vous n ont plus que 2 cartes",
+                    nCarte);
         break;
     case 9:
         //// Le joueur de votre choix passe son tour ////
@@ -346,7 +355,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
                     0,
                     9,
                     "Posez la carte, face visible, devant le joueur choisi qui la conserve jusqu’à ce qu’il ait passe son tour puis la defausse. Plusieurs de ces cartes peuvent se cumuler devant le meme joueur.",
-                    "Le joueur de votre choix passe son tour");
+                    "Le joueur de votre choix passe son tour",
+                    nCarte);
         break;
     default:
         break;
@@ -354,7 +364,7 @@ void selectCarteEmpiler(int index, pileCartes *pioche)
     // Fin
 }
 
-void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[])
+void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[], int nCarte)
 {
     // Lexique
 
@@ -366,6 +376,7 @@ void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char tit
     }
     nouvelleCarte->cout = cout;
     nouvelleCarte->index = index;
+    nouvelleCarte->nCarte = nCarte;
     strcpy(nouvelleCarte->effet, effet);
     strcpy(nouvelleCarte->titre, titre);
     nouvelleCarte->suivant = pioche->premier;
@@ -444,7 +455,7 @@ void ajoutCarteJoueur(listeCartes *listecarte, carte *carte)
     // Fin
 }
 
-void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index)
+void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int nCarte)
 {
     // Lexique
     carte *ptrCarte;
@@ -459,7 +470,7 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
         exit(EXIT_FAILURE);
     }
 
-    while(ptrCarte->index != index)
+    while(ptrCarte->nCarte != nCarte)
     {
         ptrPrec = ptrCarte->precedent;
         ptrSuiv = ptrCarte->suivant;
@@ -468,7 +479,9 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     ptrPrec->suivant = ptrSuiv;
     ptrSuiv->precedent = ptrPrec;
 
-    empileCarte(defausse, ptrCarte->cout, ptrCarte->index, ptrCarte->effet, ptrCarte->titre);
+    printf("%s", ptrCarte->titre);
+
+    empileCarte(defausse, ptrCarte->cout, ptrCarte->index, ptrCarte->effet, ptrCarte->titre, ptrCarte->nCarte);
     // Fin
 }
 
