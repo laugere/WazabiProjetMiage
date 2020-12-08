@@ -1,4 +1,4 @@
-void lancerDe(dice de, int des[24])
+void lancerDe(dice de, int des[24],char pseudo[25])
 {
     //Lexique
     int index;
