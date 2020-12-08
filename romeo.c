@@ -15,7 +15,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         //printf("%d\n",i); <-- retourne 97 (ascii de a)
         // -48 pour convertir en int
 
-    } while (nbJ < 2 && nbJ > 6);
+    } while (nbJ < 2 || nbJ > 6);
 
     listeJoueurs->nb = nbJ;
 
