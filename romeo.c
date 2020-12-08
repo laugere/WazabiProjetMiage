@@ -11,7 +11,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         viderBuffer();
         printf("\n");
         if(nbJ < 2 || nbJ > 6){
-            prinft("Le Wazabi ne peut être joué que de 2 à 6 joueurs.\n");
+            printf("Le Wazabi ne peut être joue que de 2 a 6 joueurs.\n");
         }
 
         //int i = 'a';
@@ -29,6 +29,17 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         ajoute++;
     }
     //afficherJoueurs(listeJoueurs);
+}
+
+
+void determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ){
+
+    for(int i = 0; i < nbJ; i++){
+        lancerDe();
+
+
+    }
+
 }
 
 void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
