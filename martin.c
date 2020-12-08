@@ -57,7 +57,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
     do
     {
         carte = selectionCarte(joueur, false);
-    } while (carte->cout <= nbWJoueur);
+    } while (carte->cout > nbWJoueur);
     index = carte->index;
     switch (index)
     {
