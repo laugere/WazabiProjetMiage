@@ -41,6 +41,10 @@ void tour()
     int sens = 0;
     joueur *ptrJoueur;
     int nbWJoueur;
+    int nbDJoueur;
+    int nbPJoueur;
+    int iterator;
+    int jterator;
 
     // Début
     listeJoueur.debut = NULL;
@@ -58,7 +62,18 @@ void tour()
         lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
         printf("--------------------------------------------------------------------------------\n");
         nbWJoueur = retourneSommeWazabi(ptrJoueur->des);
+        nbDJoueur = retourneSommeDonneDe(ptrJoueur->des);
+        nbPJoueur = retourneSommePioche(ptrJoueur->des);
         printf("Vous avez %d Wazabi\n", nbWJoueur);
+        for (iterator = 0; iterator < nbDJoueur; iterator++)
+        {
+            donner1De(ptrJoueur, &listeJoueur);
+        }
+        for (jterator = 0; jterator < nbPJoueur; jterator++)
+        {
+            ajoutCarteJoueur(&ptrJoueur->listecartes, piocheCarte(&pioche));
+        }
+
         utilisationCarte(ptrJoueur, &pioche, &listeJoueur, sens, &defausse, nbWJoueur);
 
         // Vérification si le joueur courant a encore des dés
