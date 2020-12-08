@@ -28,7 +28,7 @@ carte *selectionCarte(joueur *joueur, bool cache)
         do
         {
             entry = getchar();
-        } while (entry != 'd' && entry != 'q' && entry != 's');
+        } while (entry != 'd' && entry != 'q' && entry != 's' && entry != 'z');
         switch (entry)
         {
         case 'q':
@@ -99,6 +99,10 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             skipJoueur(joueur);
             break;
         }
+    }
+    else
+    {
+        printf("Vous avez choisi de n'utiliser aucune carte. \n");
     }
     // Fin
 }
