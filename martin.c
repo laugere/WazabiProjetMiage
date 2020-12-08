@@ -23,6 +23,7 @@ carte *selectionCarte(joueur *joueur, bool cache)
         }
         printf("--------------------------------------------------------------------------------\n");
         printf("Choisir cette carte ? [s] \n");
+        printf("Annuler et ne choisir aucune carte [z] \n");
         printf("[q]<-- Prec - Suivante -->[d] \n");
         do
         {
@@ -38,6 +39,10 @@ carte *selectionCarte(joueur *joueur, bool cache)
             break;
         case 's':
             vRetour = aux;
+            aux = NULL;
+            break;
+        case 'z':
+            vRetour = NULL;
             aux = NULL;
             break;
         }
@@ -58,39 +63,42 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
     {
         carte = selectionCarte(joueur, false);
     } while (carte->cout > nbWJoueur);
-    index = carte->index;
-    switch (index)
+    if (carte != NULL)
     {
-    case 0:
-        ChangementSens(sens);
-        break;
-    case 1:
-        supprimer2Des(joueur->des);
-        break;
-    case 2:
-        donner1De(joueur, listeJoueurs);
-        break;
-    case 3:
-        joueur1Carte(listeJoueurs, defausse);
-        break;
-    case 4:
-        piochez3Cartes(joueur, pioche);
-        break;
-    case 5:
-        supprimer1De(joueur->des);
-        break;
-    case 6:
-        switchDes(listeJoueurs);
-        break;
-    case 7:
-        prendre1Carte(listeJoueurs, joueur);
-        break;
-    case 8:
-        supprimerJoueur2Cartes(listeJoueurs, joueur, defausse);
-        break;
-    case 9:
-        skipJoueur(joueur);
-        break;
+        index = carte->index;
+        switch (index)
+        {
+        case 0:
+            ChangementSens(sens);
+            break;
+        case 1:
+            supprimer2Des(joueur->des);
+            break;
+        case 2:
+            donner1De(joueur, listeJoueurs);
+            break;
+        case 3:
+            joueur1Carte(listeJoueurs, defausse);
+            break;
+        case 4:
+            piochez3Cartes(joueur, pioche);
+            break;
+        case 5:
+            supprimer1De(joueur->des);
+            break;
+        case 6:
+            switchDes(listeJoueurs);
+            break;
+        case 7:
+            prendre1Carte(listeJoueurs, joueur);
+            break;
+        case 8:
+            supprimerJoueur2Cartes(listeJoueurs, joueur, defausse);
+            break;
+        case 9:
+            skipJoueur(joueur);
+            break;
+        }
     }
     // Fin
 }
