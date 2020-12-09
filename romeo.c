@@ -52,6 +52,7 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
             maxW = wCourant;
             joueurRetour = ptrJoueur;
         }
+        ptrJoueur = ptrJoueur->suivant;
     }
 
     return joueurRetour;
