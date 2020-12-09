@@ -178,28 +178,35 @@ joueur *selectionJoueur(joueur *joueurCourant, listeJoueurs *listeJoueurs)
     aux = listeJoueurs->debut;
     while (aux != NULL)
     {
-        printf("\n\n");
-        printf("--------------------------------------------------------------------------------\n");
-        printf("%s \n", aux->pseudo);
-        printf("--------------------------------------------------------------------------------\n");
-        printf("Choisir ce joueur ? [s] \n");
-        printf("[q]<-- Prec - Suivante -->[d] \n");
-        do
+        if (aux != joueurCourant)
         {
-            entry = getchar();
-        } while (entry != 'd' && entry != 'q' && entry != 's');
-        switch (entry)
+            printf("\n\n");
+            printf("--------------------------------------------------------------------------------\n");
+            printf("%s \n", aux->pseudo);
+            printf("--------------------------------------------------------------------------------\n");
+            printf("Choisir ce joueur ? [s] \n");
+            printf("[q]<-- Prec - Suivante -->[d] \n");
+            do
+            {
+                entry = getchar();
+            } while (entry != 'd' && entry != 'q' && entry != 's');
+            switch (entry)
+            {
+            case 'q':
+                aux = aux->precedent;
+                break;
+            case 'd':
+                aux = aux->suivant;
+                break;
+            case 's':
+                joueurRetour = aux;
+                aux = NULL;
+                break;
+            }
+        }
+        else
         {
-        case 'q':
-            aux = aux->precedent;
-            break;
-        case 'd':
             aux = aux->suivant;
-            break;
-        case 's':
-            joueurRetour = aux;
-            aux = NULL;
-            break;
         }
     }
 
