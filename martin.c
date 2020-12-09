@@ -104,7 +104,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             skipJoueur(joueur);
             break;
         }
-        //transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
+        transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
     }
     else
     {
@@ -470,12 +470,11 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     {
         ptrPrec = ptrCarte->precedent;
         ptrSuiv = ptrCarte->suivant;
+        ptrCarte = ptrCarte->suivant;
     }
 
     ptrPrec->suivant = ptrSuiv;
     ptrSuiv->precedent = ptrPrec;
-
-    printf("%s", ptrCarte->titre);
 
     empileCarte(defausse, ptrCarte->cout, ptrCarte->index, ptrCarte->effet, ptrCarte->titre, ptrCarte->nCarte);
     // Fin
@@ -491,15 +490,11 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
     // Début
     ptrCarte = listecarteEmetteur->premier;
 
-    if (listecarteEmetteur->taille < nCarte)
-    {
-        exit(EXIT_FAILURE);
-    }
-
     while (ptrCarte->nCarte != nCarte)
     {
         ptrPrec = ptrCarte->precedent;
         ptrSuiv = ptrCarte->suivant;
+        ptrCarte = ptrCarte->suivant;
     }
 
     ptrPrec->suivant = ptrSuiv;
