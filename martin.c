@@ -598,7 +598,7 @@ void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
     // Début
     joueurCible = selectionJoueur(joueurCourant, listeJoueurs);
     carte = selectionCarte(joueurCible, true);
-    transfertCarteJoueur(&joueurCible->listecartes, &joueurCourant->listecartes, carte->index);
+    transfertCarteJoueur(&joueurCible->listecartes, &joueurCourant->listecartes, carte->nCarte);
     // Fin
 }
 
