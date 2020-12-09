@@ -480,24 +480,25 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     // Fin
 }
 
-void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int index)
+void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int nCarte)
 {
     // Lexique
     carte *ptrCarte;
     carte *ptrPrec;
-    int iterator;
+    carte *ptrSuiv;
 
     // Début
     ptrCarte = listecarteEmetteur->premier;
 
-    if (listecarteEmetteur->taille < index)
+    if (listecarteEmetteur->taille < nCarte)
     {
         exit(EXIT_FAILURE);
     }
 
-    for (iterator = 0; iterator < index; iterator++)
+    while(ptrCarte->nCarte != nCarte)
     {
         ptrPrec = ptrCarte->precedent;
+        ptrSuiv = ptrCarte->suivant;
     }
 
     ptrPrec->suivant = ptrCarte->suivant;
