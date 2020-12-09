@@ -501,8 +501,8 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
         ptrSuiv = ptrCarte->suivant;
     }
 
-    ptrPrec->suivant = ptrCarte->suivant;
-    ptrPrec->suivant->precedent = ptrPrec;
+    ptrPrec->suivant = ptrSuiv;
+    ptrSuiv->precedent = ptrPrec;
     ajoutCarteJoueur(listecarteRecepteur, ptrCarte);
     // Fin
 }
