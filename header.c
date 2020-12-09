@@ -88,8 +88,8 @@ void afficherJoueurs(listeJoueurs *listeJoueurs);
 // Effets de cartes
 // Suppression de dés
 void supprimerDe(int deJoueur[]);
-void supprimer1De(int deJoueur[]);
-void supprimer2Des(int deJoueur[]);
+void supprimer1De(joueur *joueurCourant);
+void supprimer2Des(joueur *joueurCourant);
 // Donne De
 void donner1De(joueur *joueur, listeJoueurs *listeJoueurs);
 void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs);

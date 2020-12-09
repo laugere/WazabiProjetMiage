@@ -77,7 +77,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             ChangementSens(sens);
             break;
         case 1:
-            supprimer2Des(joueur->des);
+            supprimer2Des(joueur);
             break;
         case 2:
             donner1De(joueur, listeJoueurs);
@@ -89,7 +89,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             piochez3Cartes(joueur, pioche);
             break;
         case 5:
-            supprimer1De(joueur->des);
+            supprimer1De(joueur);
             break;
         case 6:
             switchDes(listeJoueurs);
@@ -104,7 +104,7 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             skipJoueur(joueur);
             break;
         }
-        transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
+        //transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
     }
     else
     {
@@ -162,7 +162,7 @@ void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs)
 
     // Début
     JoueurRecepteur = selectionJoueur(joueurCourant, listeJoueurs);
-    supprimer1De(joueurCourant->des);
+    supprimerDe(joueurCourant->des);
     ajouterDe(JoueurRecepteur->des);
     // Fin
 }
@@ -207,25 +207,25 @@ joueur *selectionJoueur(joueur *joueurCourant, listeJoueurs *listeJoueurs)
     // Fin
 }
 
-void supprimer1De(int deJoueur[])
+void supprimer1De(joueur *joueurCourant)
 {
     // Lexique
 
     // Début
     printf("Vous avez choisi de supprimer 1 de...\n");
-    supprimerDe(deJoueur);
+    supprimerDe(joueurCourant->des);
     printf("Le de a ete supprime. \n");
     // Fin
 }
 
-void supprimer2Des(int deJoueur[])
+void supprimer2Des(joueur *joueurCourant)
 {
     // Lexique
 
     // Début
     printf("Vous avez choisi de supprimer 2 des...\n");
-    supprimerDe(deJoueur);
-    supprimerDe(deJoueur);
+    supprimerDe(joueurCourant->des);
+    supprimerDe(joueurCourant->des);
     printf("Les des ont ete supprimes. \n");
     // Fin
 }
