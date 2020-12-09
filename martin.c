@@ -134,11 +134,11 @@ void supprimerDe(int deJoueur[])
     int i;
 
     // Début
-    for (i = 0; deJoueur[i] != '\0'; i++)
+    for (i = 0; deJoueur[i] != 0; i++)
     {
-        if (deJoueur[i + 1] == '\0')
+        if (deJoueur[i + 1] == 0)
         {
-            deJoueur[i] = '\0';
+            deJoueur[i] = 0;
         }
     }
     // Fin
