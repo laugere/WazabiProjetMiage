@@ -25,6 +25,7 @@ carte *selectionCarte(joueur *joueur, bool cache)
         printf("Choisir cette carte ? [s] \n");
         printf("Annuler et ne choisir aucune carte [z] \n");
         printf("[q]<-- Prec - Suivante -->[d] \n");
+        printf("--------------------------------------------------------------------------------\n");
         do
         {
             entry = getchar();
@@ -465,7 +466,7 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     // Début
     ptrCarte = listeCartes->premier;
 
-    while(ptrCarte->nCarte != nCarte)
+    while (ptrCarte->nCarte != nCarte)
     {
         ptrPrec = ptrCarte->precedent;
         ptrSuiv = ptrCarte->suivant;
@@ -495,7 +496,7 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
         exit(EXIT_FAILURE);
     }
 
-    while(ptrCarte->nCarte != nCarte)
+    while (ptrCarte->nCarte != nCarte)
     {
         ptrPrec = ptrCarte->precedent;
         ptrSuiv = ptrCarte->suivant;
