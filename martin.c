@@ -579,6 +579,7 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joue
 
     // Début
     joueurCible = selectionJoueur(joueurCourant, listeJoueurs);
+    printf("%s choisi sa carte restante : \n", joueurCible->pseudo);
     carteChoisi = selectionCarte(joueurCible, false);
     carteSupp = joueurCible->listecartes.premier;
     for (iterator = 0; iterator < joueurCible->listecartes.taille; iterator++)
