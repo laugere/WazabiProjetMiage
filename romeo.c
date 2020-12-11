@@ -4,6 +4,7 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
     int nbJ = 0;
     int ajoute = 0;
 
+    printf("--------------------WAZABI--------------------\n");
     do
     {
         printf("Combien de joueurs pour cette partie ?\n");
