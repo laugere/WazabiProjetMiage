@@ -54,6 +54,8 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
         ptrJoueur = ptrJoueur->suivant;
     }
 
+    printf("Le joueur %s commence.\n", joueurRetour->pseudo);
+
     return joueurRetour;
     // Fin
 }
