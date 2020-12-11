@@ -573,18 +573,21 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joue
 {
     // Lexique
     joueur *joueurCible;
-    carte *carte;
+    carte *carteChoisi;
+    carte *carteSupp;
     int iterator;
 
     // Début
     joueurCible = selectionJoueur(joueurCourant, listeJoueurs);
-    carte = selectionCarte(joueurCible, false);
+    carteChoisi = selectionCarte(joueurCible, false);
+    carteSupp = joueurCible->listecartes.premier;
     for (iterator = 0; iterator < joueurCible->listecartes.taille; iterator++)
     {
-        if (iterator != carte->index)
+        if (carteSupp != carteChoisi)
         {
             transfertCarteDefausse(&joueurCible->listecartes, defausse, iterator);
         }
+        carteSupp = carteSupp->suivant;
     }
     // Fin
 }
@@ -606,18 +609,21 @@ void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, p
 {
     // Lexique
     joueur *ptrJoueur;
+    carte *ptrCartes;
     int iterator;
     int jterator;
 
     // Début
     ptrJoueur = listeJoueurs->debut;
+    ptrCartes = ptrJoueur->listecartes.premier;
     for (iterator = 0; iterator < listeJoueurs->nb; iterator++)
     {
         if (ptrJoueur != joueurCourant)
         {
             for (jterator = 0; jterator < ptrJoueur->listecartes.taille - 2; jterator++)
             {
-                transfertCarteDefausse(&ptrJoueur->listecartes, defausse, jterator);
+                transfertCarteDefausse(&ptrJoueur->listecartes, defausse, ptrCartes->nCarte);
+                ptrCartes = ptrCartes->suivant;
             }
         }
         ptrJoueur = ptrJoueur->suivant;
