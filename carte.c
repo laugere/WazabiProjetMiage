@@ -88,36 +88,45 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
         {
         case 0:
             ChangementSens(sens);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 1:
             supprimer2Des(joueur);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 2:
             donner1De(joueur, listeJoueurs);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 3:
             joueur1Carte(listeJoueurs, defausse, joueur);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 4:
             piochez3Cartes(joueur, pioche);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 5:
             supprimer1De(joueur);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 6:
             switchDes(listeJoueurs);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 7:
             prendre1Carte(listeJoueurs, joueur);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 8:
             supprimerJoueur2Cartes(listeJoueurs, joueur, defausse);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 9:
             skipJoueur(joueur);
+            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         }
-        transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
     }
     else
     {
