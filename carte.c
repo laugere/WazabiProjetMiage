@@ -305,6 +305,7 @@ void switchDes(listeJoueurs *listeJoueurs)
             *ptrJoueur->suivant->des = *ptrJoueur->des;
         else if (entry == 'd')
             *ptrJoueur->precedent->des = *ptrJoueur->des;
+        ptrJoueur = ptrJoueur->suivant;
     }
     // Fin
 }
