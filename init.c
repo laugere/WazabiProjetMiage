@@ -90,9 +90,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
     {
         printf("Quel est le pseudo du joueur %d ?\n", numJ);
 
-        //scanf("%s", pseudo);
         scanfByRomeo(pseudo, 25);
-        //
         //initialise le pseudo
         for (int i = 0; i < 25; i++)
         {
@@ -124,9 +122,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
             if (ptrAux->suivant == NULL)
             {
                 printf("Quel est le pseudo du joueur %d ?\n", numJ);
-                //scanf("%s", pseudo);
                 scanfByRomeo(pseudo, 25);
-                //
                 //initialise le pseudo
                 for (int i = 0; i < 25; i++)
                 {
