@@ -64,6 +64,9 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
                 joueurRetour = ptrJoueur;
             }
             ptrJoueur = ptrJoueur->suivant;
+            if(iterator == nbJ -1){
+                avantDernierW = wCourant;
+            }
         }
         if (maxW == avantDernierW)
         {
