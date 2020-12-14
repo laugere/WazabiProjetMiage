@@ -43,6 +43,7 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
 {
     // Lexique
     int iterator;
+    int avantDernierW;
     int maxW;
     int wCourant;
     joueur *ptrJoueur;
@@ -63,6 +64,9 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
                 joueurRetour = ptrJoueur;
             }
             ptrJoueur = ptrJoueur->suivant;
+        }
+        if(maxW == avantDernierW){
+            maxW = 0;
         }
     }
 
