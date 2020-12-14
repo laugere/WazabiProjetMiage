@@ -45,6 +45,7 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
     int iterator;
     int maxW;
     int wCourant;
+    int pasEgal = 0;
     joueur *ptrJoueur;
     joueur *joueurRetour;
 
@@ -60,14 +61,18 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
 
             if (wCourant == maxW)
             {
-                iterator--;
+                pasEgal = 1;
             }
             else if (wCourant > maxW)
             {
                 maxW = wCourant;
                 joueurRetour = ptrJoueur;
+                pasEgal = 0;
             }
             ptrJoueur = ptrJoueur->suivant;
+        }
+        if(pasEgal == 1){
+            maxW = 0;
         }
     }
 
