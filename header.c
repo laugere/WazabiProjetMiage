@@ -80,6 +80,7 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
 void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int index);
 void ChangementSens(int sens);
 void piochez3Cartes(joueur *joueur, pileCartes *pioche);
+void afficherCartesPioche(pileCartes *pioche);
 
 // Méthodes Joueurs
 void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute);

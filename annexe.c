@@ -94,3 +94,5 @@ bool verifFin(joueur *joueur)
     }
     // Fin
 }
+
+void afficherDes()
