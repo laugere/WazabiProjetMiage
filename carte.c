@@ -92,7 +92,8 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             break;
         case 1:
             supprimer2Des(joueur);
-            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
+            // Plante le programme 
+            // transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 2:
             donner1De(joueur, listeJoueurs);
@@ -108,7 +109,8 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
             break;
         case 5:
             supprimer1De(joueur);
-            transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
+            // Plante le programme 
+            // transfertCarteDefausse(&joueur->listecartes, defausse, carte->nCarte);
             break;
         case 6:
             switchDes(listeJoueurs);
