@@ -401,7 +401,7 @@ void skipJoueur(joueur *joueurCourant)
     // Lexique
 
     // Début
-    joueurCourant = joueurCourant->suivant;
+    *joueurCourant = *joueurCourant->suivant;
     // Fin
 }
 
