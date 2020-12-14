@@ -31,6 +31,7 @@ void viderBuffer()
     }
 }
 
+// Méthode de test pour afficher tous les joueurs ainsi que leurs dés
 void afficherJoueurs(listeJoueurs *listeJoueurs) //Méthode de test
 {
     joueur *ptrAux = listeJoueurs->debut;
@@ -59,6 +60,8 @@ void afficherJoueurs(listeJoueurs *listeJoueurs) //Méthode de test
     }
 }
 
+// méthodes permettant de vérifier si la partie est terminée
+// Partie terminée => 1 joueur n'a plus de dé
 bool verifFin(joueur *joueur)
 {
     // Lexique
