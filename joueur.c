@@ -1,3 +1,7 @@
+//////////////////////////////////////////////////
+/////   GESTION JOUEUR  //////////////////////////
+//////////////////////////////////////////////////
+
 // Sélectionne un joueur parmis la liste des joueurs de la partie
 // Affiche tous les joueurs sauf le joueur courant.
 joueur *selectionJoueur(joueur *joueurCourant, listeJoueurs *listeJoueurs)
