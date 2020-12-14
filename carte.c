@@ -366,9 +366,9 @@ void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, p
 
     // Début
     ptrJoueur = listeJoueurs->debut;
-    ptrCartes = ptrJoueur->listecartes.premier;
     for (iterator = 0; iterator < listeJoueurs->nb; iterator++)
     {
+        ptrCartes = ptrJoueur->listecartes.premier;
         if (ptrJoueur != joueurCourant)
         {
             for (jterator = 0; jterator < ptrJoueur->listecartes.taille - 2; jterator++)
