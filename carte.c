@@ -329,7 +329,7 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joue
     {
         if (carteSupp != carteChoisi)
         {
-            transfertCarteDefausse(&joueurCible->listecartes, defausse, iterator);
+            transfertCarteDefausse(&joueurCible->listecartes, defausse, carteSupp->nCarte);
         }
         carteSupp = carteSupp->suivant;
     }
