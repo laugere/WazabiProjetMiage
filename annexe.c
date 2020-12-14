@@ -95,4 +95,15 @@ bool verifFin(joueur *joueur)
     // Fin
 }
 
-void afficherDes()
+void afficherDes(int deJoueur[])
+{
+    // Lexique
+    int iterator;
+
+    // Début
+    for (iterator = 0; iterator < 24; iterator++) {
+        printf("%d", deJoueur[iterator]);
+    }
+    printf("\n");
+    // Fin
+}

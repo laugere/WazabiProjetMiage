@@ -70,6 +70,7 @@ void tour();
 void lancerDe(dice de, int des[24], char pseudo[25]);
 void afficherDe(int face);
 void ajouterDe(int deJoueur[]);
+void afficherDes(int deJoueur[]);
 
 // Méthodes Cartes
 void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse, int nbWJoueur);
