@@ -81,5 +81,8 @@ void tour()
         }
 
     } while (!fin);
+
+    printf("Partie Finie !!");
+    printf("Le joueur %s a gagné", ptrJoueur->pseudo);
     // Fin
 }
