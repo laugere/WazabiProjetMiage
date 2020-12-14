@@ -354,7 +354,7 @@ void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
 }
 /*********************************************************************************************************
 Méthode "supprimerJoueur2Cartes"
-Méthode qui supprime deux cartes dans le deck d'un joueur
+Méthode qui supprime deux cartes dans chaque deck, sauf le joueurCourant
 **********************************************************************************************************/
 void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, pileCartes *defausse)
 {
