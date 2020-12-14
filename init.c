@@ -51,15 +51,19 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
     // Début
     maxW = 0;
     ptrJoueur = listeJoueurs->debut;
-    for (iterator = 0; iterator < nbJ; iterator++)
+    while (maxW = 0)
     {
-        lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
-        wCourant = retourneSommeWazabi(ptrJoueur->des);
-        if (wCourant > maxW) {
-            maxW = wCourant;
-            joueurRetour = ptrJoueur;
+        for (iterator = 0; iterator < nbJ; iterator++)
+        {
+            lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
+            wCourant = retourneSommeWazabi(ptrJoueur->des);
+            if (wCourant > maxW)
+            {
+                maxW = wCourant;
+                joueurRetour = ptrJoueur;
+            }
+            ptrJoueur = ptrJoueur->suivant;
         }
-        ptrJoueur = ptrJoueur->suivant;
     }
 
     printf("Le joueur %s commence.\n", joueurRetour->pseudo);
