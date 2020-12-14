@@ -57,12 +57,15 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
         {
             lancerDe(de, ptrJoueur->des, ptrJoueur->pseudo);
             wCourant = retourneSommeWazabi(ptrJoueur->des);
-            if (wCourant > maxW)
+
+            if (wCourant == maxW)
+            {
+                iterator--;
+            }
+            else if (wCourant > maxW)
             {
                 maxW = wCourant;
                 joueurRetour = ptrJoueur;
-            }else if(wCourant == maxW){
-                iterator--;
             }
             ptrJoueur = ptrJoueur->suivant;
         }
