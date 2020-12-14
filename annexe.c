@@ -70,7 +70,7 @@ void afficherCartesPioche(pileCartes *pioche)
 
     while (aux != NULL)
     {
-        printf("%d\n", aux->titre);
+        printf("%s\n", aux->titre);
         aux = aux->suivant;
     }
 
