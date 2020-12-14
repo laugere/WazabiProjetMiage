@@ -32,7 +32,7 @@ void viderBuffer()
 }
 
 // Méthode de test pour afficher tous les joueurs ainsi que leurs dés
-void afficherJoueurs(listeJoueurs *listeJoueurs) //Méthode de test
+void afficherJoueurs(listeJoueurs *listeJoueurs)
 {
     joueur *ptrAux = listeJoueurs->debut;
     int tailleListe = 0;
