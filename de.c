@@ -2,7 +2,7 @@
 /////   GESTION DÉ  //////////////////////////////
 //////////////////////////////////////////////////
 
-// Effectue le lancé de dé 
+// Effectue le lancé de dé
 void lancerDe(dice de, int des[24], char pseudo[25])
 {
     //Lexique
@@ -126,16 +126,16 @@ void ajouterDe(int deJoueur[])
 void supprimerDe(int deJoueur[])
 {
     // Lexique
-    int i;
+    int index;
 
     // Début
-    for (i = 0; deJoueur[i] != 0; i++)
+    index = 0;
+    while (deJoueur[index] != 0)
     {
-        if (deJoueur[i + 1] == 0)
-        {
-            deJoueur[i] = 0;
-        }
+        printf("%d", index);
+        index++;
     }
+    deJoueur[index] = 0;
     // Fin
 }
 
