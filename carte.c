@@ -1,3 +1,14 @@
+/*********************************************************************************************************
+                                            GESTION DES CARTES
+**********************************************************************************************************/
+
+/*********************************************************************************************************
+Méthode "selectionCarte"
+Méthode de gestion des cartes jouables par le joueur courant                                        
+Elle est séparé de la méthode utilisation carte, pour simplifier son utilisation dans des contextes différents
+Le paramètre cache, permet à un adversaire de piocher dans le jeu du joueur, et donc de 
+présenter les cartes cachées (elles sont tout de même correctement indexés)
+**********************************************************************************************************/
 carte *selectionCarte(joueur *joueur, bool cache)
 {
     // Lexique
@@ -48,11 +59,13 @@ carte *selectionCarte(joueur *joueur, bool cache)
             break;
         }
     }
-
     return vRetour;
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode "utilisationCarte"
+Méthode qui rend effectif l'effet d'une carte
+**********************************************************************************************************/
 void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJoueurs, int sens, pileCartes *defausse, int nbWJoueur)
 {
     // Lexique
@@ -112,82 +125,27 @@ void utilisationCarte(joueur *joueur, pileCartes *pioche, listeJoueurs *listeJou
     }
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode de la carte "ChangementSens"
+1 : sens inversé
+0 : sens classique
+**********************************************************************************************************/
 void ChangementSens(int sens)
 {
     if (sens == 0)
     {
-        sens = 1; //inverse le sens
+        sens = 1; 
     }
     else
     {
-        sens = 0; //remet le sens normal
+        sens = 0;
     }
 }
 
-void piochez3Cartes(joueur *joueur, pileCartes *pioche)
-{
-
-    for (int i = 0; i < 3; i++)
-    {
-        ajoutCarteJoueur(&joueur->listecartes, piocheCarte(pioche));
-    }
-}
-
-void donner1De(joueur *joueur, listeJoueurs *listeJoueurs)
-{
-    // Lexique
-
-    // Début
-    printf("Vous avez choisi de donner un dé ...");
-    transfertDe(joueur, listeJoueurs);
-    printf("Le de a ete donne.");
-    // Fin
-}
-
-void supprimer1De(joueur *joueurCourant)
-{
-    // Lexique
-
-    // Début
-    printf("Vous avez choisi de supprimer 1 de...\n");
-    supprimerDe(joueurCourant->des);
-    printf("Le de a ete supprime. \n");
-    // Fin
-}
-
-void supprimer2Des(joueur *joueurCourant)
-{
-    // Lexique
-
-    // Début
-    printf("Vous avez choisi de supprimer 2 des...\n");
-    supprimerDe(joueurCourant->des);
-    supprimerDe(joueurCourant->des);
-    printf("Les des ont ete supprimes. \n");
-    // Fin
-}
-
-void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[], int nCarte)
-{
-    // Lexique
-
-    // Début
-    carte *nouvelleCarte = malloc(sizeof(*nouvelleCarte));
-    if (pioche == NULL || nouvelleCarte == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
-    nouvelleCarte->cout = cout;
-    nouvelleCarte->index = index;
-    nouvelleCarte->nCarte = nCarte;
-    strcpy(nouvelleCarte->effet, effet);
-    strcpy(nouvelleCarte->titre, titre);
-    nouvelleCarte->suivant = pioche->premier;
-    pioche->premier = nouvelleCarte;
-    // Fin
-}
-
+/*********************************************************************************************************
+Méthode qui permet de piocher une carte
+Permet de piocher une carte dans la pioche. Si celle-ci est vide, aucune carte n'est ajouté au deck courant
+**********************************************************************************************************/
 carte *piocheCarte(pileCartes *pioche)
 {
     // Lexique
@@ -211,7 +169,9 @@ carte *piocheCarte(pileCartes *pioche)
     return carteRetour;
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode qui permet d'augmenter la taille de la listeCarte courante, et d'ajouter la carte courante
+**********************************************************************************************************/
 void ajoutCarteJoueur(listeCartes *listecarte, carte *carte)
 {
     // Lexique
@@ -226,6 +186,47 @@ void ajoutCarteJoueur(listeCartes *listecarte, carte *carte)
     // Fin
 }
 
+/*********************************************************************************************************
+Méthode de la carte "Piochez 3 cartes"
+Appel 3x la méthode "ajoutCarteJoueur" qui ajoute une carte dans le deck du joueur courant
+**********************************************************************************************************/
+void piochez3Cartes(joueur *joueur, pileCartes *pioche)
+{
+
+    for (int i = 0; i < 3; i++)
+    {
+        ajoutCarteJoueur(&joueur->listecartes, piocheCarte(pioche));
+    }
+}
+
+/*********************************************************************************************************
+Méthode "Empile carte"
+Méthode qui empile une carte sur une pile, que ce soit la pioche ou la défausse
+**********************************************************************************************************/
+void empileCarte(pileCartes *pioche, int cout, int index, char effet[], char titre[], int nCarte)
+{
+    // Lexique
+
+    // Début
+    carte *nouvelleCarte = malloc(sizeof(*nouvelleCarte));
+    if (pioche == NULL || nouvelleCarte == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    nouvelleCarte->cout = cout;
+    nouvelleCarte->index = index;
+    nouvelleCarte->nCarte = nCarte;
+    strcpy(nouvelleCarte->effet, effet);
+    strcpy(nouvelleCarte->titre, titre);
+    nouvelleCarte->suivant = pioche->premier;
+    pioche->premier = nouvelleCarte;
+    // Fin
+}
+
+/*********************************************************************************************************
+Méthode "transfertCarteDefausse"
+Méthode qui transfert une carte courante dans la défausse de la partie
+**********************************************************************************************************/
 void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int nCarte)
 {
     // Lexique
@@ -250,6 +251,10 @@ void transfertCarteDefausse(listeCartes *listeCartes, pileCartes *defausse, int 
     // Fin
 }
 
+/*********************************************************************************************************
+Méthode "transfertCarteJoueur"
+Méthode qui transfert une carte du deck d'un joueur dans le deck d'un autre joueur
+**********************************************************************************************************/
 void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecarteRecepteur, int nCarte)
 {
     // Lexique
@@ -273,6 +278,10 @@ void transfertCarteJoueur(listeCartes *listecarteEmetteur, listeCartes *listecar
     // Fin
 }
 
+/*********************************************************************************************************
+Méthode "switchDes"
+Méthode qui échange les dés entre les joueurs
+**********************************************************************************************************/
 void switchDes(listeJoueurs *listeJoueurs)
 {
     // Lexique
@@ -299,7 +308,10 @@ void switchDes(listeJoueurs *listeJoueurs)
     }
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode "joueur1Carte"
+Méthode qui ne laisse qu'une seule carte dans le deck d'un joueur selectionné
+**********************************************************************************************************/
 void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joueurCourant)
 {
     // Lexique
@@ -323,7 +335,10 @@ void joueur1Carte(listeJoueurs *listeJoueurs, pileCartes *defausse, joueur *joue
     }
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode "prendre1Carte"
+Méthode qui prend une carte dans le deck d'un adversaire
+**********************************************************************************************************/
 void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
 {
     // Lexique
@@ -336,7 +351,10 @@ void prendre1Carte(listeJoueurs *listeJoueurs, joueur *joueurCourant)
     transfertCarteJoueur(&joueurCible->listecartes, &joueurCourant->listecartes, carte->nCarte);
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode "supprimerJoueur2Cartes"
+Méthode qui supprime deux cartes dans le deck d'un joueur
+**********************************************************************************************************/
 void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, pileCartes *defausse)
 {
     // Lexique
@@ -362,12 +380,63 @@ void supprimerJoueur2Cartes(listeJoueurs *listeJoueurs, joueur *joueurCourant, p
     }
     // Fin
 }
-
+/*********************************************************************************************************
+Méthode "skipJoueur"
+Passe le tour du prochain joueur
+**********************************************************************************************************/
 void skipJoueur(joueur *joueurCourant)
 {
     // Lexique
 
     // Début
     joueurCourant = joueurCourant->suivant;
+    // Fin
+}
+
+/*********************************************************************************************************
+                                            GESTION DES DES
+**********************************************************************************************************/
+
+/*********************************************************************************************************
+Méthode de la carte "Donner un dé"
+Appel la méthode qui permet de transferer un dé à un adversaire choisi par le joueur courant
+**********************************************************************************************************/
+void donner1De(joueur *joueur, listeJoueurs *listeJoueurs)
+{
+    // Lexique
+
+    // Début
+    printf("Vous avez choisi de donner un dé ...");
+    transfertDe(joueur, listeJoueurs);
+    printf("Le de a ete donne.");
+    // Fin
+}
+/*********************************************************************************************************
+Méthode de la carte "Supprimer un dé"
+Appel la méthode "supprimerDe" qui supprime un dé de la liste de dé du joueur 
+**********************************************************************************************************/
+void supprimer1De(joueur *joueurCourant)
+{
+    // Lexique
+
+    // Début
+    printf("Vous avez choisi de supprimer 1 de...\n");
+    supprimerDe(joueurCourant->des);
+    printf("Le de a ete supprime. \n");
+    // Fin
+}
+/*********************************************************************************************************
+Méthode de la carte "Donner 2 dés"
+Appel 2x la méthode "supprimerDe"
+**********************************************************************************************************/
+void supprimer2Des(joueur *joueurCourant)
+{
+    // Lexique
+
+    // Début
+    printf("Vous avez choisi de supprimer 2 des...\n");
+    supprimerDe(joueurCourant->des);
+    supprimerDe(joueurCourant->des);
+    printf("Les des ont ete supprimes. \n");
     // Fin
 }
