@@ -1,3 +1,8 @@
+//////////////////////////////////////////////////
+/////   GESTION DÉ  //////////////////////////////
+//////////////////////////////////////////////////
+
+// Effectue le lancé de dé 
 void lancerDe(dice de, int des[24], char pseudo[25])
 {
     //Lexique
@@ -18,7 +23,8 @@ void lancerDe(dice de, int des[24], char pseudo[25])
     // Fin
 }
 
-void afficherDe(int face) // affichage de la face en fonction de l'index du dé
+// Affiche la face correspondant à l'index envoyé en paramètre.
+void afficherDe(int face)
 {
     // Début
     switch (face)
@@ -100,6 +106,7 @@ int retourneSommeDonneDe(int des[24])
     // Fin
 }
 
+// Ajoute un dé dans la liste des dés du joueur
 void ajouterDe(int deJoueur[])
 {
     // Lexique
@@ -115,6 +122,7 @@ void ajouterDe(int deJoueur[])
     // Fin
 }
 
+// Supprime un dé  dans la liste des dés du joueur
 void supprimerDe(int deJoueur[])
 {
     // Lexique
@@ -131,6 +139,7 @@ void supprimerDe(int deJoueur[])
     // Fin
 }
 
+// Utilise SupprimeDe et AjouterDe pour effectuer un transfert de dé d'un joueur à l'autre
 void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs)
 {
     // Lexique
@@ -143,6 +152,8 @@ void transfertDe(joueur *joueurCourant, listeJoueurs *listeJoueurs)
     // Fin
 }
 
+// Compte le nombre de dés dans la liste de dés du joueur
+// Si une valeur dans le tableau est à 0 alors le dé  n'existe pas.
 int countDe(int des[24])
 {
     // Lexique
