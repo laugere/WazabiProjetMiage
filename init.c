@@ -51,7 +51,7 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
     // Début
     maxW = 0;
     ptrJoueur = listeJoueurs->debut;
-    while (maxW = 0)
+    while (maxW == 0)
     {
         for (iterator = 0; iterator < nbJ; iterator++)
         {
