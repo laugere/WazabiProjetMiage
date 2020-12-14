@@ -133,7 +133,6 @@ void supprimerDe(int deJoueur[])
     while (deJoueur[index] != 0)
     {
         index++;
-        printf("%d", index);
     }
     deJoueur[index - 1] = 0;
     // Fin
