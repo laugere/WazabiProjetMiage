@@ -60,6 +60,23 @@ void afficherJoueurs(listeJoueurs *listeJoueurs)
     }
 }
 
+void afficherCartesPioche(pileCartes *pioche)
+{
+    if (pioche == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    carte *aux = pioche->premier;
+
+    while (aux != NULL)
+    {
+        printf("%d\n", aux->titre);
+        aux = aux->suivant;
+    }
+
+    printf("\n");
+}
+
 // méthodes permettant de vérifier si la partie est terminée
 // Partie terminée => 1 joueur n'a plus de dé
 bool verifFin(joueur *joueur)
