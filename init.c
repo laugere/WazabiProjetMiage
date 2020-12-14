@@ -2,7 +2,9 @@
 /////   GESTION INITIALISATION  //////////////////
 //////////////////////////////////////////////////
 
-// Init game
+// Intialise la partie en demandant le nombre de joueurs (2 - 6)
+// Puis instancie le nombre de joueurs dans la liste
+// Enfin, il lance la méthode ajouterJoueur pour ajouter des joueurs à la liste
 void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
 {
     int nbJ = 0;
@@ -32,9 +34,11 @@ void initPartie(listeJoueurs *listeJoueurs, pileCartes *pioche)
         ajouterJoueur(listeJoueurs, pioche, ajoute);
         ajoute++;
     }
-    //afficherJoueurs(listeJoueurs);
 }
 
+// Détermine le premier joueur qui va joueur le premier tour
+// Tous les joueurs vont effectuer un lancé et celui qui obtiens le plus de wazabi
+// Commence (wazabi = 1 en valeur de face de dé)
 joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
 {
     // Lexique
@@ -64,7 +68,7 @@ joueur *determinePremierJoueur(listeJoueurs *listeJoueurs, int nbJ, dice de)
     // Fin
 }
 
-// To initialize the dice tab
+// Permet d'initaliser l'objet dé en lui indiquant toutes les faces que celui-ci peut avoir
 void initDe(dice *de)
 {
     (*de).faces[0] = 1;
@@ -75,6 +79,8 @@ void initDe(dice *de)
     (*de).faces[5] = 3;
 }
 
+// Ajoute un joueur dans la liste de joueurs donnée en paramètre
+// On demandera le pseudo de celui-ci (max 25 caractères)
 void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
 {
     int numJ = ajoute + 1;
@@ -150,6 +156,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
         }
     }
 
+    // Initie la liste de cartes du joueur
     initListeCarte(tmpJoueur, pioche);
 
     //lie le premier et le dernier joueur
@@ -177,6 +184,7 @@ void ajouterJoueur(listeJoueurs *listeJoueurs, pileCartes *pioche, int ajoute)
     }
 }
 
+// Initie la pioche en y ajoutant toutes les cartes du jeu (36 cartes)
 void initPioche(pileCartes *pioche)
 {
     // Lexique
@@ -209,6 +217,7 @@ void initPioche(pileCartes *pioche)
     // Fin
 }
 
+// Appelle la fonction qui empile la carte correspondant à l'index dans la pioche
 void selectCarteEmpiler(int index, pileCartes *pioche, int nCarte)
 {
     // Lexique
@@ -312,6 +321,8 @@ void selectCarteEmpiler(int index, pileCartes *pioche, int nCarte)
     // Fin
 }
 
+// Initie la liste circulaire de cartes
+// Liste circulaire (précédent de premier est dernier)
 void initListeCarte(joueur *joueur, pileCartes *pioche)
 {
     // Lexique
@@ -329,6 +340,8 @@ void initListeCarte(joueur *joueur, pileCartes *pioche)
     // Fin
 }
 
+// Ajoute la première carte de la liste cirulaire de cartes
+// Obligatoire pour une liste circulaire
 void ajoutFirstCarteJoueur(listeCartes *listecarte, pileCartes *pioche)
 {
     // Lexique
